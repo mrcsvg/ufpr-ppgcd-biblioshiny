@@ -1,0 +1,219 @@
+[
+  {
+    "objectID": "atividade/atividade_biblioshiny.html",
+    "href": "atividade/atividade_biblioshiny.html",
+    "title": "Bibliometria Analítica e Indicadores Científicos",
+    "section": "",
+    "text": "Tema da Equipe 7: Bibliometria analítica e indicadores científicos. Ferramenta: bibliometrix (pacote R) + Biblioshiny (interface web do pacote).\n\nO bibliometrix é um pacote R para science mapping (mapeamento científico). O Biblioshiny é a interface gráfica (Shiny) que roda por cima do mesmo pacote: tudo o que você faz clicando no Biblioshiny corresponde a uma função do bibliometrix. Nesta atividade você vai executar essas funções no código e, ao final, vai aprender a reproduzir cada passo no Biblioshiny.\nO que você vai entregar (ver checklist no fim):\n\nEste notebook executado (.Rmd + versão em PDF).\nUma tabela-síntese de indicadores do seu corpus.\nPelo menos um gráfico de evolução temporal e um de produtividade de autores."
+  },
+  {
+    "objectID": "atividade/atividade_biblioshiny.html#corpus-de-exemplo-use-agora",
+    "href": "atividade/atividade_biblioshiny.html#corpus-de-exemplo-use-agora",
+    "title": "Bibliometria Analítica e Indicadores Científicos",
+    "section": "Corpus de exemplo (use agora)",
+    "text": "Corpus de exemplo (use agora)\n\ndata(management, package = \"bibliometrixData\")\nM &lt;- management\ndim(M)            # nº de documentos (linhas) x nº de campos (colunas)\n\n[1] 898  67"
+  },
+  {
+    "objectID": "atividade/atividade_biblioshiny.html#como-importar-o-seu-corpus-modelo-para-o-trabalho-final",
+    "href": "atividade/atividade_biblioshiny.html#como-importar-o-seu-corpus-modelo-para-o-trabalho-final",
+    "title": "Bibliometria Analítica e Indicadores Científicos",
+    "section": "Como importar o SEU corpus (modelo para o trabalho final)",
+    "text": "Como importar o SEU corpus (modelo para o trabalho final)\n\n# Exemplo: arquivo BibTeX exportado do Scopus salvo na mesma pasta do notebook\nM &lt;- convert2df(\n  file     = \"scopus.bib\",\n  dbsource = \"scopus\",     # \"wos\", \"scopus\", \"openalex\", \"dimensions\", \"lens\", \"pubmed\"\n  format   = \"bibtex\"      # \"bibtex\", \"plaintext\", \"csv\", \"api\"\n)\n\n\n🧪 Sua vez 1: confirme o tamanho do corpus com dim(M) e descubra o intervalo de anos com range(M$PY, na.rm = TRUE).\n\n\nrange(M$PY, na.rm = TRUE)\n\n[1] 1985 2020"
+  },
+  {
+    "objectID": "atividade/atividade_biblioshiny.html#produção-dos-principais-autores-ao-longo-do-tempo",
+    "href": "atividade/atividade_biblioshiny.html#produção-dos-principais-autores-ao-longo-do-tempo",
+    "title": "Bibliometria Analítica e Indicadores Científicos",
+    "section": "Produção dos principais autores ao longo do tempo",
+    "text": "Produção dos principais autores ao longo do tempo\n\ntopAU &lt;- authorProdOverTime(M, k = 10, graph = TRUE)\n\n\n\n\n\n\n\nhead(topAU$dfAU)    # tabela: autor, ano, nº de artigos, citações\n\n    Author year freq  TC      TCpY\n1 ABRAMO G 2009    2 200 11.111111\n2 ABRAMO G 2011    1  26  1.625000\n3 ABRAMO G 2012    1  28  1.866667\n4 ABRAMO G 2015    1  20  1.666667\n5 ABRAMO G 2016    1  18  1.636364\n6 ABRAMO G 2019    1  11  1.375000\n\n\n\n🧪 Sua vez 5: qual autor tem a trajetória mais longa (mais anos ativos)? E qual tem a maior produção concentrada em poucos anos?"
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Bibliometria com bibliometrix & Biblioshiny",
+    "section": "",
+    "text": "Material da capacitação reunido em um só lugar: a apresentação, a atividade prática em R, o cheat sheet e os caminhos para rodar tudo online."
+  },
+  {
+    "objectID": "index.html#materiais",
+    "href": "index.html#materiais",
+    "title": "Bibliometria com bibliometrix & Biblioshiny",
+    "section": "Materiais",
+    "text": "Materiais\n\n\n🎞️ Apresentação\nSlides (reveal.js): a jornada do bibliometrix ao Biblioshiny.\nAbrir slides →\n\n\n🧪 Atividade prática\nNotebook em R: importação do corpus, indicadores e a ponte código ↔︎ Biblioshiny.\nLer a atividade →\n\n\n📋 Cheat sheet\nFicha de referência rápida (1–2 páginas).\nAbrir cheat sheet →"
+  },
+  {
+    "objectID": "index.html#rodar-a-atividade-de-forma-interativa",
+    "href": "index.html#rodar-a-atividade-de-forma-interativa",
+    "title": "Bibliometria com bibliometrix & Biblioshiny",
+    "section": "Rodar a atividade de forma interativa",
+    "text": "Rodar a atividade de forma interativa\nEsta página é só leitura. Para executar o R (e abrir o Biblioshiny), use um destes ambientes:\n\n\n\n\n\n\nTipTrês caminhos\n\n\n\n\n\n\nPosit Cloud (recomendado): crie um projeto, rode posit-cloud/setup_posit.R uma vez e suba a atividade. A interface gráfica abre com biblioshiny().\nBinder (sem login):  — ambiente R online, primeira carga leva alguns minutos.\nGoogle Colab: abrir notebook (runtime R).\n\n\n\n\n\n\n\n\n\n\nNote\n\n\n\nO Biblioshiny (biblioshiny()) precisa de um servidor R, então roda no Posit Cloud ou no R/RStudio local — não no Colab/Binder nem nesta página.\n\n\n\n\nAria, M. & Cuccurullo, C. (2017). bibliometrix: An R-tool for comprehensive science mapping analysis. Journal of Informetrics, 11(4), 959–975 · bibliometrix.org"
+  },
+  {
+    "objectID": "apresentacao/apresentacao_biblioshiny.html#roteiro",
+    "href": "apresentacao/apresentacao_biblioshiny.html#roteiro",
+    "title": "Do código à interface",
+    "section": "Roteiro",
+    "text": "Roteiro\n\nPor que isso importa — da revisão narrativa ao science mapping\nA história — o nascimento do bibliometrix (2017)\nA evolução — do código para todos: o biblioshiny\nPor que R (e por que este slide é um .qmd)\nA riqueza das análises do bibliometrix — ao vivo\nComo instanciar o Biblioshiny no Posit Cloud\nTodas as capacidades do Biblioshiny (modelo SAAS)\nMão na massa — sua vez de explorar\n\n\nApresentar-se, dizer que ao final cada um vai rodar a própria instância. Tempo-alvo: 25–30 min + prática."
+  },
+  {
+    "objectID": "apresentacao/apresentacao_biblioshiny.html#o-problema-da-revisão-tradicional",
+    "href": "apresentacao/apresentacao_biblioshiny.html#o-problema-da-revisão-tradicional",
+    "title": "Do código à interface",
+    "section": "O problema da revisão tradicional",
+    "text": "O problema da revisão tradicional\nQuando o número de artigos explode, ler tudo “na mão” não escala — e vira pouco transparente e difícil de reproduzir.\n\nA bibliometria e o science mapping respondem a perguntas como:\n\nComo o campo evoluiu no tempo?\nQuem são os autores, periódicos e países centrais?\nQuais os temas e como eles se conectam e mudam?\nQual a estrutura intelectual (quem cita quem)?\n\n\n\n\nA ideia: transformar metadados de milhares de artigos em um mapa quantitativo, transparente e reproduzível."
+  },
+  {
+    "objectID": "apresentacao/apresentacao_biblioshiny.html#bibliometrix-2017",
+    "href": "apresentacao/apresentacao_biblioshiny.html#bibliometrix-2017",
+    "title": "Do código à interface",
+    "section": "bibliometrix (2017)",
+    "text": "bibliometrix (2017)\n\nPacote em R criado por Massimo Aria e Corrado Cuccurullo.\n\n\nArtigo seminal: bibliometrix: An R-tool for comprehensive science mapping analysis — Journal of Informetrics, 11(4), 959–975 (2017).\n\n\nProposta: oferecer, num só lugar e de forma aberta e gratuita, todo o fluxo de análise bibliométrica que antes exigia várias ferramentas isoladas.\n\n\nImporta dados de Scopus, Web of Science, Dimensions, OpenAlex, Lens, PubMed e Cochrane.\n\n\nContexto: antes do bibliometrix, o fluxo era fragmentado (uma ferramenta para métricas, outra para redes, outra para mapas). O bibliometrix unificou."
+  },
+  {
+    "objectID": "apresentacao/apresentacao_biblioshiny.html#o-porém-do-começo",
+    "href": "apresentacao/apresentacao_biblioshiny.html#o-porém-do-começo",
+    "title": "Do código à interface",
+    "section": "O “porém” do começo",
+    "text": "O “porém” do começo\nO bibliometrix é poderoso — mas exigia escrever código em R.\n\nPara a maior parte dos pesquisadores (que não programam), isso era uma barreira de entrada.\n\n\nE daí veio a virada de chave 👇"
+  },
+  {
+    "objectID": "apresentacao/apresentacao_biblioshiny.html#biblioshiny-bibliometrix-para-não-programadores",
+    "href": "apresentacao/apresentacao_biblioshiny.html#biblioshiny-bibliometrix-para-não-programadores",
+    "title": "Do código à interface",
+    "section": "biblioshiny: bibliometrix para não-programadores",
+    "text": "biblioshiny: bibliometrix para não-programadores\n\nUma aplicação web (Shiny) que coloca uma interface gráfica sobre o mesmo motor do bibliometrix.\n\n\nMesmíssimas análises — agora clicando, sem escrever uma linha de código.\n\n\nImportar, filtrar, analisar e visualizar; exportar tabelas, gráficos e relatórios.\n\n\n\nCada botão do Biblioshiny corresponde a uma função do bibliometrix. Quem entende o código entende o que cada tela calcula."
+  },
+  {
+    "objectID": "apresentacao/apresentacao_biblioshiny.html#o-modelo-saas",
+    "href": "apresentacao/apresentacao_biblioshiny.html#o-modelo-saas",
+    "title": "Do código à interface",
+    "section": "O modelo SAAS",
+    "text": "O modelo SAAS\nO Biblioshiny é organizado em torno do fluxo SAAS — uma reformulação do framework SALSA (Grant & Booth, 2009):\n\n\n\nEtapa\nO que faz\nSeção do artigo\n\n\n\n\nSearch\nBuscar e importar o corpus\nMétodos\n\n\nAppraisal\nAvaliar/filtrar e descrever\nMétodos / Resultados\n\n\nAnalysis\nMapear estrutura e indicadores\nResultados\n\n\nSynthesis\nInterpretar e narrar\nDiscussão\n\n\n\n\nCada etapa mapeia para uma seção de um artigo científico → análise transparente e reproduzível de ponta a ponta."
+  },
+  {
+    "objectID": "apresentacao/apresentacao_biblioshiny.html#onde-o-projeto-está-hoje",
+    "href": "apresentacao/apresentacao_biblioshiny.html#onde-o-projeto-está-hoje",
+    "title": "Do código à interface",
+    "section": "Onde o projeto está hoje",
+    "text": "Onde o projeto está hoje\n\nIntegração via API (OpenAlex, PubMed) — baixa os dados direto, sem exportar arquivo\nAnálise de texto completo: função das citações, extração de palavras-chave (TF-IDF, RAKE, YAKE), estrutura IMRaD\nBiblio AI: assistente de IA integrado para ajudar a interpretar os resultados\nLivro de referência (2026): Science Mapping Analysis — A Primer with Biblioshiny (McGraw-Hill)"
+  },
+  {
+    "objectID": "apresentacao/apresentacao_biblioshiny.html#e-por-que-este-slide-é-um-.qmd",
+    "href": "apresentacao/apresentacao_biblioshiny.html#e-por-que-este-slide-é-um-.qmd",
+    "title": "Do código à interface",
+    "section": "E por que este slide é um .qmd",
+    "text": "E por que este slide é um .qmd\nEsta apresentação foi feita em Quarto — Markdown + código que renderiza sozinho.\nformat:\n  revealjs:\n    theme: simple\nexecute:\n  echo: true\n\nO mesmo arquivo gera slides, PDF e HTML, com o código analítico embutido e reproduzível.\n\n\n\nPara quem vem do Python: pense em Jupyter + nbconvert + papermill… só que num arquivo de texto só, versionável no Git. É esse o espírito do R para pesquisa reprodutível."
+  },
+  {
+    "objectID": "apresentacao/apresentacao_biblioshiny.html#setup",
+    "href": "apresentacao/apresentacao_biblioshiny.html#setup",
+    "title": "Do código à interface",
+    "section": "Setup",
+    "text": "Setup\n\n# Instalação (uma vez por sessão no Posit Cloud)\ninstall.packages(c(\"bibliometrix\", \"bibliometrixData\"))\n\nlibrary(bibliometrix)\n\n\n\n# Corpus de exemplo já incluído (sem precisar baixar nada)\ndata(management, package = \"bibliometrixData\")\nM &lt;- management\n\ndim(M)                       # documentos x campos\nrange(M$PY, na.rm = TRUE)    # intervalo de anos\n\n\nAqui troco para execução ao vivo no notebook. Mostrar o tamanho do corpus."
+  },
+  {
+    "objectID": "apresentacao/apresentacao_biblioshiny.html#importar-o-seu-corpus",
+    "href": "apresentacao/apresentacao_biblioshiny.html#importar-o-seu-corpus",
+    "title": "Do código à interface",
+    "section": "Importar o SEU corpus",
+    "text": "Importar o SEU corpus\n\n# Exportações de Scopus, WoS, OpenAlex, Lens, Dimensions, PubMed...\nM &lt;- convert2df(\n  file     = \"scopus.bib\",\n  dbsource = \"scopus\",\n  format   = \"bibtex\"\n)\n\nUma função (convert2df) padroniza sete bases diferentes num único data frame de classe bibliometrixDB."
+  },
+  {
+    "objectID": "apresentacao/apresentacao_biblioshiny.html#visão-geral-descritiva",
+    "href": "apresentacao/apresentacao_biblioshiny.html#visão-geral-descritiva",
+    "title": "Do código à interface",
+    "section": "Visão geral descritiva",
+    "text": "Visão geral descritiva\n\nresults &lt;- biblioAnalysis(M, sep = \";\")\nS &lt;- summary(results, k = 10, pause = FALSE, verbose = FALSE)\n\nS$MainInformationDF   # documentos, autores, período, crescimento anual, citações...\n\n👉 Demonstração ao vivo no notebook — saem dezenas de indicadores de uma vez só."
+  },
+  {
+    "objectID": "apresentacao/apresentacao_biblioshiny.html#evolução-temporal",
+    "href": "apresentacao/apresentacao_biblioshiny.html#evolução-temporal",
+    "title": "Do código à interface",
+    "section": "Evolução temporal",
+    "text": "Evolução temporal\n\nplot(results, k = 10, pause = FALSE)   # produção anual, países, autores...\n\nO ritmo de crescimento revela se o campo está em ascensão, maturidade ou declínio."
+  },
+  {
+    "objectID": "apresentacao/apresentacao_biblioshiny.html#periódicos-e-a-lei-de-bradford",
+    "href": "apresentacao/apresentacao_biblioshiny.html#periódicos-e-a-lei-de-bradford",
+    "title": "Do código à interface",
+    "section": "Periódicos e a Lei de Bradford",
+    "text": "Periódicos e a Lei de Bradford\n\nbradford(M)$table     # zona \"Core\" = núcleo de periódicos\n\nA Lei de Bradford identifica o pequeno núcleo de revistas que concentra a maioria dos artigos — onde ler e onde submeter."
+  },
+  {
+    "objectID": "apresentacao/apresentacao_biblioshiny.html#autores-e-a-lei-de-lotka",
+    "href": "apresentacao/apresentacao_biblioshiny.html#autores-e-a-lei-de-lotka",
+    "title": "Do código à interface",
+    "section": "Autores e a Lei de Lotka",
+    "text": "Autores e a Lei de Lotka\n\nL &lt;- lotka(M)         # versão atual recebe M (classe bibliometrixDB)\nL$AuthorProd          # nº de autores por nº de artigos\nL$Beta                # ~2 =&gt; segue o padrão clássico de concentração\n\nLotka: poucos autores publicam muito; muitos publicam pouco."
+  },
+  {
+    "objectID": "apresentacao/apresentacao_biblioshiny.html#impacto-índices-h-g-e-m",
+    "href": "apresentacao/apresentacao_biblioshiny.html#impacto-índices-h-g-e-m",
+    "title": "Do código à interface",
+    "section": "Impacto: índices h, g e m",
+    "text": "Impacto: índices h, g e m\n\nautores &lt;- gsub(\",\", \" \", names(results$Authors)[1:10])\nHindex(M, field = \"author\", elements = autores, sep = \";\")$H\n\n\nh: equilíbrio entre volume e impacto\ng: dá peso aos muito citados\nm: corrige o h pelo tempo de carreira"
+  },
+  {
+    "objectID": "apresentacao/apresentacao_biblioshiny.html#documentos-mais-citados",
+    "href": "apresentacao/apresentacao_biblioshiny.html#documentos-mais-citados",
+    "title": "Do código à interface",
+    "section": "Documentos mais citados",
+    "text": "Documentos mais citados\n\ncitations(M, field = \"article\", sep = \";\")$Cited\n\nAs referências mais citadas costumam ser os clássicos que sustentam o campo."
+  },
+  {
+    "objectID": "apresentacao/apresentacao_biblioshiny.html#e-ainda-há-muito-mais",
+    "href": "apresentacao/apresentacao_biblioshiny.html#e-ainda-há-muito-mais",
+    "title": "Do código à interface",
+    "section": "E ainda há muito mais",
+    "text": "E ainda há muito mais\n\nEstrutura conceitual: rede de coocorrência de palavras, mapa temático, evolução temática\nEstrutura intelectual: rede de cocitação, historiógrafo (genealogia das ideias)\nEstrutura social: redes de colaboração e mapa de países\nThree-Field Plot (Sankey): Autores → Palavras-chave → Fontes\n\n\nthreeFieldsPlot(M, fields = c(\"AU\", \"DE\", \"SO\"), n = c(20, 20, 20))"
+  },
+  {
+    "objectID": "apresentacao/apresentacao_biblioshiny.html#tudo-isso-sem-escrever-código",
+    "href": "apresentacao/apresentacao_biblioshiny.html#tudo-isso-sem-escrever-código",
+    "title": "Do código à interface",
+    "section": "Tudo isso… sem escrever código",
+    "text": "Tudo isso… sem escrever código\n\nlibrary(bibliometrix)\nbiblioshiny()        # sobe a interface web no navegador\n\n\nNo Posit Cloud funciona igual — abre numa aba nova do navegador.\n\n\nPegadinha: o navegador pode bloquear o pop-up da nova aba. Libere pop-ups para posit.cloud e a interface abre.\n\n\nAqui paro de falar e ABRO o biblioshiny ao vivo. Mostro a tela inicial e o menu lateral."
+  },
+  {
+    "objectID": "apresentacao/apresentacao_biblioshiny.html#dados-e-visão-geral",
+    "href": "apresentacao/apresentacao_biblioshiny.html#dados-e-visão-geral",
+    "title": "Do código à interface",
+    "section": "Dados e visão geral",
+    "text": "Dados e visão geral\n\nData — importar/converter 7 bases · integração por API (OpenAlex, PubMed) · filtrar por ano, periódico, país, citações · checar dados ausentes\nOverview — Main Information · produção anual · média de citações por ano · Three-Field Plot · fontes/autores/afiliações/países mais relevantes · documentos mais citados"
+  },
+  {
+    "objectID": "apresentacao/apresentacao_biblioshiny.html#fontes-autores-e-documentos",
+    "href": "apresentacao/apresentacao_biblioshiny.html#fontes-autores-e-documentos",
+    "title": "Do código à interface",
+    "section": "Fontes, autores e documentos",
+    "text": "Fontes, autores e documentos\n\nSources — fontes mais relevantes · Lei de Bradford · impacto da fonte (h-index) · produção da fonte no tempo\nAuthors — autores e afiliações mais relevantes · produção no tempo · Lei de Lotka · impacto do autor (h/g/m) · rede de colaboração\nDocuments — mais citados (global/local) · referências mais citadas · RPYS (espectroscopia de referências) · palavras frequentes · WordCloud / TreeMap · trend topics"
+  },
+  {
+    "objectID": "apresentacao/apresentacao_biblioshiny.html#estruturas-e-ia",
+    "href": "apresentacao/apresentacao_biblioshiny.html#estruturas-e-ia",
+    "title": "Do código à interface",
+    "section": "Estruturas e IA",
+    "text": "Estruturas e IA\n\nClustering — agrupamento por acoplamento (coupling)\nConceptual Structure — rede de coocorrência · mapa temático · evolução temática · análise fatorial (MCA/CA)\nIntellectual Structure — rede de cocitação · historiógrafo\nSocial Structure — rede de colaboração · mapa de colaboração entre países\nConteúdo & IA — análise de texto completo (função das citações, IMRaD) · Biblio AI para interpretação"
+  },
+  {
+    "objectID": "apresentacao/apresentacao_biblioshiny.html#a-ponte-menu-função",
+    "href": "apresentacao/apresentacao_biblioshiny.html#a-ponte-menu-função",
+    "title": "Do código à interface",
+    "section": "A ponte: menu → função",
+    "text": "A ponte: menu → função\n\n\n\nNo Biblioshiny (clique)\nNo bibliometrix (código)\n\n\n\n\nData → Load Data\nconvert2df()\n\n\nOverview → Main Information\nbiblioAnalysis() + summary()\n\n\nSources → Bradford’s Law\nbradford()\n\n\nAuthors → Lotka’s Law\nlotka()\n\n\nAuthors → Author Impact\nHindex()\n\n\nDocuments → Most Cited\ncitations()\n\n\nConceptual → Thematic Map\nthematicMap()\n\n\nIntellectual → Historiograph\nhistNetwork() + histPlot()"
+  },
+  {
+    "objectID": "apresentacao/apresentacao_biblioshiny.html#sua-vez",
+    "href": "apresentacao/apresentacao_biblioshiny.html#sua-vez",
+    "title": "Do código à interface",
+    "section": "Sua vez",
+    "text": "Sua vez\n\nAbra o projeto compartilhado no Posit Cloud (link no chat da turma)\nRode o notebook atividade_biblioshiny.Rmd — célula por célula\nBrinque com o corpus de exemplo (management) — ou importe o seu\nRode biblioshiny() e confira um indicador que você calculou no código\nUse o cheat sheet como mapa de bolso\n\n\n\nObjetivo: sair daqui sabendo ler um mapa científico — e reproduzi-lo."
+  },
+  {
+    "objectID": "apresentacao/apresentacao_biblioshiny.html#obrigado",
+    "href": "apresentacao/apresentacao_biblioshiny.html#obrigado",
+    "title": "Do código à interface",
+    "section": "Obrigado!",
+    "text": "Obrigado!\nPerguntas?\n\nAria, M. & Cuccurullo, C. (2017). bibliometrix: An R-tool for comprehensive science mapping analysis. Journal of Informetrics, 11(4), 959–975.\nAria, M. & Cuccurullo, C. (2026). Science Mapping Analysis: A Primer with Biblioshiny. McGraw-Hill.\nSite: bibliometrix.org · Interface: biblioshiny()"
+  }
+]
