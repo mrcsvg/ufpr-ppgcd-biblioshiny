@@ -1,0 +1,68 @@
+---
+title: "Bibliometria com bibliometrix & Biblioshiny"
+subtitle: "Equipe 7 — Bibliometria analítica e indicadores científicos · UFPR/PPGCD"
+toc: false
+---
+
+Material da capacitação reunido em um só lugar: a **apresentação**, a **atividade
+prática** em R, o **cheat sheet** e os caminhos para rodar tudo online.
+
+> **Ferramentas:** [`bibliometrix`](https://www.bibliometrix.org) (pacote R) +
+> **Biblioshiny** (a interface web do mesmo pacote).
+
+## Materiais
+
+::: {.grid}
+
+::: {.g-col-12 .g-col-md-4}
+### 🎞️ Apresentação
+Slides (reveal.js): a jornada do `bibliometrix` ao Biblioshiny.
+
+[Abrir slides →](apresentacao/apresentacao_biblioshiny.qmd)
+:::
+
+::: {.g-col-12 .g-col-md-4}
+### 🧪 Atividade prática
+Notebook em R: importação do corpus, indicadores e a ponte código ↔ Biblioshiny.
+
+[Ler a atividade →](atividade/atividade_biblioshiny.Rmd)
+:::
+
+::: {.g-col-12 .g-col-md-4}
+### 📋 Cheat sheet
+Ficha de referência rápida (1–2 páginas).
+
+[Abrir cheat sheet →](cheatsheet/cheatsheet_biblioshiny.html)
+:::
+
+:::
+
+## Rodar a atividade de forma interativa
+
+Esta página é só **leitura**. Para **executar** o R (e abrir o Biblioshiny),
+use um destes ambientes:
+
+::: {.callout-tip collapse="false"}
+## Três caminhos
+
+- **Posit Cloud (recomendado):** crie um projeto, rode `posit-cloud/setup_posit.R`
+  uma vez e suba a atividade. A interface gráfica abre com `biblioshiny()`.
+- **Binder (sem login):**
+  [![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/mrcsvg/ufpr-ppgcd-biblioshiny/HEAD?labpath=atividade%2Fatividade_biblioshiny.ipynb)
+  — ambiente R online, primeira carga leva alguns minutos.
+- **Google Colab:**
+  [abrir notebook (runtime R)](https://colab.research.google.com/github/mrcsvg/ufpr-ppgcd-biblioshiny/blob/main/atividade/atividade_biblioshiny_colab.ipynb).
+:::
+
+::: {.callout-note}
+O **Biblioshiny** (`biblioshiny()`) precisa de um servidor R, então roda no
+**Posit Cloud** ou no **R/RStudio local** — não no Colab/Binder nem nesta página.
+:::
+
+---
+
+::: {.small}
+Aria, M. & Cuccurullo, C. (2017). *bibliometrix: An R-tool for comprehensive
+science mapping analysis.* Journal of Informetrics, 11(4), 959–975 ·
+[bibliometrix.org](https://www.bibliometrix.org)
+:::

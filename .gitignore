@@ -9,6 +9,7 @@
 /.quarto/
 *_files/
 /_site/
+/_freeze/
 /_book/
 
 # Saídas renderizadas (descomente se NÃO quiser versionar os HTML gerados)
@@ -23,3 +24,5 @@ indicadores.csv
 .DS_Store
 Thumbs.db
 .positai
+
+**/*.quarto_ipynb
