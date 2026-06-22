@@ -47,12 +47,12 @@ Ela **não** roda bem no Colab/Binder (precisa servir um app web).
 
 ## 🟢 Rodar online no Binder (estilo Colab, sem login)
 
-A configuração do Binder está em `binder/`. Troque `USUARIO/REPO` pelos seus dados:
+A configuração do Binder está em `binder/`:
 
-[![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/USUARIO/REPO/HEAD?labpath=atividade%2Fatividade_biblioshiny.ipynb)
+[![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/mrcsvg/ufpr-ppgcd-biblioshiny/HEAD?labpath=atividade%2Fatividade_biblioshiny.ipynb)
 
-- **Notebook (Jupyter):** `https://mybinder.org/v2/gh/USUARIO/REPO/HEAD?labpath=atividade%2Fatividade_biblioshiny.ipynb`
-- **RStudio:** `https://mybinder.org/v2/gh/USUARIO/REPO/HEAD?urlpath=rstudio`
+- **Notebook (Jupyter):** `https://mybinder.org/v2/gh/mrcsvg/ufpr-ppgcd-biblioshiny/HEAD?labpath=atividade%2Fatividade_biblioshiny.ipynb`
+- **RStudio:** `https://mybinder.org/v2/gh/mrcsvg/ufpr-ppgcd-biblioshiny/HEAD?urlpath=rstudio`
 
 A primeira construção leva alguns minutos (compila o `bibliometrix`); depois fica em cache.
 Sessões são temporárias — baixe seu trabalho antes de sair.
@@ -65,6 +65,38 @@ Sessões são temporárias — baixe seu trabalho antes de sair.
 install.packages(c("bibliometrix", "bibliometrixData"))
 # Quarto: https://quarto.org (já incluído no Posit Cloud e no RStudio recente)
 ```
+
+---
+
+## 🌐 Publicar no GitHub Pages (site de leitura)
+
+O repositório é um **projeto Quarto** (`_quarto.yml`): a capa (`index.qmd`), a
+apresentação e a atividade viram um site único. O Pages serve só conteúdo
+**estático** — ótimo para leitura; a execução do R continua no Posit/Binder/Colab.
+
+**Requisitos:** Quarto (já vem com o RStudio) e os pacotes R `rmarkdown` (engine
+dos `.qmd`/`.Rmd`) e `bibliometrix` (executa a atividade na primeira renderização):
+
+```r
+install.packages(c("rmarkdown", "bibliometrix", "bibliometrixData"))
+```
+
+```bash
+# 1) Renderiza o site para a pasta _site/
+quarto render
+
+# 2) Publica na branch gh-pages (cria/atualiza sozinho e dá push)
+quarto publish gh-pages
+```
+
+> No RStudio sem o `quarto` no PATH, use o Terminal do próprio RStudio ou o botão
+> **Render**. Depois, em **GitHub → Settings → Pages**, confirme a fonte
+> *Deploy from a branch → `gh-pages`*.
+
+Site publicado: **https://mrcsvg.github.io/ufpr-ppgcd-biblioshiny/**
+
+> A pasta `_site/` e o cache `_freeze/` não precisam ir para o Git (o
+> `quarto publish` cuida da branch `gh-pages`).
 
 ---
 

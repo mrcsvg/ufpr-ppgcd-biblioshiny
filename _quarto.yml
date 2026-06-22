@@ -1,0 +1,49 @@
+project:
+  type: website
+  output-dir: _site
+  # Renderiza APENAS estes arquivos. Assim o build não tenta executar os
+  # notebooks .ipynb (que exigiriam o kernel Jupyter de R) nem os scripts.
+  render:
+    - index.qmd
+    - apresentacao/apresentacao_biblioshiny.qmd
+    - atividade/atividade_biblioshiny.Rmd
+  # O cheat sheet já é um HTML pronto: copiamos como recurso, sem reprocessar.
+  resources:
+    - cheatsheet/cheatsheet_biblioshiny.html
+
+website:
+  title: "Bibliometria · Equipe 7"
+  description: "bibliometrix & Biblioshiny — UFPR/PPGCD"
+  site-url: "https://mrcsvg.github.io/ufpr-ppgcd-biblioshiny/"
+  repo-url: "https://github.com/mrcsvg/ufpr-ppgcd-biblioshiny"
+  page-navigation: true
+  navbar:
+    pinned: true
+    left:
+      - href: index.qmd
+        text: Início
+      - href: apresentacao/apresentacao_biblioshiny.qmd
+        text: Apresentação
+      - href: atividade/atividade_biblioshiny.Rmd
+        text: Atividade
+      - href: cheatsheet/cheatsheet_biblioshiny.html
+        text: Cheat sheet
+    right:
+      - icon: github
+        href: https://github.com/mrcsvg/ufpr-ppgcd-biblioshiny
+        aria-label: Repositório no GitHub
+  page-footer:
+    center: "bibliometrix · Biblioshiny — UFPR/PPGCD · Equipe 7"
+
+format:
+  html:
+    theme: flatly
+    toc: true
+    toc-depth: 3
+    code-copy: true
+    code-overflow: wrap
+
+# Cacheia a execução do R: depois da primeira renderização bem-sucedida,
+# re-renderizar não roda o R de novo (a menos que o código mude).
+execute:
+  freeze: auto
