@@ -1,0 +1,25 @@
+# --- R ---
+.Rproj.user/
+.Rhistory
+.RData
+.Ruserdata
+*.Rproj
+
+# --- Quarto / R Markdown ---
+/.quarto/
+*_files/
+/_site/
+/_book/
+
+# Saídas renderizadas (descomente se NÃO quiser versionar os HTML gerados)
+# apresentacao/apresentacao_biblioshiny.html
+# atividade/atividade_biblioshiny.html
+
+# --- Dados gerados na atividade ---
+indicadores.csv
+*.rds
+
+# --- Sistema operacional ---
+.DS_Store
+Thumbs.db
+.positai

@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Cheat Sheet · Biblioshiny &amp; bibliometrix</title>
+<style>
+  :root{
+    --ink:#15323a;        /* petróleo profundo  */
+    --teal:#0f766e;       /* acento principal   */
+    --coral:#cf5b3c;      /* acento secundário  */
+    --paper:#fbfaf6;      /* fundo papel        */
+    --card:#ffffff;
+    --line:#ddd6c6;
+    --muted:#5d6b6b;
+    --code:#0b3b3b;
+    --codebg:#eef3f1;
+  }
+  *{box-sizing:border-box;}
+  html,body{margin:0;padding:0;background:var(--paper);color:var(--ink);
+    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+    font-size:10.5px;line-height:1.42;-webkit-font-smoothing:antialiased;}
+  .page{max-width:1100px;margin:0 auto;padding:18px 20px 28px;}
+
+  /* ---------- Cabeçalho ---------- */
+  header{display:flex;align-items:flex-end;justify-content:space-between;
+    gap:16px;border-bottom:3px solid var(--ink);padding-bottom:10px;margin-bottom:14px;}
+  .title h1{font-family:Georgia,"Times New Roman",serif;font-weight:700;
+    font-size:27px;line-height:1.0;margin:0;letter-spacing:-.5px;}
+  .title h1 .accent{color:var(--teal);}
+  .title p{margin:5px 0 0;color:var(--muted);font-size:11px;max-width:60ch;}
+  .tag{font-family:Georgia,serif;font-style:italic;color:var(--coral);
+    font-size:12px;white-space:nowrap;}
+  /* mini-rede de co-citação (assinatura) */
+  .net{width:96px;height:46px;flex:none;}
+  .net line{stroke:var(--line);stroke-width:1.4;}
+  .net circle{fill:var(--teal);}
+  .net circle.c2{fill:var(--coral);}
+  .net circle.c3{fill:var(--ink);}
+
+  /* ---------- Grade de cartões ---------- */
+  .grid{column-count:3;column-gap:14px;}
+  @media (max-width:880px){.grid{column-count:2;}}
+  @media (max-width:560px){.grid{column-count:1;}}
+  .card{break-inside:avoid;background:var(--card);border:1px solid var(--line);
+    border-radius:7px;padding:10px 11px 11px;margin:0 0 14px;}
+  .card h2{font-family:Georgia,serif;font-size:12.5px;margin:0 0 7px;
+    color:var(--ink);display:flex;align-items:center;gap:7px;}
+  .num{font-family:Georgia,serif;font-style:italic;color:var(--card);
+    background:var(--teal);width:18px;height:18px;border-radius:50%;
+    display:inline-flex;align-items:center;justify-content:center;
+    font-size:11px;flex:none;}
+  .card.alt h2 .num{background:var(--coral);}
+
+  code,kbd{font-family:"SF Mono",ui-monospace,Menlo,Consolas,monospace;
+    background:var(--codebg);color:var(--code);padding:1px 4px;border-radius:3px;
+    font-size:9.6px;}
+  pre{background:var(--codebg);color:var(--code);border-left:3px solid var(--teal);
+    border-radius:4px;padding:7px 8px;margin:6px 0;overflow:hidden;
+    font-family:"SF Mono",ui-monospace,Menlo,Consolas,monospace;font-size:9.3px;
+    line-height:1.5;white-space:pre-wrap;}
+  pre .cm{color:var(--muted);}
+  pre .fn{color:var(--coral);font-weight:600;}
+
+  p{margin:5px 0;}
+  ul{margin:5px 0;padding-left:15px;}
+  li{margin:2.5px 0;}
+  .lead{color:var(--muted);font-size:9.8px;margin:0 0 7px;}
+
+  table{width:100%;border-collapse:collapse;margin:5px 0 2px;}
+  th,td{text-align:left;padding:3.5px 5px;border-bottom:1px solid var(--line);
+    vertical-align:top;font-size:9.6px;}
+  th{color:var(--teal);font-weight:700;border-bottom:1.5px solid var(--teal);}
+  td code{font-size:9.2px;}
+
+  .def{margin:6px 0;}
+  .def b{color:var(--teal);}
+  .def.coral b{color:var(--coral);}
+
+  .tip{background:#f4efe6;border:1px dashed var(--coral);border-radius:5px;
+    padding:7px 9px;font-size:9.6px;}
+  .tip b{color:var(--coral);}
+
+  footer{margin-top:6px;border-top:2px solid var(--ink);padding-top:7px;
+    display:flex;justify-content:space-between;color:var(--muted);font-size:9px;
+    font-family:Georgia,serif;font-style:italic;}
+
+  @media print{
+    @page{size:A4 portrait;margin:9mm;}
+    body{background:#fff;font-size:9.4px;}
+    .page{padding:0;max-width:none;}
+    .card{box-shadow:none;}
+    .grid{column-count:3;column-gap:9px;}
+  }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <header>
+    <div class="title">
+      <h1>Biblioshiny <span class="accent">&amp;</span> bibliometrix</h1>
+      <p>Bibliometria analítica e indicadores científicos em R · ficha de referência rápida (Equipe 7)</p>
+    </div>
+    <svg class="net" viewBox="0 0 96 46" aria-hidden="true">
+      <line x1="14" y1="14" x2="48" y2="8"/><line x1="48" y1="8" x2="80" y2="18"/>
+      <line x1="14" y1="14" x2="34" y2="36"/><line x1="34" y1="36" x2="68" y2="38"/>
+      <line x1="48" y1="8" x2="34" y2="36"/><line x1="68" y1="38" x2="80" y2="18"/>
+      <circle cx="14" cy="14" r="4.5"/><circle class="c3" cx="48" cy="8" r="5.5"/>
+      <circle class="c2" cx="80" cy="18" r="4"/><circle cx="34" cy="36" r="4"/>
+      <circle class="c3" cx="68" cy="38" r="3.5"/>
+    </svg>
+    <div class="tag">science&nbsp;mapping</div>
+  </header>
+
+  <div class="grid">
+
+    <!-- 1 -->
+    <section class="card">
+      <h2><span class="num">1</span> O que é cada coisa</h2>
+      <p class="lead">Mesma engine, duas portas de entrada.</p>
+      <p><b>bibliometrix</b> — pacote R com as funções de análise. Reprodutível e auditável.</p>
+      <p><b>Biblioshiny</b> — interface web (Shiny) que <i>chama essas mesmas funções</i> com cliques. Didático e rápido.</p>
+      <div class="tip"><b>Regra de ouro:</b> todo botão do Biblioshiny tem uma função equivalente no código (ver cartão 7).</div>
+    </section>
+
+    <!-- 2 -->
+    <section class="card">
+      <h2><span class="num">2</span> Instalar &amp; abrir</h2>
+<pre><span class="cm"># uma vez só</span>
+install.packages(<span class="fn">"bibliometrix"</span>)
+install.packages(<span class="fn">"bibliometrixData"</span>)
+
+<span class="cm"># sempre que for usar</span>
+library(bibliometrix)
+
+<span class="cm"># abrir a interface gráfica</span>
+biblioshiny()</pre>
+      <p class="lead"><code>biblioshiny()</code> abre no navegador — rode no console, não no notebook.</p>
+    </section>
+
+    <!-- 3 -->
+    <section class="card">
+      <h2><span class="num">3</span> Importar o corpus</h2>
+<pre>M &lt;- <span class="fn">convert2df</span>(
+  file = "scopus.bib",
+  dbsource = "scopus",
+  format = "bibtex")</pre>
+      <table>
+        <tr><th>dbsource</th><th>format</th></tr>
+        <tr><td>wos</td><td>plaintext</td></tr>
+        <tr><td>scopus</td><td>bibtex</td></tr>
+        <tr><td>openalex</td><td>csv</td></tr>
+        <tr><td>dimensions</td><td>api</td></tr>
+        <tr><td>lens · pubmed</td><td>—</td></tr>
+      </table>
+      <p class="lead">Para praticar sem download:</p>
+<pre>data(management,
+  package = "bibliometrixData")
+M &lt;- management</pre>
+    </section>
+
+    <!-- 4 -->
+    <section class="card alt">
+      <h2><span class="num">4</span> Fluxo essencial</h2>
+      <p class="lead">A ordem importa — cada passo alimenta o seguinte.</p>
+<pre><span class="cm"># a) medidas-base</span>
+results &lt;- <span class="fn">biblioAnalysis</span>(M, sep=";")
+
+<span class="cm"># b) resumo + tabelas</span>
+S &lt;- <span class="fn">summary</span>(results, k=10,
+        pause=FALSE)
+
+<span class="cm"># c) gráficos descritivos</span>
+<span class="fn">plot</span>(results, k=10, pause=FALSE)</pre>
+      <p class="lead">Tabelas úteis guardadas em <code>S</code>: <code>S$MainInformationDF</code>, <code>S$AnnualProduction</code>, <code>S$MostProdAuthors</code>.</p>
+    </section>
+
+    <!-- 5 -->
+    <section class="card">
+      <h2><span class="num">5</span> Função por indicador</h2>
+      <table>
+        <tr><th>Indicador</th><th>Função</th></tr>
+        <tr><td>Produção anual</td><td><code>plot()</code></td></tr>
+        <tr><td>Lei de Bradford</td><td><code>bradford()</code></td></tr>
+        <tr><td>Lei de Lotka</td><td><code>lotka()</code></td></tr>
+        <tr><td>Impacto h/g/m</td><td><code>Hindex()</code></td></tr>
+        <tr><td>Autores no tempo</td><td><code>authorProdOverTime()</code></td></tr>
+        <tr><td>Mais citados</td><td><code>citations()</code></td></tr>
+        <tr><td>Sankey 3 campos</td><td><code>threeFieldsPlot()</code></td></tr>
+      </table>
+    </section>
+
+    <!-- 6 -->
+    <section class="card alt">
+      <h2><span class="num">6</span> Indicadores em código</h2>
+<pre><span class="cm"># Bradford (núcleo de periódicos)</span>
+<span class="fn">bradford</span>(M)$table
+
+<span class="cm"># Lotka (concentração de autores)</span>
+L &lt;- <span class="fn">lotka</span>(M); L$Beta
+
+<span class="cm"># h, g e m index dos top autores</span>
+au &lt;- gsub(","," ",
+   names(results$Authors)[1:10])
+<span class="fn">Hindex</span>(M, field="author",
+   elements=au, sep=";")$H</pre>
+    </section>
+
+    <!-- 7 -->
+    <section class="card">
+      <h2><span class="num">7</span> Mapa do Biblioshiny</h2>
+      <table>
+        <tr><th>Menu (clique)</th><th>= função</th></tr>
+        <tr><td>Data → Load Data</td><td><code>convert2df</code></td></tr>
+        <tr><td>Overview → Main Info</td><td><code>biblioAnalysis</code></td></tr>
+        <tr><td>Annual Production</td><td><code>plot</code></td></tr>
+        <tr><td>Sources → Bradford</td><td><code>bradford</code></td></tr>
+        <tr><td>Authors → Lotka</td><td><code>lotka</code></td></tr>
+        <tr><td>Author Impact</td><td><code>Hindex</code></td></tr>
+        <tr><td>Production over Time</td><td><code>authorProdOverTime</code></td></tr>
+        <tr><td>Most Cited Docs</td><td><code>citations</code></td></tr>
+      </table>
+    </section>
+
+    <!-- 8 -->
+    <section class="card">
+      <h2><span class="num">8</span> Glossário de índices</h2>
+      <div class="def"><b>h-index</b> — h artigos com ≥ h citações cada. Equilibra volume e impacto.</div>
+      <div class="def"><b>g-index</b> — dá mais peso aos artigos muito citados.</div>
+      <div class="def"><b>m-index</b> — h-index ÷ anos de carreira (corrige por tempo).</div>
+      <div class="def coral"><b>Bradford</b> — poucos periódicos do "núcleo" concentram a maioria dos artigos.</div>
+      <div class="def coral"><b>Lotka (β≈2)</b> — poucos autores publicam muito; muitos publicam pouco.</div>
+      <div class="def coral"><b>AGR %</b> — taxa de crescimento anual da produção.</div>
+    </section>
+
+    <!-- 9 -->
+    <section class="card alt">
+      <h2><span class="num">9</span> Padrão de entrega</h2>
+      <ul>
+        <li>Versão editável: <code>.Rmd</code></li>
+        <li>PDF obrigatório (Knit → PDF)</li>
+        <li>Tabela-síntese de indicadores</li>
+        <li>1 gráfico temporal + 1 de autores</li>
+        <li>1 print do Biblioshiny conferindo um número</li>
+        <li>Esta ficha (1–2 págs.)</li>
+      </ul>
+      <div class="tip"><b>Conexões:</b> dados ↔ Eq.1/2 · apresentação ↔ Eq.8.</div>
+    </section>
+
+  </div>
+
+  <footer>
+    <span>Aria &amp; Cuccurullo (2017) · Journal of Informetrics 11(4):959–975 · bibliometrix.org</span>
+    <span>Capacitação em Pesquisa Científica — Equipe 7</span>
+  </footer>
+
+</div>
+</body>
+</html>
