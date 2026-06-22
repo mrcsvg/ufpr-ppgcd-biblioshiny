@@ -1,0 +1,391 @@
+---
+title: "Do código à interface"
+subtitle: "A jornada do **bibliometrix** ao **Biblioshiny**"
+author: "Equipe 7 — Bibliometria analítica e indicadores científicos"
+date: today
+date-format: "DD/MM/YYYY"
+lang: pt
+format:
+  revealjs:
+    theme: simple
+    embed-resources: true   # gera UM HTML autocontido (sem pasta de dependências)
+    slide-number: c/t
+    show-slide-number: all
+    progress: true
+    history: true
+    transition: slide
+    transition-speed: fast
+    code-line-numbers: true
+    highlight-style: github
+    code-overflow: wrap
+    width: 1280
+    height: 760
+    margin: 0.08
+    fig-align: center
+    footer: "bibliometrix · Biblioshiny — Mestrado"
+# Por padrão MOSTRAMOS o código mas NÃO executamos, para o deck renderizar
+# em qualquer máquina. A execução "ao vivo" acontece no notebook (atividade_biblioshiny.Rmd).
+# Para gerar saídas reais aqui, troque para eval: true após instalar o bibliometrix.
+execute:
+  echo: true
+  eval: false
+  warning: false
+  message: false
+---
+
+```{=html}
+<style>
+:root{ --acc:#0f766e; --acc2:#cf5b3c; }
+.reveal h1,.reveal h2,.reveal h3{ color:#15323a; }
+.reveal h2{ border-bottom:3px solid var(--acc); padding-bottom:.15em; }
+.reveal strong{ color:var(--acc); }
+.reveal .em2{ color:var(--acc2); font-weight:700; }
+.reveal section img{ border-radius:8px; }
+.reveal pre code{ font-size:.78em; }
+.reveal .small{ font-size:.8em; }
+.reveal .smaller{ font-size:.68em; color:#5d6b6b; }
+.reveal table{ font-size:.72em; }
+</style>
+```
+
+## Roteiro {.smaller}
+
+::: incremental
+1. **Por que** isso importa — da revisão narrativa ao *science mapping*
+2. **A história** — o nascimento do `bibliometrix` (2017)
+3. **A evolução** — do código para todos: o `biblioshiny`
+4. **Por que R** (e por que este slide é um `.qmd`)
+5. **A riqueza** das análises do `bibliometrix` — ao vivo
+6. **Como instanciar** o Biblioshiny no Posit Cloud
+7. **Todas as capacidades** do Biblioshiny (modelo SAAS)
+8. **Mão na massa** — sua vez de explorar
+:::
+
+::: notes
+Apresentar-se, dizer que ao final cada um vai rodar a própria instância. Tempo-alvo: 25–30 min + prática.
+:::
+
+# 1 · Por que isso importa
+
+## O problema da revisão tradicional {.smaller}
+
+Quando o número de artigos explode, ler tudo "na mão" não escala — e vira pouco transparente e difícil de reproduzir.
+
+. . .
+
+A **bibliometria** e o ***science mapping*** respondem a perguntas como:
+
+- Como o campo **evoluiu** no tempo?
+- Quem são os **autores, periódicos e países** centrais?
+- Quais os **temas** e como eles se conectam e mudam?
+- Qual a **estrutura intelectual** (quem cita quem)?
+
+. . .
+
+> A ideia: transformar **metadados de milhares de artigos** em um mapa quantitativo, transparente e **reproduzível**.
+
+# 2 · A história
+
+## bibliometrix (2017) {.smaller}
+
+::: {.fragment}
+Pacote em **R** criado por **Massimo Aria** e **Corrado Cuccurullo**.
+:::
+
+::: {.fragment}
+Artigo seminal: *bibliometrix: An R-tool for comprehensive science mapping analysis* — **Journal of Informetrics**, 11(4), 959–975 (2017).
+:::
+
+::: {.fragment}
+Proposta: oferecer, num só lugar e de forma **aberta e gratuita**, todo o fluxo de análise bibliométrica que antes exigia várias ferramentas isoladas.
+:::
+
+::: {.fragment}
+Importa dados de **Scopus, Web of Science, Dimensions, OpenAlex, Lens, PubMed e Cochrane**.
+:::
+
+::: notes
+Contexto: antes do bibliometrix, o fluxo era fragmentado (uma ferramenta para métricas, outra para redes, outra para mapas). O bibliometrix unificou.
+:::
+
+## O "porém" do começo {.smaller}
+
+O `bibliometrix` é poderoso — mas exigia **escrever código em R**.
+
+. . .
+
+Para a maior parte dos pesquisadores (que não programam), isso era uma **barreira de entrada**.
+
+. . .
+
+E daí veio a virada de chave 👇
+
+# 3 · A evolução
+
+## biblioshiny: bibliometrix para não-programadores {.smaller}
+
+::: {.fragment}
+Uma aplicação **web (Shiny)** que coloca uma **interface gráfica** sobre o mesmo motor do `bibliometrix`.
+:::
+
+::: {.fragment}
+Mesmíssimas análises — agora **clicando**, sem escrever uma linha de código.
+:::
+
+::: {.fragment}
+Importar, filtrar, analisar e visualizar; exportar tabelas, gráficos e relatórios.
+:::
+
+::: {.fragment}
+> Cada **botão** do Biblioshiny corresponde a uma **função** do `bibliometrix`. Quem entende o código entende o que cada tela calcula.
+:::
+
+## O modelo SAAS {.smaller}
+
+O Biblioshiny é organizado em torno do **fluxo SAAS** — uma reformulação do framework SALSA (Grant & Booth, 2009):
+
+| Etapa | O que faz | Seção do artigo |
+|---|---|---|
+| **S**earch | Buscar e importar o corpus | Métodos |
+| **A**ppraisal | Avaliar/filtrar e descrever | Métodos / Resultados |
+| **A**nalysis | Mapear estrutura e indicadores | Resultados |
+| **S**ynthesis | Interpretar e narrar | Discussão |
+
+. . .
+
+Cada etapa **mapeia para uma seção de um artigo científico** → análise transparente e **reproduzível** de ponta a ponta.
+
+## Onde o projeto está hoje {.smaller}
+
+::: incremental
+- Integração via **API** (OpenAlex, PubMed) — baixa os dados direto, sem exportar arquivo
+- **Análise de texto completo**: função das citações, extração de palavras-chave (TF-IDF, RAKE, YAKE), estrutura IMRaD
+- **Biblio AI**: assistente de IA integrado para ajudar a **interpretar** os resultados
+- Livro de referência (2026): *Science Mapping Analysis — A Primer with Biblioshiny* (McGraw-Hill)
+:::
+
+# 4 · Por que R?
+
+## E por que este slide é um `.qmd` {.smaller}
+
+Esta apresentação foi feita em **Quarto** — Markdown + código que **renderiza sozinho**.
+
+```yaml
+format:
+  revealjs:
+    theme: simple
+execute:
+  echo: true
+```
+
+. . .
+
+O mesmo arquivo gera **slides, PDF e HTML**, com o **código analítico embutido** e reproduzível.
+
+. . .
+
+> Para quem vem do **Python**: pense em Jupyter + nbconvert + papermill... só que num arquivo de texto só, versionável no Git. É esse o espírito do R para pesquisa reprodutível.
+
+# 5 · A riqueza do bibliometrix
+
+## Setup {.smaller}
+
+```{r}
+# Instalação (uma vez por sessão no Posit Cloud)
+install.packages(c("bibliometrix", "bibliometrixData"))
+
+library(bibliometrix)
+```
+
+. . .
+
+```{r}
+# Corpus de exemplo já incluído (sem precisar baixar nada)
+data(management, package = "bibliometrixData")
+M <- management
+
+dim(M)                       # documentos x campos
+range(M$PY, na.rm = TRUE)    # intervalo de anos
+```
+
+::: notes
+Aqui troco para execução ao vivo no notebook. Mostrar o tamanho do corpus.
+:::
+
+## Importar o SEU corpus {.smaller}
+
+```{r}
+# Exportações de Scopus, WoS, OpenAlex, Lens, Dimensions, PubMed...
+M <- convert2df(
+  file     = "scopus.bib",
+  dbsource = "scopus",
+  format   = "bibtex"
+)
+```
+
+Uma função (`convert2df`) padroniza **sete bases diferentes** num único *data frame* de classe `bibliometrixDB`.
+
+## Visão geral descritiva {.smaller}
+
+```{r}
+results <- biblioAnalysis(M, sep = ";")
+S <- summary(results, k = 10, pause = FALSE, verbose = FALSE)
+
+S$MainInformationDF   # documentos, autores, período, crescimento anual, citações...
+```
+
+👉 **Demonstração ao vivo no notebook** — saem dezenas de indicadores de uma vez só.
+
+## Evolução temporal {.smaller}
+
+```{r}
+plot(results, k = 10, pause = FALSE)   # produção anual, países, autores...
+```
+
+O ritmo de crescimento revela se o campo está em **ascensão, maturidade ou declínio**.
+
+## Periódicos e a Lei de Bradford {.smaller}
+
+```{r}
+bradford(M)$table     # zona "Core" = núcleo de periódicos
+```
+
+A **Lei de Bradford** identifica o pequeno núcleo de revistas que concentra a maioria dos artigos — onde ler e onde submeter.
+
+## Autores e a Lei de Lotka {.smaller}
+
+```{r}
+L <- lotka(M)         # versão atual recebe M (classe bibliometrixDB)
+L$AuthorProd          # nº de autores por nº de artigos
+L$Beta                # ~2 => segue o padrão clássico de concentração
+```
+
+**Lotka:** poucos autores publicam muito; muitos publicam pouco.
+
+## Impacto: índices h, g e m {.smaller}
+
+```{r}
+autores <- gsub(",", " ", names(results$Authors)[1:10])
+Hindex(M, field = "author", elements = autores, sep = ";")$H
+```
+
+- **h**: equilíbrio entre volume e impacto
+- **g**: dá peso aos muito citados
+- **m**: corrige o h pelo tempo de carreira
+
+## Documentos mais citados {.smaller}
+
+```{r}
+citations(M, field = "article", sep = ";")$Cited
+```
+
+As referências mais citadas costumam ser os **clássicos** que sustentam o campo.
+
+## E ainda há muito mais {.smaller}
+
+::: incremental
+- **Estrutura conceitual**: rede de coocorrência de palavras, **mapa temático**, **evolução temática**
+- **Estrutura intelectual**: rede de **cocitação**, **historiógrafo** (genealogia das ideias)
+- **Estrutura social**: redes de **colaboração** e mapa de **países**
+- **Three-Field Plot** (Sankey): Autores → Palavras-chave → Fontes
+:::
+
+```{r}
+threeFieldsPlot(M, fields = c("AU", "DE", "SO"), n = c(20, 20, 20))
+```
+
+# 6 · Agora o Biblioshiny
+
+## Tudo isso... sem escrever código {.smaller}
+
+```{r}
+library(bibliometrix)
+biblioshiny()        # sobe a interface web no navegador
+```
+
+::: {.fragment}
+**No Posit Cloud** funciona igual — abre numa aba nova do navegador.
+:::
+
+::: {.fragment .em2}
+Pegadinha: o navegador pode **bloquear o pop-up** da nova aba. Libere pop-ups para `posit.cloud` e a interface abre.
+:::
+
+::: notes
+Aqui paro de falar e ABRO o biblioshiny ao vivo. Mostro a tela inicial e o menu lateral.
+:::
+
+# 7 · Todas as capacidades
+
+## Dados e visão geral {.smaller}
+
+::: {.small}
+**Data** — importar/converter 7 bases · integração por **API** (OpenAlex, PubMed) · filtrar por ano, periódico, país, citações · checar dados ausentes
+
+**Overview** — *Main Information* · produção anual · média de citações por ano · *Three-Field Plot* · fontes/autores/afiliações/países mais relevantes · documentos mais citados
+:::
+
+## Fontes, autores e documentos {.smaller}
+
+::: {.small}
+**Sources** — fontes mais relevantes · **Lei de Bradford** · impacto da fonte (h-index) · produção da fonte no tempo
+
+**Authors** — autores e afiliações mais relevantes · produção no tempo · **Lei de Lotka** · impacto do autor (h/g/m) · rede de colaboração
+
+**Documents** — mais citados (global/local) · referências mais citadas · **RPYS** (espectroscopia de referências) · palavras frequentes · *WordCloud* / *TreeMap* · **trend topics**
+:::
+
+## Estruturas e IA {.smaller}
+
+::: {.small}
+**Clustering** — agrupamento por acoplamento (*coupling*)
+
+**Conceptual Structure** — rede de coocorrência · **mapa temático** · **evolução temática** · análise fatorial (MCA/CA)
+
+**Intellectual Structure** — rede de **cocitação** · **historiógrafo**
+
+**Social Structure** — rede de **colaboração** · mapa de colaboração entre **países**
+
+**Conteúdo & IA** — análise de texto completo (função das citações, IMRaD) · **Biblio AI** para interpretação
+:::
+
+## A ponte: menu → função {.smaller}
+
+| No Biblioshiny (clique) | No bibliometrix (código) |
+|---|---|
+| Data → Load Data | `convert2df()` |
+| Overview → Main Information | `biblioAnalysis()` + `summary()` |
+| Sources → Bradford's Law | `bradford()` |
+| Authors → Lotka's Law | `lotka()` |
+| Authors → Author Impact | `Hindex()` |
+| Documents → Most Cited | `citations()` |
+| Conceptual → Thematic Map | `thematicMap()` |
+| Intellectual → Historiograph | `histNetwork()` + `histPlot()` |
+
+# 8 · Mão na massa
+
+## Sua vez {.smaller}
+
+::: incremental
+1. Abra o projeto compartilhado no **Posit Cloud** (link no chat da turma)
+2. Rode o notebook **`atividade_biblioshiny.Rmd`** — célula por célula
+3. Brinque com o **corpus de exemplo** (`management`) — ou importe o seu
+4. Rode `biblioshiny()` e **confira um indicador** que você calculou no código
+5. Use o **cheat sheet** como mapa de bolso
+:::
+
+::: {.fragment}
+> Objetivo: sair daqui sabendo **ler** um mapa científico — e **reproduzi-lo**.
+:::
+
+## Obrigado! {.center}
+
+**Perguntas?**
+
+::: {.smaller}
+Aria, M. & Cuccurullo, C. (2017). *bibliometrix: An R-tool for comprehensive science mapping analysis.* Journal of Informetrics, 11(4), 959–975.
+
+Aria, M. & Cuccurullo, C. (2026). *Science Mapping Analysis: A Primer with Biblioshiny.* McGraw-Hill.
+
+Site: bibliometrix.org · Interface: `biblioshiny()`
+:::
