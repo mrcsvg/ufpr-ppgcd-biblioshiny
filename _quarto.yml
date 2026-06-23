@@ -10,6 +10,8 @@ project:
   # O cheat sheet já é um HTML pronto: copiamos como recurso, sem reprocessar.
   resources:
     - cheatsheet/cheatsheet_biblioshiny.html
+    # Imagens e vídeos (mp4) da apresentação — garante a cópia para _site
+    - apresentacao/img/
 
 website:
   title: "Bibliometria · Equipe 7"
