@@ -163,7 +163,9 @@ Onde o projeto está hoje:
 **Conteúdo & IA** — análise de texto completo (função das citações, IMRaD) · **Biblio AI** para interpretação
 :::
 
-# 4 · Configuração Inicial
+## No panorama das ferramentas {.smaller}
+
+![Comparativo de ferramentas de *science mapping*: **BiblioShiny** e a lib **Bibliometrix** cobrem praticamente **todas as features** (redes temática/autor/referência, evolução, performance, mapa geográfico) — onde VOSviewer e CiteSpace são mais especializados.](img/tools-comparison.jpg){.shot width="50%" fig-align="center"}
 
 ## Acesso, requisitos e formatos {.smaller}
 
