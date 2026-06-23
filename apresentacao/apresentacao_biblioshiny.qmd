@@ -58,15 +58,15 @@ execute:
 
 ## Roteiro {.smaller}
 
-1. **Apresentação da ferramenta** — o que é o Biblioshiny
-2. **Aplicações na pesquisa** — onde entra no ciclo da pesquisa
-3. **Funcionalidades principais** — o que ele calcula
-4. **Configuração inicial** — acesso, requisitos e formatos
-5. **Fluxo de uso** — Input → Processo → Review → Output
-6. **Exemplos reais** — estudo de caso ao vivo
-7. **Formações** — onde aprender mais
-8. **Limitações e riscos** — gargalos técnicos e metodológicos
-9. **Boas práticas** — rastreabilidade e reprodutibilidade
+1.  **Apresentação da ferramenta** — o que é o Biblioshiny
+2.  **Aplicações na pesquisa** — onde entra no ciclo da pesquisa
+3.  **Funcionalidades principais** — o que ele calcula
+4.  **Configuração inicial** — acesso, requisitos e formatos
+5.  **Fluxo de uso** — Input → Processo → Review → Output
+6.  **Exemplos reais** — estudo de caso ao vivo
+7.  **Formações** — onde aprender mais
+8.  **Limitações e riscos** — gargalos técnicos e metodológicos
+9.  **Boas práticas** — rastreabilidade e reprodutibilidade
 10. **Atividade com solução** — sua vez de explorar
 11. **Referências**
 
@@ -108,12 +108,12 @@ Uma aplicação **web (Shiny)** que coloca uma **interface gráfica** sobre o me
 
 O Biblioshiny é organizado em torno do **fluxo SAAS** — uma reformulação do framework SALSA (Grant & Booth, 2009):
 
-| Etapa | O que faz | Seção do artigo |
-|---|---|---|
-| **S**earch | Buscar e importar o corpus | Métodos |
-| **A**ppraisal | Avaliar/filtrar e descrever | Métodos / Resultados |
-| **A**nalysis | Mapear estrutura e indicadores | Resultados |
-| **S**ynthesis | Interpretar e narrar | Discussão |
+| Etapa         | O que faz                      | Seção do artigo      |
+|---------------|--------------------------------|----------------------|
+| **S**earch    | Buscar e importar o corpus     | Métodos              |
+| **A**ppraisal | Avaliar/filtrar e descrever    | Métodos / Resultados |
+| **A**nalysis  | Mapear estrutura e indicadores | Resultados           |
+| **S**ynthesis | Interpretar e narrar           | Discussão            |
 
 Cada etapa **mapeia para uma seção de um artigo científico** → análise transparente e **reproduzível** de ponta a ponta.
 
@@ -133,7 +133,7 @@ Onde o projeto está hoje:
 
 ## Dados e visão geral {.smaller}
 
-::: {.small}
+::: small
 **Data** — importar/converter 7 bases · integração por **API** (OpenAlex, PubMed) · filtrar por ano, periódico, país, citações · checar dados ausentes
 
 **Overview** — *Main Information* · produção anual · média de citações por ano · *Three-Field Plot* · fontes/autores/afiliações/países mais relevantes · documentos mais citados
@@ -141,7 +141,7 @@ Onde o projeto está hoje:
 
 ## Fontes, autores e documentos {.smaller}
 
-::: {.small}
+::: small
 **Sources** — fontes mais relevantes · **Lei de Bradford** · impacto da fonte (h-index) · produção da fonte no tempo
 
 **Authors** — autores e afiliações mais relevantes · produção no tempo · **Lei de Lotka** · impacto do autor (h/g/m) · rede de colaboração
@@ -151,7 +151,7 @@ Onde o projeto está hoje:
 
 ## Estruturas e IA {.smaller}
 
-::: {.small}
+::: small
 **Clustering** — agrupamento por acoplamento (*coupling*)
 
 **Conceptual Structure** — rede de coocorrência · **mapa temático** · **evolução temática** · análise fatorial (MCA/CA)
@@ -165,7 +165,21 @@ Onde o projeto está hoje:
 
 ## No panorama das ferramentas {.smaller}
 
-![Comparativo de ferramentas de *science mapping*: **BiblioShiny** e a lib **Bibliometrix** cobrem praticamente **todas as features** (redes temática/autor/referência, evolução, performance, mapa geográfico) — onde VOSviewer e CiteSpace são mais especializados.](img/tools-comparison.jpg){.shot width="50%" fig-align="center"}
+::::: columns
+::: {.column width="42%"}
+Comparativo de ferramentas de *science mapping*:
+
+- **BiblioShiny** e a lib **Bibliometrix** cobrem praticamente **todas as features** — redes temática/autor/referência, evolução, performance e mapa geográfico.
+- **VOSviewer** e **CiteSpace** são mais **especializados** (poucas colunas marcadas).
+- Vantagem extra: o mesmo motor em **código** (`bibliometrix`) e **interface** (Biblioshiny).
+:::
+
+::: {.column width="58%"}
+![](img/tools-comparison.jpg){.shot width="92%" fig-align="center"}
+:::
+:::::
+
+# 4 · Configuração Inicial
 
 ## Acesso, requisitos e formatos {.smaller}
 
@@ -205,7 +219,7 @@ biblioshiny()        # sobe a interface web no navegador
 
 **No Posit Cloud** funciona igual — abre numa aba nova do navegador.
 
-::: {.em2}
+::: em2
 Pegadinha: o navegador pode **bloquear o pop-up** da nova aba. Libere pop-ups para `posit.cloud` e a interface abre.
 :::
 
@@ -218,7 +232,7 @@ Aqui paro de falar e ABRO o biblioshiny ao vivo. Mostro a tela inicial e o menu 
 ## Input → Processo → Review → Output {.smaller}
 
 | Etapa | No Biblioshiny | No bibliometrix (código) |
-|---|---|---|
+|------------------|--------------------------------|----------------------|
 | **1 · Input** | Data → Import or Load **ou** API (OpenAlex/PubMed) | `convert2df()` |
 | **2 · Processo** | Appraisal: completar/filtrar; Analysis: rodar | `biblioAnalysis()` + `summary()` |
 | **3 · Review** | Conferir tabelas, completude e filtros | inspeção do `data.frame` |
@@ -228,26 +242,25 @@ A seguir, o fluxo real na interface: **buscar → limpar → analisar**.
 
 ## Etapa 1 · Duas portas de entrada {.smaller}
 
-:::: {.columns}
+::::: columns
 ::: {.column width="50%"}
-**a) Importar arquivo (lib padrão)**
-`Data → Import or Load` — exportações de Scopus, WoS, Lens, Dimensions, PubMed, Cochrane.
+**a) Importar arquivo (lib padrão)** `Data → Import or Load` — exportações de Scopus, WoS, Lens, Dimensions, PubMed, Cochrane.
 
-```{r}
-M <- convert2df(
-  file     = "scopus.bib",
-  dbsource = "scopus",
-  format   = "bibtex"
-)
-```
+Data → Import or Load → Use a sample collection → escolhe o dataset e clica Start.
+
+<video src="img/vid1-import.mp4" data-autoplay loop muted playsinline class="shot" style="width:72%">
+
+</video>
 :::
+
 ::: {.column width="50%"}
-**b) Coletar por API**
-`Data → API → OpenAlex / Pubmed` — baixa direto, sem exportar arquivo.
+**b) Coletar por API** `Data → API → OpenAlex / Pubmed` — baixa direto, sem exportar arquivo.
 
 Mesma classe de saída (`bibliometrixDB`); o restante do fluxo é idêntico.
+
+![Busca por API: monta a query (campo, termos, intervalo de anos, filtros) e retorna a contagem — aqui **984 registros**.](img/api-01-search.jpg){.shot alt="Busca por API: monta a query (campo, termos, intervalo de anos, filtros) e retorna a contagem — aqui 984 registros." width="80%" fig-align="center"}
 :::
-::::
+:::::
 
 Uma função (`convert2df`) padroniza **sete bases diferentes** num único *data frame*.
 
@@ -255,11 +268,11 @@ Uma função (`convert2df`) padroniza **sete bases diferentes** num único *data
 
 `Data → Import or Load → Use a sample collection` → escolhe o dataset e clica **Start**.
 
-<video src="img/vid1-import.mp4" data-autoplay loop muted playsinline class="shot" style="width:72%"></video>
+<video src="img/vid1-import.mp4" data-autoplay loop muted playsinline class="shot" style="width:72%">
+
+</video>
 
 ## Etapa 1 · Buscar no OpenAlex {.smaller}
-
-![Busca por API: monta a query (campo, termos, intervalo de anos, filtros) e retorna a contagem — aqui **984 registros**.](img/api-01-search.jpg){.shot width="80%" fig-align="center"}
 
 ## Etapa 1 · Baixar o corpus {.smaller}
 
@@ -279,14 +292,15 @@ Uma função (`convert2df`) padroniza **sete bases diferentes** num único *data
 
 ## Etapa 2 · Enriquecimento — antes/depois {.smaller}
 
-:::: {.columns}
+::::: columns
 ::: {.column width="50%"}
 ![237 células preenchidas via Crossref.](img/api-06-enrichment.jpg){.shot width="100%"}
 :::
+
 ::: {.column width="50%"}
 ![Comparação campo a campo: *Before % → After %*.](img/api-07-before-after.jpg){.shot width="100%"}
 :::
-::::
+:::::
 
 Corpus limpo e enriquecido → pronto para a **análise**.
 
@@ -319,7 +333,9 @@ A tela *Main Information* é exatamente a saída de `biblioAnalysis()` + `summar
 
 Um clique em cada item do menu já devolve o gráfico — *Average Citations → Life Cycle → Three-Field*.
 
-<video src="img/vid2-overview.mp4" data-autoplay loop muted playsinline class="shot" style="width:80%"></video>
+<video src="img/vid2-overview.mp4" data-autoplay loop muted playsinline class="shot" style="width:80%">
+
+</video>
 
 ## Evolução temporal {.smaller}
 
@@ -331,14 +347,15 @@ plot(results, k = 10, pause = FALSE)   # produção anual, países, autores...
 
 ## Ciclo de vida do campo {.smaller}
 
-:::: {.columns}
+::::: columns
 ::: {.column width="50%"}
 ![Ajuste logístico: saturação, ano de pico e qualidade do modelo (R²=0.968).](img/an-03-lifecycle-summary.jpg){.shot width="100%"}
 :::
+
 ::: {.column width="50%"}
 ![Curva anual e cumulativa com projeção.](img/an-04-lifecycle-plot.jpg){.shot width="100%"}
 :::
-::::
+:::::
 
 O *Life Cycle* mostra se o campo está em **ascensão, maturidade ou declínio**.
 
@@ -354,7 +371,9 @@ bradford(M)$table     # Lei de Bradford: zona "Core" = núcleo de periódicos
 
 *Most Relevant Sources → Bradford's Law → Sources' Production over Time* — tudo no menu **Sources**.
 
-<video src="img/vid3-sources.mp4" data-autoplay loop muted playsinline class="shot" style="width:80%"></video>
+<video src="img/vid3-sources.mp4" data-autoplay loop muted playsinline class="shot" style="width:80%">
+
+</video>
 
 ## Autores e a Lei de Lotka {.smaller}
 
@@ -409,7 +428,9 @@ threeFieldsPlot(M, fields = c("AU", "DE", "SO"), n = c(20, 20, 20))
 
 *Social Structure* (colaboração, mapa de países) → *Intellectual* (co-citação) → *Conceptual* (**mapa temático**).
 
-<video src="img/vid4-structures.mp4" data-autoplay loop muted playsinline class="shot" style="width:80%"></video>
+<video src="img/vid4-structures.mp4" data-autoplay loop muted playsinline class="shot" style="width:80%">
+
+</video>
 
 # 7 · Formações
 
@@ -471,9 +492,9 @@ threeFieldsPlot(M, fields = c("AU", "DE", "SO"), n = c(20, 20, 20))
 
 **Procedimentos esperados**
 
-1. Abra o projeto compartilhado no **Posit Cloud** (link no chat da turma).
-2. Rode o notebook **`atividade_biblioshiny.Rmd`** — célula por célula.
-3. Rode `biblioshiny()` e **confira um indicador** que você calculou no código.
+1.  Abra o projeto compartilhado no **Posit Cloud** (link no chat da turma).
+2.  Rode o notebook **`atividade_biblioshiny.Rmd`** — célula por célula.
+3.  Rode `biblioshiny()` e **confira um indicador** que você calculou no código.
 
 ## Sua vez — solução comentada {.smaller}
 
@@ -492,7 +513,7 @@ threeFieldsPlot(M, fields = c("AU", "DE", "SO"), n = c(20, 20, 20))
 
 ## Referências {.smaller}
 
-::: {.smaller}
+::: smaller
 Aria, M. & Cuccurullo, C. (2017). *bibliometrix: An R-tool for comprehensive science mapping analysis.* Journal of Informetrics, 11(4), 959–975.
 
 Aria, M. & Cuccurullo, C. (2026). *Science Mapping Analysis: A Primer with Biblioshiny.* McGraw-Hill.
@@ -508,6 +529,6 @@ Site: bibliometrix.org · Interface: `biblioshiny()`
 
 **Perguntas?**
 
-::: {.smaller}
+::: smaller
 Guia Técnico de Uso — Biblioshiny · PPGCD/UFPR · Mestrado Profissional em Ciência de Dados
 :::
