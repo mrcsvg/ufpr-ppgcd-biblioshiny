@@ -20,6 +20,10 @@
 indicadores.csv
 *.rds
 
+# --- Originais pesados das gravações de tela (não publicar) ---
+apresentacao/_raw/
+*.mov
+
 # --- Sistema operacional ---
 .DS_Store
 Thumbs.db
