@@ -39,24 +39,25 @@ Ficha de referência rápida (1–2 páginas).
 
 ## Rodar a atividade de forma interativa
 
-Esta página é só **leitura**. Para **executar** o R (e abrir o Biblioshiny),
-use um destes ambientes:
+Esta página é só **leitura**. Para **executar** o Biblioshiny, use um destes
+ambientes:
 
 ::: {.callout-tip collapse="false"}
-## Três caminhos
+## Caminho recomendado — Hugging Face Spaces
 
-- **Posit Cloud (recomendado):** crie um projeto, rode `posit-cloud/setup_posit.R`
-  uma vez e suba a atividade. A interface gráfica abre com `biblioshiny()`.
-- **Binder (sem login):**
-  [![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/mrcsvg/ufpr-ppgcd-biblioshiny/HEAD?labpath=atividade%2Fatividade_biblioshiny.ipynb)
-  — ambiente R online, primeira carga leva alguns minutos.
-- **Google Colab:**
-  [abrir notebook (runtime R)](https://colab.research.google.com/github/mrcsvg/ufpr-ppgcd-biblioshiny/blob/main/atividade/atividade_biblioshiny_colab.ipynb).
+1. Crie uma conta (gratuita) no [Hugging Face](https://huggingface.co/join).
+2. Clique no botão abaixo, deixe o hardware em **CPU basic (free)** e confirme em *Duplicate Space*.
+3. A primeira *build* leva alguns minutos (instala R, Chrome e pacotes — só uma vez por cópia). Depois é só abrir e usar.
+
+[![Duplicate this Space](https://huggingface.co/datasets/huggingface/badges/resolve/main/duplicate-this-space-md.svg)](https://huggingface.co/spaces/mrcsvg/ppgcd-biblioshiny?duplicate=true)
+
+Prefere rodar localmente? Instale o R/RStudio e use `library(bibliometrix); biblioshiny()`.
 :::
 
 ::: {.callout-note}
-O **Biblioshiny** (`biblioshiny()`) precisa de um servidor R, então roda no
-**Posit Cloud** ou no **R/RStudio local** — não no Colab/Binder nem nesta página.
+No Space gratuito a instância **"dorme" após 48h** sem uso (acorda sozinha no
+próximo acesso) e o armazenamento é **temporário** — exporte seus resultados
+antes de fechar.
 :::
 
 ---
