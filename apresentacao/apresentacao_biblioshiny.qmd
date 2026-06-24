@@ -183,15 +183,15 @@ Comparativo de ferramentas de *science mapping*:
 
 ## Acesso, requisitos e formatos {.smaller}
 
-- **Acesso / login** — não exige conta própria: roda em **R** (local ou no **Posit Cloud**, com login institucional do projeto compartilhado).
-- **Requisitos técnicos** — R + pacote `bibliometrix`; navegador atualizado (a interface abre numa aba do navegador).
+- **Acesso / login** — roda no **Hugging Face Spaces**: cada um duplica a instância para a sua conta (gratuita) e abre pelo navegador, sem instalar nada.
+- **Requisitos técnicos** — só o navegador atualizado; o Space já traz R + `bibliometrix` pré-instalados (também roda em **R/RStudio local**).
 - **Formatos aceitos** — exportações de **Scopus, WoS, OpenAlex, Lens, Dimensions, PubMed, Cochrane** (`.bib`, `.txt`, `.csv`) ou import direto por **API**.
-- **Configurações** — idioma da interface, filtros do corpus e integração de *workspace* no Posit Cloud.
+- **Configurações** — idioma da interface, filtros do corpus e escolha de hardware (deixe **CPU basic (free)**).
 
 ## Instalação (uma vez por sessão) {.smaller}
 
 ```{r}
-# Instalação (uma vez por sessão no Posit Cloud)
+# Instalação no R local (no Hugging Face já vem pré-instalado)
 install.packages(c("bibliometrix", "bibliometrixData"))
 
 library(bibliometrix)
@@ -217,10 +217,10 @@ library(bibliometrix)
 biblioshiny()        # sobe a interface web no navegador
 ```
 
-**No Posit Cloud** funciona igual — abre numa aba nova do navegador.
+**No R local** o `biblioshiny()` abre numa aba do navegador. **No Hugging Face** nem isso: a sua cópia do Space *já é* a interface — basta abrir a URL.
 
 ::: em2
-Pegadinha: o navegador pode **bloquear o pop-up** da nova aba. Libere pop-ups para `posit.cloud` e a interface abre.
+Pegadinha do Space gratuito: ele **"dorme" após 48h** sem uso (acorda sozinho no próximo acesso) e o armazenamento é **temporário** — exporte seus resultados antes de fechar.
 :::
 
 ::: notes
@@ -232,7 +232,7 @@ Aqui paro de falar e ABRO o biblioshiny ao vivo. Mostro a tela inicial e o menu 
 ## Input → Processo → Review → Output {.smaller}
 
 | Etapa | No Biblioshiny | No bibliometrix (código) |
-|------------------|--------------------------------|----------------------|
+|----|----|----|
 | **1 · Input** | Data → Import or Load **ou** API (OpenAlex/PubMed) | `convert2df()` |
 | **2 · Processo** | Appraisal: completar/filtrar; Analysis: rodar | `biblioAnalysis()` + `summary()` |
 | **3 · Review** | Conferir tabelas, completude e filtros | inspeção do `data.frame` |
@@ -258,7 +258,7 @@ Data → Import or Load → Use a sample collection → escolhe o dataset e clic
 
 Mesma classe de saída (`bibliometrixDB`); o restante do fluxo é idêntico.
 
-![Busca por API: monta a query (campo, termos, intervalo de anos, filtros) e retorna a contagem — aqui **984 registros**.](img/api-01-search.jpg){.shot alt="Busca por API: monta a query (campo, termos, intervalo de anos, filtros) e retorna a contagem — aqui 984 registros." width="80%" fig-align="center"}
+![Busca por API: monta a query (campo, termos, intervalo de anos, filtros) e retorna a contagem — aqui 984 registros.](img/api-01-search.jpg){.shot width="80%" fig-align="center"}
 :::
 :::::
 
@@ -488,25 +488,28 @@ threeFieldsPlot(M, fields = c("AU", "DE", "SO"), n = c(20, 20, 20))
 
 - **Objetivo:** sair sabendo **ler** um mapa científico — e **reproduzi-lo**.
 - **Contexto:** um campo de pesquisa representado por seus metadados.
-- **Base utilizada:** corpus `management` (ou importe o seu via `convert2df`).
+- **Base utilizada:** sample collection **Management** embutida no Biblioshiny — WoS, 1985–2020 (ou importe o seu export do Scopus/WoS/Lens).
 
 **Procedimentos esperados**
 
-1.  Abra o projeto compartilhado no **Posit Cloud** (link no chat da turma).
-2.  Rode o notebook **`atividade_biblioshiny.Rmd`** — célula por célula.
-3.  Rode `biblioshiny()` e **confira um indicador** que você calculou no código.
+1.  Crie uma conta (gratuita) no [**Hugging Face**](https://huggingface.co/join).
+2.  Clique no botão **Duplicate this Space** (abaixo / link no chat) → deixe o hardware em **CPU basic (free)** → **Duplicate Space**. A primeira *build* leva alguns minutos.
+3.  Abra a **sua** cópia → em *Import or Load* escolha **"Use a sample collection"** → dataset **Management** → **Start** (ou suba o seu export).
+4.  **Confira um indicador** na interface (ex.: nº de documentos, top autores) em *Overview → Main Information*.
+
+[![Duplicate this Space](https://huggingface.co/datasets/huggingface/badges/resolve/main/duplicate-this-space-md.svg)](https://huggingface.co/spaces/mrcsvg/ppgcd-biblioshiny?duplicate=true)
 
 ## Sua vez — solução comentada {.smaller}
 
-**Produto esperado:** um indicador calculado no código e confirmado na interface.
+**Produto esperado:** o dataset Management carregado na sua cópia do Biblioshiny e um indicador lido na interface.
 
-**Critérios de verificação:** o número da tela (ex.: nº de documentos, top autores) bate com o do `summary()`.
+**Critérios de verificação:** o número da tela (ex.: nº de documentos, top autores) corresponde ao corpus carregado.
 
 **Solução comentada:**
 
-- `convert2df()` → carrega o corpus (Etapa 1 · Input).
-- `biblioAnalysis()` + `summary()` → indicadores descritivos (Etapa 2 · Processo).
-- Conferir na tela **Overview → Main Information** (Etapa 3 · Review).
+- **Import or Load → "Use a sample collection" → Management → Start** → carrega o corpus de exemplo (Etapa 1 · Input) — o `convert2df()` roda por baixo dos panos.
+- **Overview → Main Information** → indicadores descritivos (Etapa 2 · Processo / Etapa 3 · Review).
+- Confira que o nº de documentos e o intervalo de anos batem com o corpus carregado.
 - Use o **cheat sheet** como mapa de bolso para localizar cada análise.
 
 # 11 · Referências
