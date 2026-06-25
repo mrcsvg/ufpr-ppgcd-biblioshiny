@@ -49,25 +49,11 @@
     "text": "Onde se encaixa no ciclo da pesquisa\n\nRevisão sistemática / de literatura — corpus rastreável, critérios documentados.\nBibliometria e science mapping — estrutura conceitual, intelectual e social de um campo.\nAnálise de corpus — texto completo, palavras-chave, trend topics.\n\nOnde o projeto está hoje:\n\nIntegração via API (OpenAlex, PubMed) — baixa os dados direto, sem exportar arquivo.\nAnálise de texto completo: função das citações, extração de palavras-chave (TF-IDF, RAKE, YAKE), estrutura IMRaD.\nBiblio AI: assistente de IA integrado para ajudar a interpretar os resultados."
   },
   {
-    "objectID": "apresentacao/apresentacao_biblioshiny.html#dados-e-visão-geral",
-    "href": "apresentacao/apresentacao_biblioshiny.html#dados-e-visão-geral",
+    "objectID": "apresentacao/apresentacao_biblioshiny.html#seis-blocos-de-funcionalidades",
+    "href": "apresentacao/apresentacao_biblioshiny.html#seis-blocos-de-funcionalidades",
     "title": "Guia Técnico de Uso — Biblioshiny",
-    "section": "Dados e visão geral",
-    "text": "Dados e visão geral\n\nData — importar/converter 7 bases · integração por API (OpenAlex, PubMed) · filtrar por ano, periódico, país, citações · checar dados ausentes\nOverview — Main Information · produção anual · média de citações por ano · Three-Field Plot · fontes/autores/afiliações/países mais relevantes · documentos mais citados"
-  },
-  {
-    "objectID": "apresentacao/apresentacao_biblioshiny.html#fontes-autores-e-documentos",
-    "href": "apresentacao/apresentacao_biblioshiny.html#fontes-autores-e-documentos",
-    "title": "Guia Técnico de Uso — Biblioshiny",
-    "section": "Fontes, autores e documentos",
-    "text": "Fontes, autores e documentos\n\nSources — fontes mais relevantes · Lei de Bradford · impacto da fonte (h-index) · produção da fonte no tempo\nAuthors — autores e afiliações mais relevantes · produção no tempo · Lei de Lotka · impacto do autor (h/g/m) · rede de colaboração\nDocuments — mais citados (global/local) · referências mais citadas · RPYS (espectroscopia de referências) · palavras frequentes · WordCloud / TreeMap · trend topics"
-  },
-  {
-    "objectID": "apresentacao/apresentacao_biblioshiny.html#estruturas-e-ia",
-    "href": "apresentacao/apresentacao_biblioshiny.html#estruturas-e-ia",
-    "title": "Guia Técnico de Uso — Biblioshiny",
-    "section": "Estruturas e IA",
-    "text": "Estruturas e IA\n\nClustering — agrupamento por acoplamento (coupling)\nConceptual Structure — rede de coocorrência · mapa temático · evolução temática · análise fatorial (MCA/CA)\nIntellectual Structure — rede de cocitação · historiógrafo\nSocial Structure — rede de colaboração · mapa de colaboração entre países\nConteúdo & IA — análise de texto completo (função das citações, IMRaD) · Biblio AI para interpretação"
+    "section": "Seis blocos de funcionalidades",
+    "text": "Seis blocos de funcionalidades\n\nImportação e tratamento de dados\nAnálise descritiva geral (Overview)\nAnálise de fontes (Sources)\nAnálise de autores (Authors)\nAnálise de documentos (Documents)\nVisualizações e relatórios"
   },
   {
     "objectID": "apresentacao/apresentacao_biblioshiny.html#no-panorama-das-ferramentas",
