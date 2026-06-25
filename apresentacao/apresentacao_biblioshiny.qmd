@@ -509,6 +509,8 @@ Grant, M. J. & Booth, A. (2009). *A typology of reviews (SALSA framework).* Heal
 UFPR. *Normas para Trabalhos Acadêmicos: PPGCD.* Curitiba, 2024.
 
 Site: bibliometrix.org · Interface: `biblioshiny()`
+
+*Esta apresentação foi feita com amor pelo Claude* 💚
 :::
 
 ## Obrigado! {.center}
