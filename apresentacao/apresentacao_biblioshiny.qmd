@@ -461,18 +461,31 @@ threeFieldsPlot(M, fields = c("AU", "DE", "SO"), n = c(20, 20, 20))
 
 # 9 · Boas Práticas
 
-## Rastreabilidade e reprodutibilidade {.smaller}
+## Limpe o corpus antes de analisar {.smaller}
 
-- **Rastreabilidade** — documentar a **versão da ferramenta** (`bibliometrix`) e a **data de acesso** às bases no artigo.
-- **Registro metodológico** — descrever, na seção de Métodos, a base, a *query*, os filtros e o fluxo SAAS usado.
-- **Verificação** — sempre comparar *outputs* automáticos com as **fontes originais** dos dados.
-- **Decisões** — registrar todos os **critérios de inclusão e exclusão** aplicados.
+> Nenhum indicador é confiável se o corpus estiver sujo. Antes de qualquer análise, duas correções valem mais que qualquer técnica sofisticada — e o Biblioshiny faz as duas:
 
-> O `.qmd`/`.Rmd` versionado no Git é o seu **registro reprodutível**: mesmo arquivo gera slides, código e relatório.
+- 🧹 **Remover duplicados** — para não inflar as contagens.
+- 🧩 **Completar metadados** — para não bloquear análises.
 
-## Reprodutibilidade na prática {.smaller}
+## Remover duplicados {.smaller}
 
-![*Settings*: fixar um **Random Seed** garante que análises com aleatoriedade (clusterização, redes) deem **sempre o mesmo resultado**; DPI/aspect controlam a exportação. Aqui também se configura o **Biblio AI**.](img/cfg-settings.jpg){.shot width="72%" fig-align="center"}
+- **Problema:** o mesmo artigo aparece mais de uma vez (busca repetida, junção de bases) → infla nº de documentos, autores e citações e **distorce as redes**.
+- **Na interface:** o Biblioshiny remove duplicados na importação / em *Filters*, por **DOI** ou por **título**.
+- **No código:**
+
+```r
+M <- duplicatedMatching(M, Field = "TI", tol = 0.95)   # ou Field = "DOI"
+```
+
+- **Boa prática:** deduplique **logo após importar**, antes de calcular qualquer indicador.
+
+## Completar metadados {.smaller}
+
+- **Problema:** campos vazios (afiliação, país, referências citadas) **bloqueiam análises inteiras** — os menus correspondentes somem do painel.
+- **Na interface:** *Complete missing metadata via DOI lookup* consulta **Crossref/OpenAlex** e preenche os vazios — **valores existentes nunca são sobrescritos**.
+- **Verifique:** a tela de **completude** mostra, campo a campo, o % de ausentes (de *Excellent* a *Completely missing*).
+- **Boa prática:** complete e **reveja a completude** antes de tirar conclusões.
 
 # 10 · Atividade com Solução
 
