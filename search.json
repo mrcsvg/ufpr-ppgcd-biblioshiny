@@ -273,18 +273,25 @@
     "text": "Gargalos técnicos e riscos metodológicos\nGargalos técnicos\n\nQualidade e cobertura das bases (cada uma indexa um recorte diferente).\nDuplicatas e campos faltantes ao mesclar exportações.\nDesambiguação de autores/afiliações ainda exige conferência manual.\n\nRiscos metodológicos\n\nVieses de algoritmo e de seleção do corpus; falsos positivos em redes.\nBiblio AI pode alucinar — a interpretação final é sempre humana.\nIndicadores fora de contexto enganam → necessidade crítica de validação por especialista."
   },
   {
-    "objectID": "apresentacao/apresentacao_biblioshiny.html#rastreabilidade-e-reprodutibilidade",
-    "href": "apresentacao/apresentacao_biblioshiny.html#rastreabilidade-e-reprodutibilidade",
+    "objectID": "apresentacao/apresentacao_biblioshiny.html#limpe-o-corpus-antes-de-analisar",
+    "href": "apresentacao/apresentacao_biblioshiny.html#limpe-o-corpus-antes-de-analisar",
     "title": "Guia Técnico de Uso — Biblioshiny",
-    "section": "Rastreabilidade e reprodutibilidade",
-    "text": "Rastreabilidade e reprodutibilidade\n\nRastreabilidade — documentar a versão da ferramenta (bibliometrix) e a data de acesso às bases no artigo.\nRegistro metodológico — descrever, na seção de Métodos, a base, a query, os filtros e o fluxo SAAS usado.\nVerificação — sempre comparar outputs automáticos com as fontes originais dos dados.\nDecisões — registrar todos os critérios de inclusão e exclusão aplicados.\n\n\nO .qmd/.Rmd versionado no Git é o seu registro reprodutível: mesmo arquivo gera slides, código e relatório."
+    "section": "Limpe o corpus antes de analisar",
+    "text": "Limpe o corpus antes de analisar\n\nNenhum indicador é confiável se o corpus estiver sujo. Antes de qualquer análise, duas correções valem mais que qualquer técnica sofisticada — e o Biblioshiny faz as duas:\n\n\n🧹 Remover duplicados — para não inflar as contagens.\n🧩 Completar metadados — para não bloquear análises."
   },
   {
-    "objectID": "apresentacao/apresentacao_biblioshiny.html#reprodutibilidade-na-prática",
-    "href": "apresentacao/apresentacao_biblioshiny.html#reprodutibilidade-na-prática",
+    "objectID": "apresentacao/apresentacao_biblioshiny.html#remover-duplicados",
+    "href": "apresentacao/apresentacao_biblioshiny.html#remover-duplicados",
     "title": "Guia Técnico de Uso — Biblioshiny",
-    "section": "Reprodutibilidade na prática",
-    "text": "Reprodutibilidade na prática\n\n\n\nSettings: fixar um Random Seed garante que análises com aleatoriedade (clusterização, redes) deem sempre o mesmo resultado; DPI/aspect controlam a exportação. Aqui também se configura o Biblio AI."
+    "section": "Remover duplicados",
+    "text": "Remover duplicados\n\nProblema: o mesmo artigo aparece mais de uma vez (busca repetida, junção de bases) → infla nº de documentos, autores e citações e distorce as redes.\nNa interface: o Biblioshiny remove duplicados na importação / em Filters, por DOI ou por título.\nNo código:\n\nM &lt;- duplicatedMatching(M, Field = \"TI\", tol = 0.95)   # ou Field = \"DOI\"\n\nBoa prática: deduplique logo após importar, antes de calcular qualquer indicador."
+  },
+  {
+    "objectID": "apresentacao/apresentacao_biblioshiny.html#completar-metadados",
+    "href": "apresentacao/apresentacao_biblioshiny.html#completar-metadados",
+    "title": "Guia Técnico de Uso — Biblioshiny",
+    "section": "Completar metadados",
+    "text": "Completar metadados\n\nProblema: campos vazios (afiliação, país, referências citadas) bloqueiam análises inteiras — os menus correspondentes somem do painel.\nNa interface: Complete missing metadata via DOI lookup consulta Crossref/OpenAlex e preenche os vazios — valores existentes nunca são sobrescritos.\nVerifique: a tela de completude mostra, campo a campo, o % de ausentes (de Excellent a Completely missing).\nBoa prática: complete e reveja a completude antes de tirar conclusões."
   },
   {
     "objectID": "apresentacao/apresentacao_biblioshiny.html#sua-vez-enunciado",

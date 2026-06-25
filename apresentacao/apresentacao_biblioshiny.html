@@ -795,26 +795,36 @@ Equipe 7 — Bibliometria analítica e indicadores científicos
 <h1>9 · Boas Práticas</h1>
 
 </section>
-<section id="rastreabilidade-e-reprodutibilidade" class="slide level2 smaller">
-<h2>Rastreabilidade e reprodutibilidade</h2>
-<ul>
-<li><strong>Rastreabilidade</strong> — documentar a <strong>versão da ferramenta</strong> (<code>bibliometrix</code>) e a <strong>data de acesso</strong> às bases no artigo.</li>
-<li><strong>Registro metodológico</strong> — descrever, na seção de Métodos, a base, a <em>query</em>, os filtros e o fluxo SAAS usado.</li>
-<li><strong>Verificação</strong> — sempre comparar <em>outputs</em> automáticos com as <strong>fontes originais</strong> dos dados.</li>
-<li><strong>Decisões</strong> — registrar todos os <strong>critérios de inclusão e exclusão</strong> aplicados.</li>
-</ul>
+<section id="limpe-o-corpus-antes-de-analisar" class="slide level2 smaller">
+<h2>Limpe o corpus antes de analisar</h2>
 <blockquote>
-<p>O <code>.qmd</code>/<code>.Rmd</code> versionado no Git é o seu <strong>registro reprodutível</strong>: mesmo arquivo gera slides, código e relatório.</p>
+<p>Nenhum indicador é confiável se o corpus estiver sujo. Antes de qualquer análise, duas correções valem mais que qualquer técnica sofisticada — e o Biblioshiny faz as duas:</p>
 </blockquote>
+<ul>
+<li>🧹 <strong>Remover duplicados</strong> — para não inflar as contagens.</li>
+<li>🧩 <strong>Completar metadados</strong> — para não bloquear análises.</li>
+</ul>
 </section>
-<section id="reprodutibilidade-na-prática" class="slide level2 smaller">
-<h2>Reprodutibilidade na prática</h2>
-<div class="quarto-figure quarto-figure-center">
-<figure>
-<p><img data-src="img/cfg-settings.jpg" class="shot" style="width:72.0%"></p>
-<figcaption><em>Settings</em>: fixar um <strong>Random Seed</strong> garante que análises com aleatoriedade (clusterização, redes) deem <strong>sempre o mesmo resultado</strong>; DPI/aspect controlam a exportação. Aqui também se configura o <strong>Biblio AI</strong>.</figcaption>
-</figure>
-</div>
+<section id="remover-duplicados" class="slide level2 smaller">
+<h2>Remover duplicados</h2>
+<ul>
+<li><strong>Problema:</strong> o mesmo artigo aparece mais de uma vez (busca repetida, junção de bases) → infla nº de documentos, autores e citações e <strong>distorce as redes</strong>.</li>
+<li><strong>Na interface:</strong> o Biblioshiny remove duplicados na importação / em <em>Filters</em>, por <strong>DOI</strong> ou por <strong>título</strong>.</li>
+<li><strong>No código:</strong></li>
+</ul>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb11"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a></a>M <span class="ot">&lt;-</span> <span class="fu">duplicatedMatching</span>(M, <span class="at">Field =</span> <span class="st">"TI"</span>, <span class="at">tol =</span> <span class="fl">0.95</span>)   <span class="co"># ou Field = "DOI"</span></span></code></pre></div><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></div>
+<ul>
+<li><strong>Boa prática:</strong> deduplique <strong>logo após importar</strong>, antes de calcular qualquer indicador.</li>
+</ul>
+</section>
+<section id="completar-metadados" class="slide level2 smaller">
+<h2>Completar metadados</h2>
+<ul>
+<li><strong>Problema:</strong> campos vazios (afiliação, país, referências citadas) <strong>bloqueiam análises inteiras</strong> — os menus correspondentes somem do painel.</li>
+<li><strong>Na interface:</strong> <em>Complete missing metadata via DOI lookup</em> consulta <strong>Crossref/OpenAlex</strong> e preenche os vazios — <strong>valores existentes nunca são sobrescritos</strong>.</li>
+<li><strong>Verifique:</strong> a tela de <strong>completude</strong> mostra, campo a campo, o % de ausentes (de <em>Excellent</em> a <em>Completely missing</em>).</li>
+<li><strong>Boa prática:</strong> complete e <strong>reveja a completude</strong> antes de tirar conclusões.</li>
+</ul>
 </section></section>
 <section>
 <section id="atividade-com-solução" class="title-slide slide level1 center">
