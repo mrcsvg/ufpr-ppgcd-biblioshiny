@@ -461,44 +461,17 @@ Equipe 7 — Bibliometria analítica e indicadores científicos
 <h1>5 · Fluxo de Uso</h1>
 
 </section>
-<section id="input-processo-review-output" class="slide level2 smaller">
-<h2>Input → Processo → Review → Output</h2>
-<table class="caption-top">
-<colgroup>
-<col style="width: 33%">
-<col style="width: 33%">
-<col style="width: 33%">
-</colgroup>
-<thead>
-<tr class="header">
-<th>Etapa</th>
-<th>No Biblioshiny</th>
-<th>No bibliometrix (código)</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td><strong>1 · Input</strong></td>
-<td>Data → Import or Load <strong>ou</strong> API (OpenAlex/PubMed)</td>
-<td><code>convert2df()</code></td>
-</tr>
-<tr class="even">
-<td><strong>2 · Processo</strong></td>
-<td>Appraisal: completar/filtrar; Analysis: rodar</td>
-<td><code>biblioAnalysis()</code> + <code>summary()</code></td>
-</tr>
-<tr class="odd">
-<td><strong>3 · Review</strong></td>
-<td>Conferir tabelas, completude e filtros</td>
-<td>inspeção do <code>data.frame</code></td>
-</tr>
-<tr class="even">
-<td><strong>4 · Output</strong></td>
-<td>Exportar tabelas, gráficos e relatórios</td>
-<td><code>plot()</code>, <em>report</em></td>
-</tr>
-</tbody>
-</table>
+<section id="sete-passos-do-fluxo" class="slide level2 smaller">
+<h2>Sete passos do fluxo</h2>
+<ul>
+<li><strong>A.</strong> Exportar os dados da base</li>
+<li><strong>B.</strong> Importar no Biblioshiny (<em>Data → Import or Load</em>)</li>
+<li><strong>C.</strong> Filtrar e tratar a coleção (<em>Data → Filters</em>)</li>
+<li><strong>D.</strong> Visão geral (<em>Overview → Main Information</em>)</li>
+<li><strong>E.</strong> Análises por dimensão</li>
+<li><strong>F.</strong> Estruturas do conhecimento (o coração da análise)</li>
+<li><strong>G.</strong> Exportar resultados</li>
+</ul>
 <p>A seguir, o fluxo real na interface: <strong>buscar → limpar → analisar</strong>.</p>
 </section>
 <section id="etapa-1-duas-portas-de-entrada" class="slide level2 smaller">

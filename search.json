@@ -84,11 +84,11 @@
     "text": "Subindo a interface\n\nlibrary(bibliometrix)\nbiblioshiny()        # sobe a interface web no navegador\n\nNo R local o biblioshiny() abre numa aba do navegador. No Hugging Face nem isso: a sua cópia do Space já é a interface — basta abrir a URL.\n\nPegadinha do Space gratuito: ele “dorme” após 48h sem uso (acorda sozinho no próximo acesso) e o armazenamento é temporário — exporte seus resultados antes de fechar.\n\n\nAqui paro de falar e ABRO o biblioshiny ao vivo. Mostro a tela inicial e o menu lateral."
   },
   {
-    "objectID": "apresentacao/apresentacao_biblioshiny.html#input-processo-review-output",
-    "href": "apresentacao/apresentacao_biblioshiny.html#input-processo-review-output",
+    "objectID": "apresentacao/apresentacao_biblioshiny.html#sete-passos-do-fluxo",
+    "href": "apresentacao/apresentacao_biblioshiny.html#sete-passos-do-fluxo",
     "title": "Guia Técnico de Uso — Biblioshiny",
-    "section": "Input → Processo → Review → Output",
-    "text": "Input → Processo → Review → Output\n\n\n\n\n\n\n\n\nEtapa\nNo Biblioshiny\nNo bibliometrix (código)\n\n\n\n\n1 · Input\nData → Import or Load ou API (OpenAlex/PubMed)\nconvert2df()\n\n\n2 · Processo\nAppraisal: completar/filtrar; Analysis: rodar\nbiblioAnalysis() + summary()\n\n\n3 · Review\nConferir tabelas, completude e filtros\ninspeção do data.frame\n\n\n4 · Output\nExportar tabelas, gráficos e relatórios\nplot(), report\n\n\n\nA seguir, o fluxo real na interface: buscar → limpar → analisar."
+    "section": "Sete passos do fluxo",
+    "text": "Sete passos do fluxo\n\nA. Exportar os dados da base\nB. Importar no Biblioshiny (Data → Import or Load)\nC. Filtrar e tratar a coleção (Data → Filters)\nD. Visão geral (Overview → Main Information)\nE. Análises por dimensão\nF. Estruturas do conhecimento (o coração da análise)\nG. Exportar resultados\n\nA seguir, o fluxo real na interface: buscar → limpar → analisar."
   },
   {
     "objectID": "apresentacao/apresentacao_biblioshiny.html#etapa-1-duas-portas-de-entrada",
