@@ -17,41 +17,50 @@
     --codebg:#eef3f1;
   }
   *{box-sizing:border-box;}
-  html,body{margin:0;padding:0;background:var(--paper);color:var(--ink);
+  html,body{margin:0;padding:0;background:#e9e6dc;color:var(--ink);
     font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
     font-size:10.5px;line-height:1.42;-webkit-font-smoothing:antialiased;}
-  .page{max-width:1100px;margin:0 auto;padding:18px 20px 28px;}
+
+  /* ---------- Folha A4 (1 página impressa cada) ---------- */
+  .sheet{position:relative;background:var(--paper);max-width:820px;margin:18px auto;
+    padding:16px 18px 20px;border-radius:3px;box-shadow:0 2px 12px rgba(0,0,0,.12);}
 
   /* ---------- Cabeçalho ---------- */
   header{display:flex;align-items:flex-end;justify-content:space-between;
-    gap:16px;border-bottom:3px solid var(--ink);padding-bottom:10px;margin-bottom:14px;}
+    gap:16px;border-bottom:3px solid var(--ink);padding-bottom:9px;margin-bottom:13px;}
   .title h1{font-family:Georgia,"Times New Roman",serif;font-weight:700;
-    font-size:27px;line-height:1.0;margin:0;letter-spacing:-.5px;}
+    font-size:25px;line-height:1.0;margin:0;letter-spacing:-.5px;}
   .title h1 .accent{color:var(--teal);}
-  .title p{margin:5px 0 0;color:var(--muted);font-size:11px;max-width:60ch;}
+  .title p{margin:5px 0 0;color:var(--muted);font-size:10.5px;max-width:62ch;}
   .tag{font-family:Georgia,serif;font-style:italic;color:var(--coral);
-    font-size:12px;white-space:nowrap;}
-  /* mini-rede de co-citação (assinatura) */
-  .net{width:96px;height:46px;flex:none;}
+    font-size:11px;white-space:nowrap;text-align:right;}
+  .tag .pg{display:block;color:var(--muted);font-style:normal;font-size:9px;margin-top:3px;}
+  .net{width:88px;height:42px;flex:none;}
   .net line{stroke:var(--line);stroke-width:1.4;}
   .net circle{fill:var(--teal);}
   .net circle.c2{fill:var(--coral);}
   .net circle.c3{fill:var(--ink);}
 
-  /* ---------- Grade de cartões ---------- */
-  .grid{column-count:3;column-gap:14px;}
-  @media (max-width:880px){.grid{column-count:2;}}
-  @media (max-width:560px){.grid{column-count:1;}}
-  .card{break-inside:avoid;background:var(--card);border:1px solid var(--line);
-    border-radius:7px;padding:10px 11px 11px;margin:0 0 14px;}
-  .card h2{font-family:Georgia,serif;font-size:12.5px;margin:0 0 7px;
+  /* cabeçalho enxuto da 2ª folha */
+  .runhead{display:flex;align-items:baseline;justify-content:space-between;
+    border-bottom:2px solid var(--ink);padding-bottom:7px;margin-bottom:13px;}
+  .runhead b{font-family:Georgia,serif;font-size:14px;}
+  .runhead .sub{color:var(--muted);font-size:10px;}
+  .runhead .pg{color:var(--muted);font-size:9px;font-style:italic;}
+
+  /* ---------- Grade de cartões (2 colunas) ---------- */
+  .grid{display:grid;grid-template-columns:1fr 1fr;gap:12px;align-items:start;}
+  @media (max-width:560px){.grid{grid-template-columns:1fr;}}
+  .card{background:var(--card);border:1px solid var(--line);border-radius:7px;
+    padding:9px 11px 10px;break-inside:avoid;}
+  .card.wide{grid-column:1 / -1;}
+  .card h2{font-family:Georgia,serif;font-size:12.5px;margin:0 0 6px;
     color:var(--ink);display:flex;align-items:center;gap:7px;}
   .num{font-family:Georgia,serif;font-style:italic;color:var(--card);
     background:var(--teal);width:18px;height:18px;border-radius:50%;
     display:inline-flex;align-items:center;justify-content:center;
     font-size:11px;flex:none;}
   .card.alt h2 .num{background:var(--coral);}
-  /* cartão-destaque (guia principal) */
   .card.star{border:1.5px solid var(--teal);background:#f4faf8;}
   .card.star h2 .num{background:var(--ink);}
 
@@ -73,40 +82,44 @@
   ol.steps li{margin:4px 0;}
 
   table{width:100%;border-collapse:collapse;margin:5px 0 2px;}
-  th,td{text-align:left;padding:3.5px 5px;border-bottom:1px solid var(--line);
-    vertical-align:top;font-size:9.6px;}
+  th,td{text-align:left;padding:3.5px 6px;border-bottom:1px solid var(--line);
+    vertical-align:top;font-size:9.7px;}
   th{color:var(--teal);font-weight:700;border-bottom:1.5px solid var(--teal);}
   td code{font-size:9.2px;}
-  td.q{color:var(--ink);font-weight:600;}
+  td.q{color:var(--ink);font-weight:600;width:38%;}
 
-  .def{margin:6px 0;}
+  .def{margin:5px 0;}
   .def b{color:var(--teal);}
   .def.coral b{color:var(--coral);}
 
   .tip{background:#f4efe6;border:1px dashed var(--coral);border-radius:5px;
-    padding:7px 9px;font-size:9.6px;}
+    padding:7px 9px;font-size:9.6px;margin-top:6px;}
   .tip b{color:var(--coral);}
 
-  footer{margin-top:6px;border-top:2px solid var(--ink);padding-top:7px;
-    display:flex;justify-content:space-between;color:var(--muted);font-size:9px;
+  footer{margin-top:11px;border-top:2px solid var(--ink);padding-top:6px;
+    display:flex;justify-content:space-between;color:var(--muted);font-size:8.6px;
     font-family:Georgia,serif;font-style:italic;}
 
+  /* ---------- Impressão: 1 folha = 1 página A4 ---------- */
   @media print{
     @page{size:A4 portrait;margin:9mm;}
-    body{background:#fff;font-size:9.4px;}
-    .page{padding:0;max-width:none;}
-    .card{box-shadow:none;}
-    .grid{column-count:3;column-gap:9px;}
+    html,body{background:#fff;font-size:9.3px;}
+    .sheet{max-width:none;margin:0;padding:0;border-radius:0;box-shadow:none;
+      page-break-after:always;}
+    .sheet:last-child{page-break-after:auto;}
+    .grid{gap:8px;}
+    .card{padding:8px 9px 9px;}
   }
 </style>
 </head>
 <body>
-<div class="page">
 
+<!-- ====================== FOLHA 1 ====================== -->
+<section class="sheet">
   <header>
     <div class="title">
       <h1>Biblioshiny <span class="accent">&amp;</span> bibliometrix</h1>
-      <p>Guia rápido do <b>Biblioshiny</b>: navegação, principais funções e as perguntas de pesquisa que cada uma responde (Equipe 7)</p>
+      <p>Guia rápido do <b>Biblioshiny</b>: como abrir, navegar e responder cada pergunta de pesquisa.</p>
     </div>
     <svg class="net" viewBox="0 0 96 46" aria-hidden="true">
       <line x1="14" y1="14" x2="48" y2="8"/><line x1="48" y1="8" x2="80" y2="18"/>
@@ -116,7 +129,7 @@
       <circle class="c2" cx="80" cy="18" r="4"/><circle cx="34" cy="36" r="4"/>
       <circle class="c3" cx="68" cy="38" r="3.5"/>
     </svg>
-    <div class="tag">science&nbsp;mapping</div>
+    <div class="tag">science&nbsp;mapping<span class="pg">folha 1 / 2 · usar a interface</span></div>
   </header>
 
   <div class="grid">
@@ -125,9 +138,9 @@
     <section class="card">
       <h2><span class="num">1</span> As duas portas</h2>
       <p class="lead">Mesma engine, duas formas de usar.</p>
-      <p><b>Biblioshiny</b> — a <i>interface web</i> que você vai usar nesta atividade: você clica nos menus e ele calcula tudo. Didático e rápido, sem escrever código.</p>
+      <p><b>Biblioshiny</b> — a <i>interface web</i> que você vai usar: clica nos menus e ele calcula tudo. Didático e rápido, sem código.</p>
       <p><b>bibliometrix</b> — o pacote R por baixo da interface. Mesmos resultados, mas reprodutível e auditável (a "Trilha dos Bravos").</p>
-      <div class="tip"><b>Regra de ouro:</b> todo botão do Biblioshiny corresponde a uma função do bibliometrix — ver o guia do cartão 3.</div>
+      <div class="tip"><b>Regra de ouro:</b> todo botão tem uma função equivalente — ver o guia ★.</div>
     </section>
 
     <!-- 2 -->
@@ -135,21 +148,20 @@
       <h2><span class="num">2</span> Abrir o Biblioshiny</h2>
       <p class="lead">Pelo navegador, sem instalar nada (Hugging Face).</p>
       <ol class="steps">
-        <li>Crie uma conta grátis no <b>Hugging Face</b>.</li>
-        <li>Abra o nosso Space → <b>Duplicate this Space</b> → hardware <b>CPU basic (free)</b>.</li>
+        <li>Conta grátis no <b>Hugging Face</b>.</li>
+        <li>Nosso Space → <b>Duplicate this Space</b> → <b>CPU basic (free)</b>.</li>
         <li>Na sua cópia: <b>Import or Load → Use a sample collection → Management → Start</b>.</li>
       </ol>
-      <div class="tip"><b>Tier free:</b> o Space dorme após 48h e o armazenamento é temporário — exporte o que quiser guardar.</div>
-      <p class="lead">Alternativa local: <code>library(bibliometrix)</code> &rarr; <code>biblioshiny()</code>.</p>
+      <div class="tip"><b>Tier free:</b> dorme após 48h, armazenamento temporário — exporte o que guardar. Local: <code>biblioshiny()</code>.</div>
     </section>
 
     <!-- 3 — GUIA PRINCIPAL -->
-    <section class="card star">
-      <h2><span class="num">★</span> Pergunta &rarr; onde responder</h2>
-      <p class="lead">Para cada pergunta de pesquisa: a tela do Biblioshiny e a função equivalente.</p>
+    <section class="card star wide">
+      <h2><span class="num">★</span> Pergunta de pesquisa &rarr; onde responder</h2>
+      <p class="lead">Para cada pergunta: a tela do Biblioshiny e a função equivalente do bibliometrix.</p>
       <table>
-        <tr><th>Pergunta de pesquisa</th><th>Biblioshiny</th><th>Função</th></tr>
-        <tr><td class="q">Tamanho e período do campo?</td><td>Overview › Main Information</td><td><code>biblioAnalysis</code> + <code>summary</code></td></tr>
+        <tr><th>Pergunta de pesquisa</th><th>No Biblioshiny (clique)</th><th>Função (código)</th></tr>
+        <tr><td class="q">Qual o tamanho e período do campo?</td><td>Overview › Main Information</td><td><code>biblioAnalysis</code> + <code>summary</code></td></tr>
         <tr><td class="q">O campo cresce ou declina?</td><td>Overview › Annual Scientific Production</td><td><code>plot</code></td></tr>
         <tr><td class="q">Quais periódicos são o núcleo?</td><td>Sources › Bradford's Law</td><td><code>bradford</code></td></tr>
         <tr><td class="q">Como se distribui a produtividade?</td><td>Authors › Lotka's Law</td><td><code>lotka</code></td></tr>
@@ -170,10 +182,10 @@
         <tr><th>Menu</th><th>Responde</th></tr>
         <tr><td><b>Overview</b></td><td>tamanho, período, crescimento, info geral</td></tr>
         <tr><td><b>Sources</b></td><td>periódicos relevantes e Lei de Bradford</td></tr>
-        <tr><td><b>Authors</b></td><td>produtividade, Lotka, impacto (h/g/m), evolução</td></tr>
+        <tr><td><b>Authors</b></td><td>produtividade, Lotka, impacto, evolução</td></tr>
         <tr><td><b>Documents</b></td><td>mais citados, palavras-chave, word cloud</td></tr>
-        <tr><td><b>Conceptual Structure</b></td><td>temas: co-word, mapa temático, 3 campos</td></tr>
-        <tr><td><b>Social Structure</b></td><td>colaboração: redes de autores/países</td></tr>
+        <tr><td><b>Conceptual Str.</b></td><td>temas: co-word, mapa temático, 3 campos</td></tr>
+        <tr><td><b>Social Str.</b></td><td>colaboração: redes de autores/países</td></tr>
       </table>
     </section>
 
@@ -188,9 +200,28 @@
       <div class="def coral"><b>AGR %</b> — taxa de crescimento anual da produção.</div>
     </section>
 
+  </div>
+
+  <footer>
+    <span>Aria &amp; Cuccurullo (2017) · Journal of Informetrics 11(4):959–975 · bibliometrix.org</span>
+    <span>Equipe 7 — folha 1 / 2</span>
+  </footer>
+</section>
+
+<!-- ====================== FOLHA 2 ====================== -->
+<section class="sheet">
+  <div class="runhead">
+    <span><b>Biblioshiny <span style="color:var(--teal)">&amp;</span> bibliometrix</b>
+      <span class="sub">— código &amp; entrega da atividade</span></span>
+    <span class="pg">folha 2 / 2</span>
+  </div>
+
+  <div class="grid">
+
     <!-- 6 -->
     <section class="card alt">
-      <h2><span class="num">6</span> Código essencial <span style="font-style:italic;font-weight:400;font-size:9px;color:var(--muted)">(p/ os bravos)</span></h2>
+      <h2><span class="num">6</span> Fluxo essencial <span style="font-style:italic;font-weight:400;font-size:9px;color:var(--muted)">(no código)</span></h2>
+      <p class="lead">A ordem importa — cada passo alimenta o seguinte.</p>
 <pre><span class="cm"># 1) carregar o mesmo corpus</span>
 data(management,
   package="bibliometrixData")
@@ -201,20 +232,35 @@ results &lt;- <span class="fn">biblioAnalysis</span>(M, sep=";")
 S &lt;- <span class="fn">summary</span>(results, k=10,
         pause=FALSE)
 
-<span class="cm"># 3) indicadores</span>
-<span class="fn">bradford</span>(M)$table       <span class="cm"># núcleo</span>
-<span class="fn">lotka</span>(M)$Beta          <span class="cm"># autores</span>
-<span class="fn">Hindex</span>(M, field="author",
-   elements=gsub(","," ",
-   names(results$Authors)[1:10]),
-   sep=";")$H               <span class="cm"># impacto</span></pre>
-      <p class="lead">Tabelas em <code>S</code>: <code>S$MainInformationDF</code>, <code>S$AnnualProduction</code>.</p>
+<span class="cm"># 3) gráficos descritivos</span>
+<span class="fn">plot</span>(results, k=10, pause=FALSE)</pre>
+      <p class="lead">Tabelas guardadas em <code>S</code>: <code>S$MainInformationDF</code>, <code>S$AnnualProduction</code>.</p>
     </section>
 
     <!-- 7 -->
     <section class="card">
-      <h2><span class="num">7</span> Importar o SEU corpus</h2>
-      <p class="lead">Para o trabalho final, troque a sample collection pelo seu export.</p>
+      <h2><span class="num">7</span> Indicadores em código</h2>
+<pre><span class="cm"># núcleo de periódicos</span>
+<span class="fn">bradford</span>(M)$table
+
+<span class="cm"># concentração de autores</span>
+<span class="fn">lotka</span>(M)$Beta
+
+<span class="cm"># h, g e m dos top autores</span>
+au &lt;- gsub(","," ",
+  names(results$Authors)[1:10])
+<span class="fn">Hindex</span>(M, field="author",
+  elements=au, sep=";")$H
+
+<span class="cm"># documentos mais citados</span>
+M[order(-as.numeric(M$TC)),
+  c("TI","TC")][1:10, ]</pre>
+    </section>
+
+    <!-- 8 -->
+    <section class="card">
+      <h2><span class="num">8</span> Importar o SEU corpus</h2>
+      <p class="lead">No trabalho final, troque a sample collection pelo seu export.</p>
 <pre>M &lt;- <span class="fn">convert2df</span>(
   file = "scopus.bib",
   dbsource = "scopus",
@@ -226,15 +272,15 @@ S &lt;- <span class="fn">summary</span>(results, k=10,
         <tr><td>openalex</td><td>csv</td></tr>
         <tr><td>dimensions · lens · pubmed</td><td>api / —</td></tr>
       </table>
-      <p class="lead">No Biblioshiny: <b>Import or Load → Import raw file(s)</b>.</p>
+      <p class="lead">Na interface: <b>Import or Load → Import raw file(s)</b>.</p>
     </section>
 
-    <!-- 8 -->
+    <!-- 9 -->
     <section class="card alt">
-      <h2><span class="num">8</span> A atividade</h2>
+      <h2><span class="num">9</span> A atividade</h2>
       <p class="lead">7 perguntas, 1 por grupo.</p>
       <ul>
-        <li>Cada grupo responde <b>uma</b> das 7 perguntas (cartão 3).</li>
+        <li>Cada grupo responde <b>uma</b> das 7 perguntas (guia ★ da folha 1).</li>
         <li>Use o <b>Biblioshiny</b> (ou o código) com o corpus <b>Management</b>.</li>
         <li>Tire um <b>screenshot</b> da tela com a resposta.</li>
         <li>Cole no <b>slide do seu grupo</b> na apresentação compartilhada do Google, com uma frase.</li>
@@ -245,10 +291,10 @@ S &lt;- <span class="fn">summary</span>(results, k=10,
   </div>
 
   <footer>
-    <span>Aria &amp; Cuccurullo (2017) · Journal of Informetrics 11(4):959–975 · bibliometrix.org</span>
-    <span>Capacitação em Pesquisa Científica — Equipe 7</span>
+    <span>bibliometrix · Biblioshiny — UFPR/PPGCD</span>
+    <span>Capacitação em Pesquisa Científica — Equipe 7 · folha 2 / 2</span>
   </footer>
+</section>
 
-</div>
 </body>
 </html>
