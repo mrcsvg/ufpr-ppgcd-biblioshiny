@@ -1,0 +1,116 @@
+---
+title: "Gabarito — Respostas da atividade"
+subtitle: "Equipe 7 · bibliometrix & Biblioshiny — corpus de exemplo *Management*"
+author: "Capacitação em Pesquisa Científica"
+date: "`r format(Sys.Date(), '%d/%m/%Y')`"
+output:
+  html_document:
+    toc: true
+    toc_float: true
+    toc_depth: 2
+    number_sections: true
+    theme: flatly
+    df_print: paged
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE, message = FALSE, warning = FALSE,
+                      fig.width = 8, fig.height = 5, fig.align = "center")
+```
+
+> ⚠️ **Página de gabarito.** Estas são as respostas das 7 perguntas para o corpus
+> de exemplo **Management** (WoS, 1985–2020). Tente responder sozinho no
+> Biblioshiny **antes** de conferir aqui. Voltar para a
+> [atividade](atividade_biblioshiny.Rmd).
+
+```{r base}
+library(bibliometrix)
+data(management, package = "bibliometrixData")
+M <- management
+results <- biblioAnalysis(M, sep = ";")
+S <- summary(results, k = 10, pause = FALSE, verbose = FALSE)
+```
+
+---
+
+# Pergunta 1 — Tamanho e período do corpus
+
+```{r p1}
+S$MainInformationDF
+```
+
+> **Resposta:** **898 documentos**, **2.079 autores** e **281 fontes**, cobrindo
+> **1985–2020**. A taxa de crescimento anual (*Annual Growth Rate*) é de **~14%**.
+
+# Pergunta 2 — Evolução temporal da produção
+
+```{r p2-tabela}
+S$AnnualProduction
+```
+
+```{r p2-grafico}
+plot(results, k = 10, pause = FALSE)
+```
+
+> **Resposta:** o pico é em **2020 (199 artigos)** e a produção cresce de forma
+> acelerada (AGR ~14%/ano) — um campo claramente **em ascensão**.
+
+# Pergunta 3 — Núcleo de periódicos (Lei de Bradford)
+
+```{r p3}
+BR <- bradford(M)
+head(BR$table, 10)
+```
+
+> **Resposta:** a **zona Core (Zone 1)** é formada por **8 periódicos**. Os 3
+> principais aparecem no topo da tabela (líder: *Journal of Informetrics* /
+> *Scientometrics* conforme o ranking acima).
+
+# Pergunta 4 — Autores mais produtivos
+
+```{r p4}
+head(results$Authors, 10)
+```
+
+> **Resposta:** o mais produtivo é **MERIGO JM (20 artigos)**, seguido de
+> **PORTER AL (19)** e **KOSTOFF RN (16)**.
+
+# Pergunta 5 — Impacto dos autores (h-index)
+
+```{r p5}
+autores <- gsub(",", " ", names(results$Authors)[1:10])
+H <- Hindex(M, field = "author", elements = autores, sep = ";", years = Inf)
+H$H[order(-H$H$h_index), ]
+```
+
+> **Resposta:** o maior **h-index é de MERIGO JM (h = 14)** — neste corpus o autor
+> mais **produtivo** é também o de maior **impacto**. Nem sempre é assim: volume e
+> influência podem divergir (muitos artigos pouco citados *vs* poucos muito citados).
+
+# Pergunta 6 — Documento mais citado
+
+```{r p6}
+ord <- order(as.numeric(M$TC), decreasing = TRUE)
+M[ord[1:10], c("AU", "TI", "SO", "PY", "TC")]
+```
+
+> **Resposta:** o documento mais citado é **Chen, Chiang & Storey (2012), *MIS
+> Quarterly*** — "Business Intelligence and Analytics: From Big Data to Big
+> Impact" — com **2.161 citações**.
+
+# Pergunta 7 — Temas: palavras-chave mais frequentes
+
+```{r p7}
+kw <- trimws(unlist(strsplit(M$DE, ";")))
+kw <- kw[kw != ""]
+head(sort(table(kw), decreasing = TRUE), 10)
+```
+
+> **Resposta:** a palavra-chave mais frequente é **"BIBLIOMETRICS" (234
+> ocorrências)**, seguida de **"BIBLIOMETRIC ANALYSIS" (161)** e **"CITATION
+> ANALYSIS" (62)** — os temas giram em torno da própria bibliometria aplicada a
+> gestão.
+
+---
+
+*Voltar para a [atividade](atividade_biblioshiny.Rmd).*

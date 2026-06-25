@@ -7,6 +7,9 @@ project:
     - index.qmd
     - apresentacao/apresentacao_biblioshiny.qmd
     - atividade/atividade_biblioshiny.Rmd
+    # Gabarito: renderizado (executa o R) mas fora da navbar — "oculto",
+    # acessível só pelo link no fim da página da atividade.
+    - atividade/gabarito.Rmd
   # O cheat sheet já é um HTML pronto: copiamos como recurso, sem reprocessar.
   resources:
     - cheatsheet/cheatsheet_biblioshiny.html

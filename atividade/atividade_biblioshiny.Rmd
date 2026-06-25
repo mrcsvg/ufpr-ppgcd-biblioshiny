@@ -16,7 +16,8 @@ output:
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(
   echo = TRUE,
-  message = FALSE,
+  eval = FALSE,       # esta página MOSTRA o código mas NÃO executa — as respostas
+  message = FALSE,    # ficam no gabarito (link no fim da página)
   warning = FALSE,
   fig.width = 8,
   fig.height = 5,
@@ -51,8 +52,9 @@ escolha o que preferir; os dois respondem **as mesmas 7 perguntas** sobre o
   slide do seu grupo**:
   👉 **[Apresentação compartilhada (Google Slides)](https://docs.google.com/presentation/d/1cXzXMhqq6SU0ZqYRCg0bC17dC7_NzdqU5nSl0a04hS8/edit?usp=sharing)**
 
-> Esta página renderizada já mostra as saídas do código — use como **gabarito**
-> para conferir se a sua resposta no Biblioshiny bate.
+> As respostas (com os valores do corpus de exemplo) ficam numa **página de
+> gabarito separada**, linkada no fim desta página. Tente responder sozinho antes
+> de conferir.
 
 ---
 
@@ -242,6 +244,15 @@ auditável.** Quem domina as funções entende o que cada tela está calculando.
 - [ ] Colei o screenshot **no slide do meu grupo** na
       [apresentação compartilhada](https://docs.google.com/presentation/d/1cXzXMhqq6SU0ZqYRCg0bC17dC7_NzdqU5nSl0a04hS8/edit?usp=sharing),
       com **uma frase** de resposta.
+
+# Gabarito
+
+Travou ou quer conferir? As respostas das 7 perguntas para o corpus **Management**
+estão na página de gabarito:
+
+👉 **[Abrir o gabarito (respostas)](gabarito.Rmd)**
+
+> Tente responder sozinho no Biblioshiny primeiro — o gabarito é para conferir.
 
 ---
 
