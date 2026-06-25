@@ -24,74 +24,80 @@ knitr::opts_chunk$set(
 )
 ```
 
-# Apresentação da atividade
+# Como funciona esta atividade
 
 > **Tema da Equipe 7:** Bibliometria analítica e indicadores científicos.
-> **Ferramenta:** `bibliometrix` (pacote R) + **Biblioshiny** (interface web do pacote).
+> **Ferramenta:** `bibliometrix` (pacote R) + **Biblioshiny** (a interface web do mesmo pacote).
 
-O `bibliometrix` é um pacote R para *science mapping* (mapeamento científico).
-O **Biblioshiny** é a interface gráfica (Shiny) que roda **por cima** do mesmo
-pacote: tudo o que você faz clicando no Biblioshiny corresponde a uma função do
-`bibliometrix`. Nesta atividade você vai **executar essas funções no código** e,
-ao final, vai aprender a **reproduzir cada passo no Biblioshiny**.
+Tudo o que se faz clicando no **Biblioshiny** corresponde a uma função do
+`bibliometrix`. Por isso você pode fazer a atividade por **dois caminhos** —
+escolha o que preferir; os dois respondem **as mesmas 7 perguntas** sobre o
+**mesmo corpus de exemplo** (dataset **Management**).
 
-**O que você vai entregar (ver checklist no fim):**
+- 🟢 **Trilha Geral (recomendada) — Biblioshiny no Hugging Face.**
+  Sem instalar nada: você duplica a nossa instância, abre no navegador e responde
+  clicando.
+- 🔴 **Trilha dos Bravos — *For the Braves and True*.**
+  Para quem quer ver o motor por baixo: instala o R + RStudio e roda o
+  `bibliometrix` no código.
 
-1. Este notebook executado (`.Rmd` + versão em PDF).
-2. Uma tabela-síntese de indicadores do seu corpus.
-3. Pelo menos um gráfico de evolução temporal e um de produtividade de autores.
+## A entrega: 7 perguntas, 1 por grupo
+
+- São **7 perguntas** (na seção [As 7 perguntas](#as-7-perguntas)). Cada grupo
+  fica responsável por **uma**.
+- Responda usando o Biblioshiny (ou o código), **tire um screenshot** da tela que
+  mostra a resposta e escreva uma frase explicando.
+- Entre na **apresentação compartilhada do Google** e cole o screenshot **no
+  slide do seu grupo**:
+  👉 **[Apresentação compartilhada (Google Slides)](https://docs.google.com/presentation/d/1cXzXMhqq6SU0ZqYRCg0bC17dC7_NzdqU5nSl0a04hS8/edit?usp=sharing)**
+
+> Esta página renderizada já mostra as saídas do código — use como **gabarito**
+> para conferir se a sua resposta no Biblioshiny bate.
 
 ---
 
-# Pré-requisitos e instalação
+# 🟢 Trilha Geral — Biblioshiny no Hugging Face
 
-Rode o bloco abaixo **uma única vez** para instalar os pacotes. Depois pode
-comentá-lo novamente (mantenha o `#`) para não reinstalar a cada execução.
+Sem instalar nada, tudo no navegador.
+
+1. Crie uma conta (gratuita) no **[Hugging Face](https://huggingface.co/join)**.
+2. Abra a **nossa** instância e clique em **Duplicate this Space** (botão abaixo)
+   → deixe o hardware em **CPU basic (free)** → **Duplicate Space**. A primeira
+   *build* leva alguns minutos (acontece **uma vez só** por cópia).
+
+   [![Duplicate this Space](https://huggingface.co/datasets/huggingface/badges/resolve/main/duplicate-this-space-md.svg)](https://huggingface.co/spaces/mrcsvg/ppgcd-biblioshiny?duplicate=true)
+
+3. Abra a **sua** cópia. Na tela **Import or Load**, escolha
+   **"Use a sample collection"** → dataset **Management** → **Start**.
+4. Navegue pelos menus para responder a pergunta do seu grupo (o mapa de cada
+   pergunta está em [As 7 perguntas](#as-7-perguntas)).
+5. **Screenshot** da tela com a resposta → cole no slide do grupo.
+
+> **Tier gratuito:** o Space "dorme" após 48h sem uso (acorda sozinho no próximo
+> acesso) e o armazenamento é temporário — exporte o que quiser guardar.
+
+---
+
+# 🔴 Trilha dos Bravos — *For the Braves and True*
+
+Para quem quer rodar o `bibliometrix` no código. Instale o **R** e o **RStudio**
+e siga abaixo.
+
+## Instalação (uma única vez)
 
 ```{r instalacao, eval=FALSE}
-# Pacote principal e dados de exemplo
 install.packages("bibliometrix")      # funções de análise
-install.packages("bibliometrixData")  # bases de dados de exemplo
+install.packages("bibliometrixData")  # bases de exemplo (inclui "Management")
 ```
-
-Carregue os pacotes:
 
 ```{r pacotes}
 library(bibliometrix)
 ```
 
-> **Dica:** para abrir a interface gráfica a qualquer momento, basta rodar
-> `biblioshiny()` no console. Não rode dentro do notebook — ela abre no navegador.
+## Carregar o mesmo corpus de exemplo
 
----
-
-# Conceito: Biblioshiny *vs* bibliometrix
-
-| No Biblioshiny (clicando) | No bibliometrix (no código) |
-|---|---|
-| Importar arquivo | `convert2df()` |
-| Main Information | `biblioAnalysis()` + `summary()` |
-| Annual Scientific Production | `summary()$AnnualProduction` / `plot()` |
-| Most Relevant Sources / Bradford | `bradford()` |
-| Authors → Lotka | `lotka()` |
-| Authors → Author Impact (H/G/M) | `Hindex()` |
-| Authors' Production over Time | `authorProdOverTime()` |
-| Most Cited Documents | `citations()` |
-| Three-Field Plot (Sankey) | `threeFieldsPlot()` |
-
-A lição central: **o Biblioshiny é didático e rápido; o código é reprodutível e
-auditável.** Quem domina as funções entende o que cada tela está calculando.
-
----
-
-# Importação do corpus de dados
-
-Nesta atividade usaremos um corpus de exemplo já incluído no pacote para que
-todos consigam executar sem depender de download. **No seu trabalho final, você
-substituirá este passo pela importação dos seus próprios arquivos** (exportados
-do Scopus, Web of Science, OpenAlex, etc. — conexão com as Equipes 1 e 2).
-
-## Corpus de exemplo (use agora)
+É exatamente a *sample collection* **Management** que a Trilha Geral carrega pela
+interface:
 
 ```{r dados-exemplo}
 data(management, package = "bibliometrixData")
@@ -99,247 +105,143 @@ M <- management
 dim(M)            # nº de documentos (linhas) x nº de campos (colunas)
 ```
 
-## Como importar o SEU corpus (modelo para o trabalho final)
+## Análise descritiva (a base de tudo)
 
-```{r importar-proprio, eval=FALSE}
-# Exemplo: arquivo BibTeX exportado do Scopus salvo na mesma pasta do notebook
-M <- convert2df(
-  file     = "scopus.bib",
-  dbsource = "scopus",     # "wos", "scopus", "openalex", "dimensions", "lens", "pubmed"
-  format   = "bibtex"      # "bibtex", "plaintext", "csv", "api"
-)
-```
-
-> **🧪 Sua vez 1:** confirme o tamanho do corpus com `dim(M)` e descubra o
-> intervalo de anos com `range(M$PY, na.rm = TRUE)`.
-
-```{r sua-vez-1}
-range(M$PY, na.rm = TRUE)
-```
-
----
-
-# Análise descritiva (a base de tudo)
-
-`biblioAnalysis()` calcula as principais medidas; `summary()` as exibe.
+`biblioAnalysis()` calcula as medidas; `summary()` as organiza. Os objetos
+`results` e `S` abaixo alimentam quase todas as 7 respostas.
 
 ```{r analise-descritiva}
 results <- biblioAnalysis(M, sep = ";")
 S <- summary(results, k = 10, pause = FALSE, verbose = FALSE)
 ```
 
-O objeto `S` guarda tabelas que você pode reutilizar:
-
-```{r tabelas-resumo}
-S$MainInformationDF   # Documentos, autores, período, crescimento anual, citações médias...
-```
-
-> **🧪 Sua vez 2:** localize na tabela acima o **Annual Growth Rate** e a
-> **média de citações por documento**. Anote os dois valores — são indicadores
-> centrais do seu tema.
+> **Dica:** rodar `biblioshiny()` no console abre **localmente** a mesma
+> interface da Trilha Geral.
 
 ---
 
-# Indicador 1 — Produção científica anual (evolução temporal)
+# As 7 perguntas
 
-A evolução temporal mostra a maturidade e o ritmo de crescimento do campo.
+Para cada pergunta: **onde clicar no Biblioshiny** (Trilha Geral) e o **código
+equivalente** (Trilha dos Bravos). Tire o screenshot da tela/saída e cole no
+slide do seu grupo.
 
-```{r producao-anual}
-plot(results, k = 10, pause = FALSE)
+## Pergunta 1 — Tamanho e período do corpus
+
+**Pergunta:** Quantos **documentos**, **autores** e **fontes** o corpus tem? Que
+**período** ele cobre?
+
+**No Biblioshiny:** *Overview → Main Information.*
+
+```{r p1}
+S$MainInformationDF   # Documentos, autores, fontes, período, crescimento, citações...
 ```
 
-Para obter só a tabela ano a ano (útil para a tabela-síntese):
+## Pergunta 2 — Evolução temporal da produção
 
-```{r tabela-anual}
-S$AnnualProduction
+**Pergunta:** Em que **ano** a produção foi maior? O campo está em **ascensão**,
+**maturidade** ou **declínio**?
+
+**No Biblioshiny:** *Overview → Annual Scientific Production.*
+
+```{r p2-tabela}
+S$AnnualProduction    # nº de artigos por ano
 ```
 
-> **🧪 Sua vez 3:** identifique o ano de maior produção e descreva em uma frase
-> o padrão de crescimento (linear, exponencial, com queda recente?).
+```{r p2-grafico}
+plot(results, k = 10, pause = FALSE)   # entre os gráficos, a produção anual
+```
 
----
+## Pergunta 3 — Núcleo de periódicos (Lei de Bradford)
 
-# Indicador 2 — Fontes/periódicos e Lei de Bradford
+**Pergunta:** Quais periódicos formam a **zona "Core"** (o núcleo que concentra a
+maior parte dos artigos)? Liste os **3 principais**.
 
-A **Lei de Bradford** identifica o "núcleo" de periódicos que concentra a maior
-parte dos artigos relevantes — essencial para focar leituras e submissões.
+**No Biblioshiny:** *Sources → Bradford's Law* (ou *Most Relevant Sources*).
 
-```{r bradford}
+```{r p3}
 BR <- bradford(M)
-head(BR$table, 10)   # zona "Core" = periódicos do núcleo
+head(BR$table, 10)    # zona "Core" = periódicos do núcleo
 ```
 
-> **🧪 Sua vez 4:** quantos periódicos formam a **zona Core** (núcleo) do seu
-> corpus? Liste os 3 principais.
+## Pergunta 4 — Autores mais produtivos
 
----
+**Pergunta:** Quais são os **3 autores** com mais artigos no corpus?
 
-# Indicador 3 — Autores: produtividade e Lei de Lotka
+**No Biblioshiny:** *Authors → Most Relevant Authors.*
 
-A **Lei de Lotka** descreve a distribuição da produtividade: poucos autores
-publicam muito, muitos publicam pouco (lei do inverso do quadrado).
-
-```{r lotka}
-# A assinatura de lotka() mudou entre versões do bibliometrix:
-#   versão atual (CRAN 5.x): lotka(M)        -> M = data frame, classe "bibliometrixDB"
-#   versões antigas:         lotka(results)  -> saída de biblioAnalysis, classe "bibliometrix"
-# O bloco abaixo escolhe automaticamente a forma que funciona:
-invisible(capture.output(L <- lotka(M)))    # tenta a forma atual
-if (!is.list(L)) L <- lotka(results)        # se vier NA, usa a forma antiga
-
-L$AuthorProd        # nº de autores por nº de artigos
-cat("Beta estimado:", round(L$Beta, 3),
-    "| R2 (ajuste):", round(L$R2, 3),
-    "| p-valor (KS):", round(L$p.value, 4), "\n")
+```{r p4}
+head(results$Authors, 10)   # autores ordenados por nº de artigos
 ```
 
-Interpretação: o `Beta` teórico de Lotka é **2**. Quanto mais próximo, mais o seu
-campo segue o padrão clássico de concentração de produtividade.
+## Pergunta 5 — Impacto dos autores (h-index)
 
-## Produção dos principais autores ao longo do tempo
+**Pergunta:** Qual autor tem o **maior h-index**? É o **mesmo** que o mais
+produtivo (Pergunta 4)? O que isso sugere sobre *quantidade* vs *influência*?
 
-```{r autores-tempo}
-topAU <- authorProdOverTime(M, k = 10, graph = TRUE)
-head(topAU$dfAU)    # tabela: autor, ano, nº de artigos, citações
-```
+**No Biblioshiny:** *Authors → Authors' Impact (h-index).*
 
-> **🧪 Sua vez 5:** qual autor tem a trajetória mais longa (mais anos ativos)?
-> E qual tem a maior produção concentrada em poucos anos?
-
----
-
-# Indicador 4 — Impacto: índices H, G e M
-
-`Hindex()` calcula, para cada autor, os índices **h**, **g** e **m**:
-
-- **h-index:** o autor tem *h* artigos com pelo menos *h* citações cada.
-- **g-index:** dá mais peso aos artigos mais citados.
-- **m-index:** h-index dividido pelos anos de carreira (corrige por tempo).
-
-```{r hindex}
-# Seleciona os 10 autores mais produtivos para calcular o impacto
-autores <- gsub(",", " ", names(results$Authors)[1:10])
-
+```{r p5}
+autores <- gsub(",", " ", names(results$Authors)[1:10])  # top 10 produtivos
 H <- Hindex(M, field = "author", elements = autores, sep = ";", years = Inf)
-H$H[order(-H$H$h_index), ]   # ordenado pelo h-index
+H$H[order(-H$H$h_index), ]                                # ordenado pelo h-index
 ```
 
-> **🧪 Sua vez 6:** compare o autor mais **produtivo** (mais artigos) com o de
-> maior **impacto** (maior h-index). São a mesma pessoa? O que isso sugere sobre
-> a diferença entre *quantidade* e *influência*?
+## Pergunta 6 — Documento mais citado
+
+**Pergunta:** Qual é o **documento mais citado** (citações globais) do corpus?
+
+**No Biblioshiny:** *Documents → Most Global Cited Documents.*
+
+```{r p6}
+ord <- order(as.numeric(M$TC), decreasing = TRUE)
+M[ord[1:10], c("AU", "TI", "SO", "PY", "TC")]   # TC = Total Citations
+```
+
+## Pergunta 7 — Temas: palavras-chave mais frequentes
+
+**Pergunta:** Quais são as **palavras-chave** mais frequentes do corpus? O que
+elas revelam sobre os temas dominantes?
+
+**No Biblioshiny:** *Documents → Words → Most Frequent Words* (ou *WordCloud*).
+
+```{r p7}
+kw <- trimws(unlist(strsplit(M$DE, ";")))   # DE = Author Keywords
+kw <- kw[kw != ""]
+head(sort(table(kw), decreasing = TRUE), 10)
+```
 
 ---
 
-# Indicador 5 — Documentos e referências mais citados
+# Mapa rápido: Biblioshiny ⇄ bibliometrix
 
-```{r citacoes}
-CIT <- citations(M, field = "article", sep = ";")
-head(CIT$Cited, 10)   # referências mais citadas pelo corpus
-```
+Referência de bolso para localizar cada análise nas duas trilhas:
 
-> **🧪 Sua vez 7:** as referências mais citadas costumam ser os "clássicos" da
-> área. Identifique 2 e comente se você as conhece.
-
----
-
-# Tabela-síntese de indicadores (entregável principal)
-
-Consolide os principais indicadores em uma única tabela — é o coração do tema
-"indicadores científicos".
-
-```{r tabela-sintese}
-# Crescimento anual: campo dedicado do summary (não depende de nomes de coluna)
-agr <- round(S$AnnualGrowthRate, 2)
-
-sintese <- data.frame(
-  Indicador = c(
-    "Documentos (total)",
-    "Fontes/periódicos",
-    "Autores",
-    "Período coberto",
-    "Crescimento anual (%)",
-    "Média de citações por documento",
-    "Autores por documento",
-    "Documentos por autor"
-  ),
-  Valor = c(
-    nrow(M),
-    length(unique(M$SO)),
-    length(results$Authors),
-    paste(range(M$PY, na.rm = TRUE), collapse = " – "),
-    agr,
-    round(mean(as.numeric(M$TC), na.rm = TRUE), 2),
-    round(length(results$Authors) / nrow(M), 2),
-    round(nrow(M) / length(results$Authors), 2)
-  )
-)
-knitr::kable(sintese, caption = "Indicadores bibliométricos do corpus")
-```
-
-> **🧪 Sua vez 8:** adapte esta tabela ao seu corpus real e exporte-a:
-> `write.csv(sintese, "indicadores.csv", row.names = FALSE)`.
-
----
-
-# Bônus — Visão integrada (Sankey)
-
-O *three-field plot* conecta três dimensões ao mesmo tempo (ex.: Autores →
-Palavras-chave → Fontes), ótimo para a apresentação final (conexão com a Equipe 8).
-
-```{r three-fields, eval=FALSE}
-threeFieldsPlot(M, fields = c("AU", "DE", "SO"), n = c(20, 20, 20))
-```
-
-> *(Definimos `eval=FALSE` porque gera um widget interativo; rode no seu console
-> para visualizar.)*
-
----
-
-# Reproduzindo tudo no Biblioshiny
-
-Abra a interface e siga o mapa abaixo:
-
-```{r abrir-biblioshiny, eval=FALSE}
-biblioshiny()
-```
-
-| Passo no Biblioshiny | Equivale a |
+| No Biblioshiny (clicando) | No bibliometrix (no código) |
 |---|---|
-| **Data → Load Data → Import raw files** | `convert2df()` |
-| **Overview → Main Information** | `biblioAnalysis()` + `summary()` |
-| **Overview → Annual Scientific Production** | gráfico de produção anual |
-| **Sources → Most Relevant Sources / Bradford's Law** | `bradford()` |
-| **Authors → Most Relevant Authors / Lotka's Law** | `lotka()` |
-| **Authors → Authors' Production over Time** | `authorProdOverTime()` |
-| **Authors → Author Impact (h-index)** | `Hindex()` |
-| **Documents → Most Global Cited Documents** | `citations()` |
+| Import or Load → Use a sample collection | `data(management)` / `convert2df()` |
+| Overview → Main Information | `biblioAnalysis()` + `summary()` |
+| Overview → Annual Scientific Production | `S$AnnualProduction` / `plot()` |
+| Sources → Bradford's Law | `bradford()` |
+| Authors → Most Relevant Authors | `results$Authors` |
+| Authors → Authors' Impact (h-index) | `Hindex()` |
+| Documents → Most Global Cited Documents | ordenar por `M$TC` |
+| Documents → Words → Most Frequent Words | tabular `M$DE` |
 
-**Tarefa de fechamento:** escolha **um** indicador desta atividade, gere-o no
-Biblioshiny e confirme que o número bate com o do seu código. Tire um print —
-ele entra na apresentação da Equipe 8.
+A lição central: **o Biblioshiny é didático e rápido; o código é reprodutível e
+auditável.** Quem domina as funções entende o que cada tela está calculando.
 
 ---
 
 # Checklist de entrega
 
-Seguindo o **Padrão de Entrega** da capacitação:
-
-- [ ] **Versão original editável** — este arquivo `.Rmd`.
-- [ ] **PDF obrigatório** — `Knit → Knit to PDF` (ou exporte o HTML para PDF).
-- [ ] Tabela-síntese de indicadores exportada (`indicadores.csv`).
-- [ ] Ao menos 1 gráfico temporal + 1 de autores salvos.
-- [ ] Um print do Biblioshiny confirmando um indicador.
-- [ ] Cheat sheet (1–2 páginas) anexado.
-
----
-
-# Desafios finais (para discussão da equipe)
-
-1. O seu campo segue a Lei de Lotka (Beta ≈ 2)? O que um desvio significaria?
-2. O autor mais produtivo é também o mais influente? Por quê?
-3. Olhando a produção anual, o campo está em ascensão, maturidade ou declínio?
-4. Qual indicador você defenderia como o **mais importante** para avaliar a
-   qualidade de um corpus — e por quê?
+- [ ] Identifiquei a **pergunta do meu grupo** (1 a 7).
+- [ ] Respondi pela **Trilha Geral** (Biblioshiny no Hugging Face) **ou** pela
+      **Trilha dos Bravos** (código).
+- [ ] Tirei o **screenshot** da tela que mostra a resposta.
+- [ ] Colei o screenshot **no slide do meu grupo** na
+      [apresentação compartilhada](https://docs.google.com/presentation/d/1cXzXMhqq6SU0ZqYRCg0bC17dC7_NzdqU5nSl0a04hS8/edit?usp=sharing),
+      com **uma frase** de resposta.
 
 ---
 
