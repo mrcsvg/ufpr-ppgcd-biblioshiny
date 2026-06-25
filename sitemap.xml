@@ -1,15 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://mrcsvg.github.io/ufpr-ppgcd-biblioshiny/atividade/atividade_biblioshiny.html</loc>
-    <lastmod>2026-06-25T13:29:24.730Z</lastmod>
-  </url>
-  <url>
-    <loc>https://mrcsvg.github.io/ufpr-ppgcd-biblioshiny/index.html</loc>
-    <lastmod>2026-06-25T13:29:24.731Z</lastmod>
+    <loc>https://mrcsvg.github.io/ufpr-ppgcd-biblioshiny/atividade/gabarito.html</loc>
+    <lastmod>2026-06-25T14:40:02.586Z</lastmod>
   </url>
   <url>
     <loc>https://mrcsvg.github.io/ufpr-ppgcd-biblioshiny/apresentacao/apresentacao_biblioshiny.html</loc>
-    <lastmod>2026-06-25T13:29:24.688Z</lastmod>
+    <lastmod>2026-06-25T14:40:02.546Z</lastmod>
+  </url>
+  <url>
+    <loc>https://mrcsvg.github.io/ufpr-ppgcd-biblioshiny/index.html</loc>
+    <lastmod>2026-06-25T14:40:02.586Z</lastmod>
+  </url>
+  <url>
+    <loc>https://mrcsvg.github.io/ufpr-ppgcd-biblioshiny/atividade/atividade_biblioshiny.html</loc>
+    <lastmod>2026-06-25T14:40:02.585Z</lastmod>
   </url>
 </urlset>
