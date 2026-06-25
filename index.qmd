@@ -23,7 +23,7 @@ Slides (reveal.js): a jornada do `bibliometrix` ao Biblioshiny.
 
 ::: {.g-col-12 .g-col-md-4}
 ### 🧪 Atividade prática
-Notebook em R: importação do corpus, indicadores e a ponte código ↔ Biblioshiny.
+Duplique o Biblioshiny no Hugging Face, carregue a *sample collection* **Management** e leia os indicadores direto na interface — sem instalar nada.
 
 [Ler a atividade →](atividade/atividade_biblioshiny.Rmd)
 :::
