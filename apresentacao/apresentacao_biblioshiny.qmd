@@ -23,7 +23,7 @@ format:
     height: 760
     margin: 0.08
     fig-align: center
-    footer: "Guia Técnico · bibliometrix · Biblioshiny — PPGCD/UFPR"
+    footer: "Guia Técnico · bibliometrix · Biblioshiny — PPGCD/UFPR · <a href='../index.html'>↩ Início</a>"
 # Por padrão MOSTRAMOS o código mas NÃO executamos, para o deck renderizar
 # em qualquer máquina. A execução "ao vivo" acontece no notebook (atividade_biblioshiny.Rmd).
 # Para gerar saídas reais aqui, troque para eval: true após instalar o bibliometrix.
