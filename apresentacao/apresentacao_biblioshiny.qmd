@@ -78,8 +78,6 @@ Apresentar-se, dizer que ao final cada um vai rodar a própria instância. Tempo
 
 ## Contexto científico {.smaller}
 
-Quando o número de artigos explode, ler tudo "na mão" não escala — e vira pouco transparente e difícil de reproduzir.
-
 A **bibliometria** e o ***science mapping*** transformam **metadados de milhares de artigos** em um mapa quantitativo, transparente e **reproduzível**, respondendo a:
 
 - Como o campo **evoluiu** no tempo?
