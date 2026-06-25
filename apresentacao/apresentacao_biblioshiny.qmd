@@ -129,37 +129,14 @@ Onde o projeto está hoje:
 
 # 3 · Funcionalidades Principais
 
-## Dados e visão geral {.smaller}
+## Seis blocos de funcionalidades {.smaller}
 
-::: small
-**Data** — importar/converter 7 bases · integração por **API** (OpenAlex, PubMed) · filtrar por ano, periódico, país, citações · checar dados ausentes
-
-**Overview** — *Main Information* · produção anual · média de citações por ano · *Three-Field Plot* · fontes/autores/afiliações/países mais relevantes · documentos mais citados
-:::
-
-## Fontes, autores e documentos {.smaller}
-
-::: small
-**Sources** — fontes mais relevantes · **Lei de Bradford** · impacto da fonte (h-index) · produção da fonte no tempo
-
-**Authors** — autores e afiliações mais relevantes · produção no tempo · **Lei de Lotka** · impacto do autor (h/g/m) · rede de colaboração
-
-**Documents** — mais citados (global/local) · referências mais citadas · **RPYS** (espectroscopia de referências) · palavras frequentes · *WordCloud* / *TreeMap* · **trend topics**
-:::
-
-## Estruturas e IA {.smaller}
-
-::: small
-**Clustering** — agrupamento por acoplamento (*coupling*)
-
-**Conceptual Structure** — rede de coocorrência · **mapa temático** · **evolução temática** · análise fatorial (MCA/CA)
-
-**Intellectual Structure** — rede de **cocitação** · **historiógrafo**
-
-**Social Structure** — rede de **colaboração** · mapa de colaboração entre **países**
-
-**Conteúdo & IA** — análise de texto completo (função das citações, IMRaD) · **Biblio AI** para interpretação
-:::
+- Importação e tratamento de dados
+- Análise descritiva geral (Overview)
+- Análise de fontes (Sources)
+- Análise de autores (Authors)
+- Análise de documentos (Documents)
+- Visualizações e relatórios
 
 ## No panorama das ferramentas {.smaller}
 
