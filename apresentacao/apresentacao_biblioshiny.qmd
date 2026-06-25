@@ -204,14 +204,15 @@ Aqui paro de falar e ABRO o biblioshiny ao vivo. Mostro a tela inicial e o menu 
 
 # 5 · Fluxo de Uso
 
-## Input → Processo → Review → Output {.smaller}
+## Sete passos do fluxo {.smaller}
 
-| Etapa | No Biblioshiny | No bibliometrix (código) |
-|----|----|----|
-| **1 · Input** | Data → Import or Load **ou** API (OpenAlex/PubMed) | `convert2df()` |
-| **2 · Processo** | Appraisal: completar/filtrar; Analysis: rodar | `biblioAnalysis()` + `summary()` |
-| **3 · Review** | Conferir tabelas, completude e filtros | inspeção do `data.frame` |
-| **4 · Output** | Exportar tabelas, gráficos e relatórios | `plot()`, *report* |
+- **A.** Exportar os dados da base
+- **B.** Importar no Biblioshiny (*Data → Import or Load*)
+- **C.** Filtrar e tratar a coleção (*Data → Filters*)
+- **D.** Visão geral (*Overview → Main Information*)
+- **E.** Análises por dimensão
+- **F.** Estruturas do conhecimento (o coração da análise)
+- **G.** Exportar resultados
 
 A seguir, o fluxo real na interface: **buscar → limpar → analisar**.
 
