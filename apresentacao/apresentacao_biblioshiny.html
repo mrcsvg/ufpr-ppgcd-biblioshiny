@@ -6,8 +6,8 @@
 <script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
 <link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
 <link href="../site_libs/quarto-html/light-border.css" rel="stylesheet">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting-a06763021a52c43c40a351ac8b799b8f.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
-  <meta name="generator" content="quarto-1.9.36">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-de63f62b328812d8e578a4d74e282472.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
+  <meta name="generator" content="quarto-1.9.38">
 
   <meta name="author" content="Equipe 7 — Bibliometria analítica e indicadores científicos">
   <title>Bibliometria · Equipe 7 – Guia Técnico de Uso — Biblioshiny</title>
@@ -210,7 +210,7 @@ Equipe 7 — Bibliometria analítica e indicadores científicos
     </div>
 </div>
 
-  <p class="date">23/06/2026</p>
+  <p class="date">25/06/2026</p>
 </section>
 <section class="slide level2">
 
@@ -304,6 +304,11 @@ Equipe 7 — Bibliometria analítica e indicadores científicos
 <h2>O modelo SAAS</h2>
 <p>O Biblioshiny é organizado em torno do <strong>fluxo SAAS</strong> — uma reformulação do framework SALSA (Grant &amp; Booth, 2009):</p>
 <table class="caption-top">
+<colgroup>
+<col style="width: 21%">
+<col style="width: 46%">
+<col style="width: 31%">
+</colgroup>
 <thead>
 <tr class="header">
 <th>Etapa</th>
@@ -379,6 +384,24 @@ Equipe 7 — Bibliometria analítica e indicadores científicos
 <p><strong>Social Structure</strong> — rede de <strong>colaboração</strong> · mapa de colaboração entre <strong>países</strong></p>
 <p><strong>Conteúdo &amp; IA</strong> — análise de texto completo (função das citações, IMRaD) · <strong>Biblio AI</strong> para interpretação</p>
 </div>
+</section>
+<section id="no-panorama-das-ferramentas" class="slide level2 smaller">
+<h2>No panorama das ferramentas</h2>
+<div class="columns">
+<div class="column" style="width:42%;">
+<p>Comparativo de ferramentas de <em>science mapping</em>:</p>
+<ul>
+<li><strong>BiblioShiny</strong> e a lib <strong>Bibliometrix</strong> cobrem praticamente <strong>todas as features</strong> — redes temática/autor/referência, evolução, performance e mapa geográfico.</li>
+<li><strong>VOSviewer</strong> e <strong>CiteSpace</strong> são mais <strong>especializados</strong> (poucas colunas marcadas).</li>
+<li>Vantagem extra: o mesmo motor em <strong>código</strong> (<code>bibliometrix</code>) e <strong>interface</strong> (Biblioshiny).</li>
+</ul>
+</div><div class="column" style="width:58%;">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="img/tools-comparison.jpg" class="shot quarto-figure quarto-figure-center" style="width:92.0%"></p>
+</figure>
+</div>
+</div></div>
 </section></section>
 <section>
 <section id="configuração-inicial" class="title-slide slide level1 center">
@@ -388,16 +411,16 @@ Equipe 7 — Bibliometria analítica e indicadores científicos
 <section id="acesso-requisitos-e-formatos" class="slide level2 smaller">
 <h2>Acesso, requisitos e formatos</h2>
 <ul>
-<li><strong>Acesso / login</strong> — não exige conta própria: roda em <strong>R</strong> (local ou no <strong>Posit Cloud</strong>, com login institucional do projeto compartilhado).</li>
-<li><strong>Requisitos técnicos</strong> — R + pacote <code>bibliometrix</code>; navegador atualizado (a interface abre numa aba do navegador).</li>
+<li><strong>Acesso / login</strong> — roda no <strong>Hugging Face Spaces</strong>: cada um duplica a instância para a sua conta (gratuita) e abre pelo navegador, sem instalar nada.</li>
+<li><strong>Requisitos técnicos</strong> — só o navegador atualizado; o Space já traz R + <code>bibliometrix</code> pré-instalados (também roda em <strong>R/RStudio local</strong>).</li>
 <li><strong>Formatos aceitos</strong> — exportações de <strong>Scopus, WoS, OpenAlex, Lens, Dimensions, PubMed, Cochrane</strong> (<code>.bib</code>, <code>.txt</code>, <code>.csv</code>) ou import direto por <strong>API</strong>.</li>
-<li><strong>Configurações</strong> — idioma da interface, filtros do corpus e integração de <em>workspace</em> no Posit Cloud.</li>
+<li><strong>Configurações</strong> — idioma da interface, filtros do corpus e escolha de hardware (deixe <strong>CPU basic (free)</strong>).</li>
 </ul>
 </section>
 <section id="instalação-uma-vez-por-sessão" class="slide level2 smaller">
 <h2>Instalação (uma vez por sessão)</h2>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a></a><span class="co"># Instalação (uma vez por sessão no Posit Cloud)</span></span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a></a><span class="co"># Instalação no R local (no Hugging Face já vem pré-instalado)</span></span>
 <span id="cb1-2"><a></a><span class="fu">install.packages</span>(<span class="fu">c</span>(<span class="st">"bibliometrix"</span>, <span class="st">"bibliometrixData"</span>))</span>
 <span id="cb1-3"><a></a></span>
 <span id="cb1-4"><a></a><span class="fu">library</span>(bibliometrix)</span></code></pre></div><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></div>
@@ -430,9 +453,9 @@ Equipe 7 — Bibliometria analítica e indicadores científicos
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a></a><span class="fu">library</span>(bibliometrix)</span>
 <span id="cb3-2"><a></a><span class="fu">biblioshiny</span>()        <span class="co"># sobe a interface web no navegador</span></span></code></pre></div><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
-<p><strong>No Posit Cloud</strong> funciona igual — abre numa aba nova do navegador.</p>
+<p><strong>No R local</strong> o <code>biblioshiny()</code> abre numa aba do navegador. <strong>No Hugging Face</strong> nem isso: a sua cópia do Space <em>já é</em> a interface — basta abrir a URL.</p>
 <div class="em2">
-<p>Pegadinha: o navegador pode <strong>bloquear o pop-up</strong> da nova aba. Libere pop-ups para <code>posit.cloud</code> e a interface abre.</p>
+<p>Pegadinha do Space gratuito: ele <strong>“dorme” após 48h</strong> sem uso (acorda sozinho no próximo acesso) e o armazenamento é <strong>temporário</strong> — exporte seus resultados antes de fechar.</p>
 </div>
 <aside class="notes">
 <p>Aqui paro de falar e ABRO o biblioshiny ao vivo. Mostro a tela inicial e o menu lateral.</p>
@@ -498,16 +521,18 @@ Equipe 7 — Bibliometria analítica e indicadores científicos
 <div class="columns">
 <div class="column" style="width:50%;">
 <p><strong>a) Importar arquivo (lib padrão)</strong> <code>Data → Import or Load</code> — exportações de Scopus, WoS, Lens, Dimensions, PubMed, Cochrane.</p>
-<div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb4"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a></a>M <span class="ot">&lt;-</span> <span class="fu">convert2df</span>(</span>
-<span id="cb4-2"><a></a>  <span class="at">file     =</span> <span class="st">"scopus.bib"</span>,</span>
-<span id="cb4-3"><a></a>  <span class="at">dbsource =</span> <span class="st">"scopus"</span>,</span>
-<span id="cb4-4"><a></a>  <span class="at">format   =</span> <span class="st">"bibtex"</span></span>
-<span id="cb4-5"><a></a>)</span></code></pre></div><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></div>
-</div>
+<p>Data → Import or Load → Use a sample collection → escolhe o dataset e clica Start.</p>
+<video src="img/vid1-import.mp4" data-autoplay="" loop="" muted="" playsinline="" class="shot" style="width:72%">
+</video>
 </div><div class="column" style="width:50%;">
 <p><strong>b) Coletar por API</strong> <code>Data → API → OpenAlex / Pubmed</code> — baixa direto, sem exportar arquivo.</p>
 <p>Mesma classe de saída (<code>bibliometrixDB</code>); o restante do fluxo é idêntico.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="img/api-01-search.jpg" class="shot" style="width:80.0%"></p>
+<figcaption>Busca por API: monta a query (campo, termos, intervalo de anos, filtros) e retorna a contagem — aqui 984 registros.</figcaption>
+</figure>
+</div>
 </div></div>
 <p>Uma função (<code>convert2df</code>) padroniza <strong>sete bases diferentes</strong> num único <em>data frame</em>.</p>
 </section>
@@ -519,12 +544,6 @@ Equipe 7 — Bibliometria analítica e indicadores científicos
 </section>
 <section id="etapa-1-buscar-no-openalex" class="slide level2 smaller">
 <h2>Etapa 1 · Buscar no OpenAlex</h2>
-<div class="quarto-figure quarto-figure-center">
-<figure>
-<p><img data-src="img/api-01-search.jpg" class="shot" style="width:80.0%"></p>
-<figcaption>Busca por API: monta a query (campo, termos, intervalo de anos, filtros) e retorna a contagem — aqui <strong>984 registros</strong>.</figcaption>
-</figure>
-</div>
 </section>
 <section id="etapa-1-baixar-o-corpus" class="slide level2 smaller">
 <h2>Etapa 1 · Baixar o corpus</h2>
@@ -605,10 +624,10 @@ Equipe 7 — Bibliometria analítica e indicadores científicos
 <section id="visão-geral-no-código" class="slide level2 smaller">
 <h2>Visão geral — no código</h2>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb5"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a></a>results <span class="ot">&lt;-</span> <span class="fu">biblioAnalysis</span>(M, <span class="at">sep =</span> <span class="st">";"</span>)</span>
-<span id="cb5-2"><a></a>S <span class="ot">&lt;-</span> <span class="fu">summary</span>(results, <span class="at">k =</span> <span class="dv">10</span>, <span class="at">pause =</span> <span class="cn">FALSE</span>, <span class="at">verbose =</span> <span class="cn">FALSE</span>)</span>
-<span id="cb5-3"><a></a></span>
-<span id="cb5-4"><a></a>S<span class="sc">$</span>MainInformationDF   <span class="co"># documentos, autores, período, crescimento anual, citações...</span></span></code></pre></div><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb4"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a></a>results <span class="ot">&lt;-</span> <span class="fu">biblioAnalysis</span>(M, <span class="at">sep =</span> <span class="st">";"</span>)</span>
+<span id="cb4-2"><a></a>S <span class="ot">&lt;-</span> <span class="fu">summary</span>(results, <span class="at">k =</span> <span class="dv">10</span>, <span class="at">pause =</span> <span class="cn">FALSE</span>, <span class="at">verbose =</span> <span class="cn">FALSE</span>)</span>
+<span id="cb4-3"><a></a></span>
+<span id="cb4-4"><a></a>S<span class="sc">$</span>MainInformationDF   <span class="co"># documentos, autores, período, crescimento anual, citações...</span></span></code></pre></div><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <p>A tela <em>Main Information</em> é exatamente a saída de <code>biblioAnalysis()</code> + <code>summary()</code>.</p>
 </section>
@@ -627,7 +646,7 @@ Equipe 7 — Bibliometria analítica e indicadores científicos
 </figure>
 </div>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb6"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a></a><span class="fu">plot</span>(results, <span class="at">k =</span> <span class="dv">10</span>, <span class="at">pause =</span> <span class="cn">FALSE</span>)   <span class="co"># produção anual, países, autores...</span></span></code></pre></div><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb5"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a></a><span class="fu">plot</span>(results, <span class="at">k =</span> <span class="dv">10</span>, <span class="at">pause =</span> <span class="cn">FALSE</span>)   <span class="co"># produção anual, países, autores...</span></span></code></pre></div><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </section>
 <section id="ciclo-de-vida-do-campo" class="slide level2 smaller">
@@ -659,7 +678,7 @@ Equipe 7 — Bibliometria analítica e indicadores científicos
 </figure>
 </div>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb7"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a></a><span class="fu">bradford</span>(M)<span class="sc">$</span>table     <span class="co"># Lei de Bradford: zona "Core" = núcleo de periódicos</span></span></code></pre></div><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb6"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a></a><span class="fu">bradford</span>(M)<span class="sc">$</span>table     <span class="co"># Lei de Bradford: zona "Core" = núcleo de periódicos</span></span></code></pre></div><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </section>
 <section id="fontes-ao-vivo-ao-vivo" class="slide level2 smaller">
@@ -671,9 +690,9 @@ Equipe 7 — Bibliometria analítica e indicadores científicos
 <section id="autores-e-a-lei-de-lotka" class="slide level2 smaller">
 <h2>Autores e a Lei de Lotka</h2>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb8"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a></a>L <span class="ot">&lt;-</span> <span class="fu">lotka</span>(M)         <span class="co"># versão atual recebe M (classe bibliometrixDB)</span></span>
-<span id="cb8-2"><a></a>L<span class="sc">$</span>AuthorProd          <span class="co"># nº de autores por nº de artigos</span></span>
-<span id="cb8-3"><a></a>L<span class="sc">$</span>Beta                <span class="co"># ~2 =&gt; segue o padrão clássico de concentração</span></span></code></pre></div><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb7"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a></a>L <span class="ot">&lt;-</span> <span class="fu">lotka</span>(M)         <span class="co"># versão atual recebe M (classe bibliometrixDB)</span></span>
+<span id="cb7-2"><a></a>L<span class="sc">$</span>AuthorProd          <span class="co"># nº de autores por nº de artigos</span></span>
+<span id="cb7-3"><a></a>L<span class="sc">$</span>Beta                <span class="co"># ~2 =&gt; segue o padrão clássico de concentração</span></span></code></pre></div><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <p><strong>Lotka:</strong> poucos autores publicam muito; muitos publicam pouco. Na interface: <em>Authors → Lotka’s Law</em>.</p>
 </section>
@@ -689,8 +708,8 @@ Equipe 7 — Bibliometria analítica e indicadores científicos
 <section id="impacto-índices-h-g-e-m" class="slide level2 smaller">
 <h2>Impacto: índices h, g e m</h2>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb9"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a></a>autores <span class="ot">&lt;-</span> <span class="fu">gsub</span>(<span class="st">","</span>, <span class="st">" "</span>, <span class="fu">names</span>(results<span class="sc">$</span>Authors)[<span class="dv">1</span><span class="sc">:</span><span class="dv">10</span>])</span>
-<span id="cb9-2"><a></a><span class="fu">Hindex</span>(M, <span class="at">field =</span> <span class="st">"author"</span>, <span class="at">elements =</span> autores, <span class="at">sep =</span> <span class="st">";"</span>)<span class="sc">$</span>H</span></code></pre></div><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb8"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a></a>autores <span class="ot">&lt;-</span> <span class="fu">gsub</span>(<span class="st">","</span>, <span class="st">" "</span>, <span class="fu">names</span>(results<span class="sc">$</span>Authors)[<span class="dv">1</span><span class="sc">:</span><span class="dv">10</span>])</span>
+<span id="cb8-2"><a></a><span class="fu">Hindex</span>(M, <span class="at">field =</span> <span class="st">"author"</span>, <span class="at">elements =</span> autores, <span class="at">sep =</span> <span class="st">";"</span>)<span class="sc">$</span>H</span></code></pre></div><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <ul>
 <li><strong>h</strong>: equilíbrio entre volume e impacto</li>
@@ -701,7 +720,7 @@ Equipe 7 — Bibliometria analítica e indicadores científicos
 <section id="documentos-mais-citados" class="slide level2 smaller">
 <h2>Documentos mais citados</h2>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb10"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a></a><span class="fu">citations</span>(M, <span class="at">field =</span> <span class="st">"article"</span>, <span class="at">sep =</span> <span class="st">";"</span>)<span class="sc">$</span>Cited</span></code></pre></div><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb9"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a></a><span class="fu">citations</span>(M, <span class="at">field =</span> <span class="st">"article"</span>, <span class="at">sep =</span> <span class="st">";"</span>)<span class="sc">$</span>Cited</span></code></pre></div><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <p>As referências mais citadas costumam ser os <strong>clássicos</strong> que sustentam o campo. Na interface: <em>Documents → Most Cited</em>.</p>
 </section>
@@ -714,7 +733,7 @@ Equipe 7 — Bibliometria analítica e indicadores científicos
 </figure>
 </div>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb11"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a></a><span class="fu">threeFieldsPlot</span>(M, <span class="at">fields =</span> <span class="fu">c</span>(<span class="st">"AU"</span>, <span class="st">"DE"</span>, <span class="st">"SO"</span>), <span class="at">n =</span> <span class="fu">c</span>(<span class="dv">20</span>, <span class="dv">20</span>, <span class="dv">20</span>))</span></code></pre></div><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb10"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a></a><span class="fu">threeFieldsPlot</span>(M, <span class="at">fields =</span> <span class="fu">c</span>(<span class="st">"AU"</span>, <span class="st">"DE"</span>, <span class="st">"SO"</span>), <span class="at">n =</span> <span class="fu">c</span>(<span class="dv">20</span>, <span class="dv">20</span>, <span class="dv">20</span>))</span></code></pre></div><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </section>
 <section id="estrutura-social-produção-por-país" class="slide level2 smaller">
@@ -820,24 +839,31 @@ Equipe 7 — Bibliometria analítica e indicadores científicos
 <ul>
 <li><strong>Objetivo:</strong> sair sabendo <strong>ler</strong> um mapa científico — e <strong>reproduzi-lo</strong>.</li>
 <li><strong>Contexto:</strong> um campo de pesquisa representado por seus metadados.</li>
-<li><strong>Base utilizada:</strong> corpus <code>management</code> (ou importe o seu via <code>convert2df</code>).</li>
+<li><strong>Base utilizada:</strong> sample collection <strong>Management</strong> embutida no Biblioshiny — WoS, 1985–2020 (ou importe o seu export do Scopus/WoS/Lens).</li>
 </ul>
 <p><strong>Procedimentos esperados</strong></p>
 <ol type="1">
-<li>Abra o projeto compartilhado no <strong>Posit Cloud</strong> (link no chat da turma).</li>
-<li>Rode o notebook <strong><code>atividade_biblioshiny.Rmd</code></strong> — célula por célula.</li>
-<li>Rode <code>biblioshiny()</code> e <strong>confira um indicador</strong> que você calculou no código.</li>
+<li>Crie uma conta (gratuita) no <a href="https://huggingface.co/join"><strong>Hugging Face</strong></a>.</li>
+<li>Clique no botão <strong>Duplicate this Space</strong> (abaixo / link no chat) → deixe o hardware em <strong>CPU basic (free)</strong> → <strong>Duplicate Space</strong>. A primeira <em>build</em> leva alguns minutos.</li>
+<li>Abra a <strong>sua</strong> cópia → em <em>Import or Load</em> escolha <strong>“Use a sample collection”</strong> → dataset <strong>Management</strong> → <strong>Start</strong> (ou suba o seu export).</li>
+<li><strong>Confira um indicador</strong> na interface (ex.: nº de documentos, top autores) em <em>Overview → Main Information</em>.</li>
 </ol>
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><a href="https://huggingface.co/spaces/mrcsvg/ppgcd-biblioshiny?duplicate=true"><img data-src="https://huggingface.co/datasets/huggingface/badges/resolve/main/duplicate-this-space-md.svg"></a></p>
+<figcaption>Duplicate this Space</figcaption>
+</figure>
+</div>
 </section>
 <section id="sua-vez-solução-comentada" class="slide level2 smaller">
 <h2>Sua vez — solução comentada</h2>
-<p><strong>Produto esperado:</strong> um indicador calculado no código e confirmado na interface.</p>
-<p><strong>Critérios de verificação:</strong> o número da tela (ex.: nº de documentos, top autores) bate com o do <code>summary()</code>.</p>
+<p><strong>Produto esperado:</strong> o dataset Management carregado na sua cópia do Biblioshiny e um indicador lido na interface.</p>
+<p><strong>Critérios de verificação:</strong> o número da tela (ex.: nº de documentos, top autores) corresponde ao corpus carregado.</p>
 <p><strong>Solução comentada:</strong></p>
 <ul>
-<li><code>convert2df()</code> → carrega o corpus (Etapa 1 · Input).</li>
-<li><code>biblioAnalysis()</code> + <code>summary()</code> → indicadores descritivos (Etapa 2 · Processo).</li>
-<li>Conferir na tela <strong>Overview → Main Information</strong> (Etapa 3 · Review).</li>
+<li><strong>Import or Load → “Use a sample collection” → Management → Start</strong> → carrega o corpus de exemplo (Etapa 1 · Input) — o <code>convert2df()</code> roda por baixo dos panos.</li>
+<li><strong>Overview → Main Information</strong> → indicadores descritivos (Etapa 2 · Processo / Etapa 3 · Review).</li>
+<li>Confira que o nº de documentos e o intervalo de anos batem com o corpus carregado.</li>
 <li>Use o <strong>cheat sheet</strong> como mapa de bolso para localizar cada análise.</li>
 </ul>
 </section></section>

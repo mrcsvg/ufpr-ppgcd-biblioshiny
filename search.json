@@ -39,14 +39,14 @@
     "href": "index.html#materiais",
     "title": "Bibliometria com bibliometrix & Biblioshiny",
     "section": "Materiais",
-    "text": "Materiais\n\n\n🎞️ Apresentação\nSlides (reveal.js): a jornada do bibliometrix ao Biblioshiny.\nAbrir slides →\n\n\n🧪 Atividade prática\nNotebook em R: importação do corpus, indicadores e a ponte código ↔︎ Biblioshiny.\nLer a atividade →\n\n\n📋 Cheat sheet\nFicha de referência rápida (1–2 páginas).\nAbrir cheat sheet →"
+    "text": "Materiais\n\n\n🎞️ Apresentação\nSlides (reveal.js): a jornada do bibliometrix ao Biblioshiny.\nAbrir slides →\n\n\n🧪 Atividade prática\nDuplique o Biblioshiny no Hugging Face, carregue a sample collection Management e leia os indicadores direto na interface — sem instalar nada.\nLer a atividade →\n\n\n📋 Cheat sheet\nFicha de referência rápida (1–2 páginas).\nAbrir cheat sheet →"
   },
   {
     "objectID": "index.html#rodar-a-atividade-de-forma-interativa",
     "href": "index.html#rodar-a-atividade-de-forma-interativa",
     "title": "Bibliometria com bibliometrix & Biblioshiny",
     "section": "Rodar a atividade de forma interativa",
-    "text": "Rodar a atividade de forma interativa\nEsta página é só leitura. Para executar o R (e abrir o Biblioshiny), use um destes ambientes:\n\n\n\n\n\n\nTipTrês caminhos\n\n\n\n\n\n\nPosit Cloud (recomendado): crie um projeto, rode posit-cloud/setup_posit.R uma vez e suba a atividade. A interface gráfica abre com biblioshiny().\nBinder (sem login):  — ambiente R online, primeira carga leva alguns minutos.\nGoogle Colab: abrir notebook (runtime R).\n\n\n\n\n\n\n\n\n\n\nNote\n\n\n\nO Biblioshiny (biblioshiny()) precisa de um servidor R, então roda no Posit Cloud ou no R/RStudio local — não no Colab/Binder nem nesta página.\n\n\n\n\nAria, M. & Cuccurullo, C. (2017). bibliometrix: An R-tool for comprehensive science mapping analysis. Journal of Informetrics, 11(4), 959–975 · bibliometrix.org"
+    "text": "Rodar a atividade de forma interativa\nEsta página é só leitura. Para executar o Biblioshiny, use um destes ambientes:\n\n\n\n\n\n\nTipCaminho recomendado — Hugging Face Spaces\n\n\n\n\n\n\nCrie uma conta (gratuita) no Hugging Face.\nClique no botão abaixo, deixe o hardware em CPU basic (free) e confirme em Duplicate Space.\nA primeira build leva alguns minutos (instala R, Chrome e pacotes — só uma vez por cópia). Depois é só abrir e usar.\n\n\n\n\nDuplicate this Space\n\n\nPrefere rodar localmente? Instale o R/RStudio e use library(bibliometrix); biblioshiny().\n\n\n\n\n\n\n\n\n\nNote\n\n\n\nNo Space gratuito a instância “dorme” após 48h sem uso (acorda sozinha no próximo acesso) e o armazenamento é temporário — exporte seus resultados antes de fechar.\n\n\n\n\nAria, M. & Cuccurullo, C. (2017). bibliometrix: An R-tool for comprehensive science mapping analysis. Journal of Informetrics, 11(4), 959–975 · bibliometrix.org"
   },
   {
     "objectID": "apresentacao/apresentacao_biblioshiny.html#roteiro",
@@ -81,7 +81,7 @@
     "href": "apresentacao/apresentacao_biblioshiny.html#o-modelo-saas",
     "title": "Guia Técnico de Uso — Biblioshiny",
     "section": "O modelo SAAS",
-    "text": "O modelo SAAS\nO Biblioshiny é organizado em torno do fluxo SAAS — uma reformulação do framework SALSA (Grant & Booth, 2009):\n\n\n\nEtapa\nO que faz\nSeção do artigo\n\n\n\n\nSearch\nBuscar e importar o corpus\nMétodos\n\n\nAppraisal\nAvaliar/filtrar e descrever\nMétodos / Resultados\n\n\nAnalysis\nMapear estrutura e indicadores\nResultados\n\n\nSynthesis\nInterpretar e narrar\nDiscussão\n\n\n\nCada etapa mapeia para uma seção de um artigo científico → análise transparente e reproduzível de ponta a ponta."
+    "text": "O modelo SAAS\nO Biblioshiny é organizado em torno do fluxo SAAS — uma reformulação do framework SALSA (Grant & Booth, 2009):\n\n\n\n\n\n\n\n\nEtapa\nO que faz\nSeção do artigo\n\n\n\n\nSearch\nBuscar e importar o corpus\nMétodos\n\n\nAppraisal\nAvaliar/filtrar e descrever\nMétodos / Resultados\n\n\nAnalysis\nMapear estrutura e indicadores\nResultados\n\n\nSynthesis\nInterpretar e narrar\nDiscussão\n\n\n\nCada etapa mapeia para uma seção de um artigo científico → análise transparente e reproduzível de ponta a ponta."
   },
   {
     "objectID": "apresentacao/apresentacao_biblioshiny.html#onde-se-encaixa-no-ciclo-da-pesquisa",
@@ -112,25 +112,32 @@
     "text": "Estruturas e IA\n\nClustering — agrupamento por acoplamento (coupling)\nConceptual Structure — rede de coocorrência · mapa temático · evolução temática · análise fatorial (MCA/CA)\nIntellectual Structure — rede de cocitação · historiógrafo\nSocial Structure — rede de colaboração · mapa de colaboração entre países\nConteúdo & IA — análise de texto completo (função das citações, IMRaD) · Biblio AI para interpretação"
   },
   {
+    "objectID": "apresentacao/apresentacao_biblioshiny.html#no-panorama-das-ferramentas",
+    "href": "apresentacao/apresentacao_biblioshiny.html#no-panorama-das-ferramentas",
+    "title": "Guia Técnico de Uso — Biblioshiny",
+    "section": "No panorama das ferramentas",
+    "text": "No panorama das ferramentas\n\n\nComparativo de ferramentas de science mapping:\n\nBiblioShiny e a lib Bibliometrix cobrem praticamente todas as features — redes temática/autor/referência, evolução, performance e mapa geográfico.\nVOSviewer e CiteSpace são mais especializados (poucas colunas marcadas).\nVantagem extra: o mesmo motor em código (bibliometrix) e interface (Biblioshiny)."
+  },
+  {
     "objectID": "apresentacao/apresentacao_biblioshiny.html#acesso-requisitos-e-formatos",
     "href": "apresentacao/apresentacao_biblioshiny.html#acesso-requisitos-e-formatos",
     "title": "Guia Técnico de Uso — Biblioshiny",
     "section": "Acesso, requisitos e formatos",
-    "text": "Acesso, requisitos e formatos\n\nAcesso / login — não exige conta própria: roda em R (local ou no Posit Cloud, com login institucional do projeto compartilhado).\nRequisitos técnicos — R + pacote bibliometrix; navegador atualizado (a interface abre numa aba do navegador).\nFormatos aceitos — exportações de Scopus, WoS, OpenAlex, Lens, Dimensions, PubMed, Cochrane (.bib, .txt, .csv) ou import direto por API.\nConfigurações — idioma da interface, filtros do corpus e integração de workspace no Posit Cloud."
+    "text": "Acesso, requisitos e formatos\n\nAcesso / login — roda no Hugging Face Spaces: cada um duplica a instância para a sua conta (gratuita) e abre pelo navegador, sem instalar nada.\nRequisitos técnicos — só o navegador atualizado; o Space já traz R + bibliometrix pré-instalados (também roda em R/RStudio local).\nFormatos aceitos — exportações de Scopus, WoS, OpenAlex, Lens, Dimensions, PubMed, Cochrane (.bib, .txt, .csv) ou import direto por API.\nConfigurações — idioma da interface, filtros do corpus e escolha de hardware (deixe CPU basic (free))."
   },
   {
     "objectID": "apresentacao/apresentacao_biblioshiny.html#instalação-uma-vez-por-sessão",
     "href": "apresentacao/apresentacao_biblioshiny.html#instalação-uma-vez-por-sessão",
     "title": "Guia Técnico de Uso — Biblioshiny",
     "section": "Instalação (uma vez por sessão)",
-    "text": "Instalação (uma vez por sessão)\n\n# Instalação (uma vez por sessão no Posit Cloud)\ninstall.packages(c(\"bibliometrix\", \"bibliometrixData\"))\n\nlibrary(bibliometrix)\n\n\n# Corpus de exemplo já incluído (sem precisar baixar nada)\ndata(management, package = \"bibliometrixData\")\nM &lt;- management\n\ndim(M)                       # documentos x campos\nrange(M$PY, na.rm = TRUE)    # intervalo de anos\n\n\nAqui troco para execução ao vivo no notebook. Mostrar o tamanho do corpus."
+    "text": "Instalação (uma vez por sessão)\n\n# Instalação no R local (no Hugging Face já vem pré-instalado)\ninstall.packages(c(\"bibliometrix\", \"bibliometrixData\"))\n\nlibrary(bibliometrix)\n\n\n# Corpus de exemplo já incluído (sem precisar baixar nada)\ndata(management, package = \"bibliometrixData\")\nM &lt;- management\n\ndim(M)                       # documentos x campos\nrange(M$PY, na.rm = TRUE)    # intervalo de anos\n\n\nAqui troco para execução ao vivo no notebook. Mostrar o tamanho do corpus."
   },
   {
     "objectID": "apresentacao/apresentacao_biblioshiny.html#subindo-a-interface",
     "href": "apresentacao/apresentacao_biblioshiny.html#subindo-a-interface",
     "title": "Guia Técnico de Uso — Biblioshiny",
     "section": "Subindo a interface",
-    "text": "Subindo a interface\n\nlibrary(bibliometrix)\nbiblioshiny()        # sobe a interface web no navegador\n\nNo Posit Cloud funciona igual — abre numa aba nova do navegador.\n\nPegadinha: o navegador pode bloquear o pop-up da nova aba. Libere pop-ups para posit.cloud e a interface abre.\n\n\nAqui paro de falar e ABRO o biblioshiny ao vivo. Mostro a tela inicial e o menu lateral."
+    "text": "Subindo a interface\n\nlibrary(bibliometrix)\nbiblioshiny()        # sobe a interface web no navegador\n\nNo R local o biblioshiny() abre numa aba do navegador. No Hugging Face nem isso: a sua cópia do Space já é a interface — basta abrir a URL.\n\nPegadinha do Space gratuito: ele “dorme” após 48h sem uso (acorda sozinho no próximo acesso) e o armazenamento é temporário — exporte seus resultados antes de fechar.\n\n\nAqui paro de falar e ABRO o biblioshiny ao vivo. Mostro a tela inicial e o menu lateral."
   },
   {
     "objectID": "apresentacao/apresentacao_biblioshiny.html#input-processo-review-output",
@@ -144,7 +151,7 @@
     "href": "apresentacao/apresentacao_biblioshiny.html#etapa-1-duas-portas-de-entrada",
     "title": "Guia Técnico de Uso — Biblioshiny",
     "section": "Etapa 1 · Duas portas de entrada",
-    "text": "Etapa 1 · Duas portas de entrada\n\n\na) Importar arquivo (lib padrão) Data → Import or Load — exportações de Scopus, WoS, Lens, Dimensions, PubMed, Cochrane.\n\nM &lt;- convert2df(\n  file     = \"scopus.bib\",\n  dbsource = \"scopus\",\n  format   = \"bibtex\"\n)\n\n\nb) Coletar por API Data → API → OpenAlex / Pubmed — baixa direto, sem exportar arquivo.\nMesma classe de saída (bibliometrixDB); o restante do fluxo é idêntico.\n\nUma função (convert2df) padroniza sete bases diferentes num único data frame."
+    "text": "Etapa 1 · Duas portas de entrada\n\n\na) Importar arquivo (lib padrão) Data → Import or Load — exportações de Scopus, WoS, Lens, Dimensions, PubMed, Cochrane.\nData → Import or Load → Use a sample collection → escolhe o dataset e clica Start.\n\n\n\nb) Coletar por API Data → API → OpenAlex / Pubmed — baixa direto, sem exportar arquivo.\nMesma classe de saída (bibliometrixDB); o restante do fluxo é idêntico.\n\n\n\nBusca por API: monta a query (campo, termos, intervalo de anos, filtros) e retorna a contagem — aqui 984 registros.\n\n\n\nUma função (convert2df) padroniza sete bases diferentes num único data frame."
   },
   {
     "objectID": "apresentacao/apresentacao_biblioshiny.html#import-ao-vivo-lib-padrão-ao-vivo",
@@ -158,7 +165,7 @@
     "href": "apresentacao/apresentacao_biblioshiny.html#etapa-1-buscar-no-openalex",
     "title": "Guia Técnico de Uso — Biblioshiny",
     "section": "Etapa 1 · Buscar no OpenAlex",
-    "text": "Etapa 1 · Buscar no OpenAlex\n\n\n\nBusca por API: monta a query (campo, termos, intervalo de anos, filtros) e retorna a contagem — aqui 984 registros."
+    "text": "Etapa 1 · Buscar no OpenAlex"
   },
   {
     "objectID": "apresentacao/apresentacao_biblioshiny.html#etapa-1-baixar-o-corpus",
@@ -340,14 +347,14 @@
     "href": "apresentacao/apresentacao_biblioshiny.html#sua-vez-enunciado",
     "title": "Guia Técnico de Uso — Biblioshiny",
     "section": "Sua vez — enunciado",
-    "text": "Sua vez — enunciado\n\nObjetivo: sair sabendo ler um mapa científico — e reproduzi-lo.\nContexto: um campo de pesquisa representado por seus metadados.\nBase utilizada: corpus management (ou importe o seu via convert2df).\n\nProcedimentos esperados\n\nAbra o projeto compartilhado no Posit Cloud (link no chat da turma).\nRode o notebook atividade_biblioshiny.Rmd — célula por célula.\nRode biblioshiny() e confira um indicador que você calculou no código."
+    "text": "Sua vez — enunciado\n\nObjetivo: sair sabendo ler um mapa científico — e reproduzi-lo.\nContexto: um campo de pesquisa representado por seus metadados.\nBase utilizada: sample collection Management embutida no Biblioshiny — WoS, 1985–2020 (ou importe o seu export do Scopus/WoS/Lens).\n\nProcedimentos esperados\n\nCrie uma conta (gratuita) no Hugging Face.\nClique no botão Duplicate this Space (abaixo / link no chat) → deixe o hardware em CPU basic (free) → Duplicate Space. A primeira build leva alguns minutos.\nAbra a sua cópia → em Import or Load escolha “Use a sample collection” → dataset Management → Start (ou suba o seu export).\nConfira um indicador na interface (ex.: nº de documentos, top autores) em Overview → Main Information.\n\n\n\n\nDuplicate this Space"
   },
   {
     "objectID": "apresentacao/apresentacao_biblioshiny.html#sua-vez-solução-comentada",
     "href": "apresentacao/apresentacao_biblioshiny.html#sua-vez-solução-comentada",
     "title": "Guia Técnico de Uso — Biblioshiny",
     "section": "Sua vez — solução comentada",
-    "text": "Sua vez — solução comentada\nProduto esperado: um indicador calculado no código e confirmado na interface.\nCritérios de verificação: o número da tela (ex.: nº de documentos, top autores) bate com o do summary().\nSolução comentada:\n\nconvert2df() → carrega o corpus (Etapa 1 · Input).\nbiblioAnalysis() + summary() → indicadores descritivos (Etapa 2 · Processo).\nConferir na tela Overview → Main Information (Etapa 3 · Review).\nUse o cheat sheet como mapa de bolso para localizar cada análise."
+    "text": "Sua vez — solução comentada\nProduto esperado: o dataset Management carregado na sua cópia do Biblioshiny e um indicador lido na interface.\nCritérios de verificação: o número da tela (ex.: nº de documentos, top autores) corresponde ao corpus carregado.\nSolução comentada:\n\nImport or Load → “Use a sample collection” → Management → Start → carrega o corpus de exemplo (Etapa 1 · Input) — o convert2df() roda por baixo dos panos.\nOverview → Main Information → indicadores descritivos (Etapa 2 · Processo / Etapa 3 · Review).\nConfira que o nº de documentos e o intervalo de anos batem com o corpus carregado.\nUse o cheat sheet como mapa de bolso para localizar cada análise."
   },
   {
     "objectID": "apresentacao/apresentacao_biblioshiny.html#referências-1",

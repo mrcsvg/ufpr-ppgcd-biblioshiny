@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.9.36">
+<meta name="generator" content="quarto-1.9.38">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -38,10 +38,10 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="site_libs/quarto-html/anchor.min.js"></script>
 <link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-845c23b38eaddc0f92fda52bfe77a8c8.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-15634bcf2e68342d4ad2dfa704d543f6.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-ecd733761eb7ed0dbb3d5c5d5a69b6ca.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-60d9dfa7e940c6c37b0c3b7e9d61c16d.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -162,7 +162,7 @@ ul.task-list li input[type="checkbox"] {
 </section>
 <section id="atividade-prática" class="level3 g-col-12 g-col-md-4">
 <h3 class="anchored" data-anchor-id="atividade-prática">🧪 Atividade prática</h3>
-<p>Notebook em R: importação do corpus, indicadores e a ponte código ↔︎ Biblioshiny.</p>
+<p>Duplique o Biblioshiny no Hugging Face, carregue a <em>sample collection</em> <strong>Management</strong> e leia os indicadores direto na interface — sem instalar nada.</p>
 <p><a href="./atividade/atividade_biblioshiny.html">Ler a atividade →</a></p>
 </section>
 <section id="cheat-sheet" class="level3 g-col-12 g-col-md-4">
@@ -174,24 +174,31 @@ ul.task-list li input[type="checkbox"] {
 </section>
 <section id="rodar-a-atividade-de-forma-interativa" class="level2">
 <h2 class="anchored" data-anchor-id="rodar-a-atividade-de-forma-interativa">Rodar a atividade de forma interativa</h2>
-<p>Esta página é só <strong>leitura</strong>. Para <strong>executar</strong> o R (e abrir o Biblioshiny), use um destes ambientes:</p>
+<p>Esta página é só <strong>leitura</strong>. Para <strong>executar</strong> o Biblioshiny, use um destes ambientes:</p>
 <div class="callout callout-style-default callout-tip callout-titled">
 <div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-1-contents" aria-controls="callout-1" aria-expanded="true" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-<span class="screen-reader-only">Tip</span>Três caminhos
+<span class="screen-reader-only">Tip</span>Caminho recomendado — Hugging Face Spaces
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
 <div id="callout-1" class="callout-1-contents callout-collapse collapse show">
 <div class="callout-body-container callout-body">
-<ul>
-<li><strong>Posit Cloud (recomendado):</strong> crie um projeto, rode <code>posit-cloud/setup_posit.R</code> uma vez e suba a atividade. A interface gráfica abre com <code>biblioshiny()</code>.</li>
-<li><strong>Binder (sem login):</strong> <a href="https://mybinder.org/v2/gh/mrcsvg/ufpr-ppgcd-biblioshiny/HEAD?labpath=atividade%2Fatividade_biblioshiny.ipynb"><img src="https://mybinder.org/badge_logo.svg" class="img-fluid" alt="Binder"></a> — ambiente R online, primeira carga leva alguns minutos.</li>
-<li><strong>Google Colab:</strong> <a href="https://colab.research.google.com/github/mrcsvg/ufpr-ppgcd-biblioshiny/blob/main/atividade/atividade_biblioshiny_colab.ipynb">abrir notebook (runtime R)</a>.</li>
-</ul>
+<ol type="1">
+<li>Crie uma conta (gratuita) no <a href="https://huggingface.co/join">Hugging Face</a>.</li>
+<li>Clique no botão abaixo, deixe o hardware em <strong>CPU basic (free)</strong> e confirme em <em>Duplicate Space</em>.</li>
+<li>A primeira <em>build</em> leva alguns minutos (instala R, Chrome e pacotes — só uma vez por cópia). Depois é só abrir e usar.</li>
+</ol>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="https://huggingface.co/spaces/mrcsvg/ppgcd-biblioshiny?duplicate=true"><img src="https://huggingface.co/datasets/huggingface/badges/resolve/main/duplicate-this-space-md.svg" class="img-fluid figure-img"></a></p>
+<figcaption>Duplicate this Space</figcaption>
+</figure>
+</div>
+<p>Prefere rodar localmente? Instale o R/RStudio e use <code>library(bibliometrix); biblioshiny()</code>.</p>
 </div>
 </div>
 </div>
@@ -205,7 +212,7 @@ Note
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>O <strong>Biblioshiny</strong> (<code>biblioshiny()</code>) precisa de um servidor R, então roda no <strong>Posit Cloud</strong> ou no <strong>R/RStudio local</strong> — não no Colab/Binder nem nesta página.</p>
+<p>No Space gratuito a instância <strong>“dorme” após 48h</strong> sem uso (acorda sozinha no próximo acesso) e o armazenamento é <strong>temporário</strong> — exporte seus resultados antes de fechar.</p>
 </div>
 </div>
 <hr>
