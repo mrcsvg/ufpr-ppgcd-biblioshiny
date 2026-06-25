@@ -119,20 +119,6 @@
     "text": "Import ao vivo — lib padrão ao vivo\nData → Import or Load → Use a sample collection → escolhe o dataset e clica Start."
   },
   {
-    "objectID": "apresentacao/apresentacao_biblioshiny.html#etapa-1-buscar-no-openalex",
-    "href": "apresentacao/apresentacao_biblioshiny.html#etapa-1-buscar-no-openalex",
-    "title": "Guia Técnico de Uso — Biblioshiny",
-    "section": "Etapa 1 · Buscar no OpenAlex",
-    "text": "Etapa 1 · Buscar no OpenAlex"
-  },
-  {
-    "objectID": "apresentacao/apresentacao_biblioshiny.html#etapa-1-baixar-o-corpus",
-    "href": "apresentacao/apresentacao_biblioshiny.html#etapa-1-baixar-o-corpus",
-    "title": "Guia Técnico de Uso — Biblioshiny",
-    "section": "Etapa 1 · Baixar o corpus",
-    "text": "Etapa 1 · Baixar o corpus\n\n\n\nO Biblioshiny baixa e converte os registros para bibliometrixDB — sem sair da interface."
-  },
-  {
     "objectID": "apresentacao/apresentacao_biblioshiny.html#etapa-2-limpar-completude-dos-metadados",
     "href": "apresentacao/apresentacao_biblioshiny.html#etapa-2-limpar-completude-dos-metadados",
     "title": "Guia Técnico de Uso — Biblioshiny",
