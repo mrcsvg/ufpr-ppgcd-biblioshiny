@@ -166,28 +166,29 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#apresentação-da-atividade" id="toc-apresentação-da-atividade" class="nav-link active" data-scroll-target="#apresentação-da-atividade">Apresentação da atividade</a></li>
-  <li><a href="#pré-requisitos-e-instalação" id="toc-pré-requisitos-e-instalação" class="nav-link" data-scroll-target="#pré-requisitos-e-instalação">Pré-requisitos e instalação</a></li>
-  <li><a href="#conceito-biblioshiny-vs-bibliometrix" id="toc-conceito-biblioshiny-vs-bibliometrix" class="nav-link" data-scroll-target="#conceito-biblioshiny-vs-bibliometrix">Conceito: Biblioshiny <em>vs</em> bibliometrix</a></li>
-  <li><a href="#importação-do-corpus-de-dados" id="toc-importação-do-corpus-de-dados" class="nav-link" data-scroll-target="#importação-do-corpus-de-dados">Importação do corpus de dados</a>
+  <li><a href="#como-funciona-esta-atividade" id="toc-como-funciona-esta-atividade" class="nav-link active" data-scroll-target="#como-funciona-esta-atividade">Como funciona esta atividade</a>
   <ul class="collapse">
-  <li><a href="#corpus-de-exemplo-use-agora" id="toc-corpus-de-exemplo-use-agora" class="nav-link" data-scroll-target="#corpus-de-exemplo-use-agora">Corpus de exemplo (use agora)</a></li>
-  <li><a href="#como-importar-o-seu-corpus-modelo-para-o-trabalho-final" id="toc-como-importar-o-seu-corpus-modelo-para-o-trabalho-final" class="nav-link" data-scroll-target="#como-importar-o-seu-corpus-modelo-para-o-trabalho-final">Como importar o SEU corpus (modelo para o trabalho final)</a></li>
+  <li><a href="#a-entrega-7-perguntas-1-por-grupo" id="toc-a-entrega-7-perguntas-1-por-grupo" class="nav-link" data-scroll-target="#a-entrega-7-perguntas-1-por-grupo">A entrega: 7 perguntas, 1 por grupo</a></li>
   </ul></li>
+  <li><a href="#trilha-geral-biblioshiny-no-hugging-face" id="toc-trilha-geral-biblioshiny-no-hugging-face" class="nav-link" data-scroll-target="#trilha-geral-biblioshiny-no-hugging-face">🟢 Trilha Geral — Biblioshiny no Hugging Face</a></li>
+  <li><a href="#trilha-dos-bravos-for-the-braves-and-true" id="toc-trilha-dos-bravos-for-the-braves-and-true" class="nav-link" data-scroll-target="#trilha-dos-bravos-for-the-braves-and-true">🔴 Trilha dos Bravos — <em>For the Braves and True</em></a>
+  <ul class="collapse">
+  <li><a href="#instalação-uma-única-vez" id="toc-instalação-uma-única-vez" class="nav-link" data-scroll-target="#instalação-uma-única-vez">Instalação (uma única vez)</a></li>
+  <li><a href="#carregar-o-mesmo-corpus-de-exemplo" id="toc-carregar-o-mesmo-corpus-de-exemplo" class="nav-link" data-scroll-target="#carregar-o-mesmo-corpus-de-exemplo">Carregar o mesmo corpus de exemplo</a></li>
   <li><a href="#análise-descritiva-a-base-de-tudo" id="toc-análise-descritiva-a-base-de-tudo" class="nav-link" data-scroll-target="#análise-descritiva-a-base-de-tudo">Análise descritiva (a base de tudo)</a></li>
-  <li><a href="#indicador-1-produção-científica-anual-evolução-temporal" id="toc-indicador-1-produção-científica-anual-evolução-temporal" class="nav-link" data-scroll-target="#indicador-1-produção-científica-anual-evolução-temporal">Indicador 1 — Produção científica anual (evolução temporal)</a></li>
-  <li><a href="#indicador-2-fontesperiódicos-e-lei-de-bradford" id="toc-indicador-2-fontesperiódicos-e-lei-de-bradford" class="nav-link" data-scroll-target="#indicador-2-fontesperiódicos-e-lei-de-bradford">Indicador 2 — Fontes/periódicos e Lei de Bradford</a></li>
-  <li><a href="#indicador-3-autores-produtividade-e-lei-de-lotka" id="toc-indicador-3-autores-produtividade-e-lei-de-lotka" class="nav-link" data-scroll-target="#indicador-3-autores-produtividade-e-lei-de-lotka">Indicador 3 — Autores: produtividade e Lei de Lotka</a>
-  <ul class="collapse">
-  <li><a href="#produção-dos-principais-autores-ao-longo-do-tempo" id="toc-produção-dos-principais-autores-ao-longo-do-tempo" class="nav-link" data-scroll-target="#produção-dos-principais-autores-ao-longo-do-tempo">Produção dos principais autores ao longo do tempo</a></li>
   </ul></li>
-  <li><a href="#indicador-4-impacto-índices-h-g-e-m" id="toc-indicador-4-impacto-índices-h-g-e-m" class="nav-link" data-scroll-target="#indicador-4-impacto-índices-h-g-e-m">Indicador 4 — Impacto: índices H, G e M</a></li>
-  <li><a href="#indicador-5-documentos-e-referências-mais-citados" id="toc-indicador-5-documentos-e-referências-mais-citados" class="nav-link" data-scroll-target="#indicador-5-documentos-e-referências-mais-citados">Indicador 5 — Documentos e referências mais citados</a></li>
-  <li><a href="#tabela-síntese-de-indicadores-entregável-principal" id="toc-tabela-síntese-de-indicadores-entregável-principal" class="nav-link" data-scroll-target="#tabela-síntese-de-indicadores-entregável-principal">Tabela-síntese de indicadores (entregável principal)</a></li>
-  <li><a href="#bônus-visão-integrada-sankey" id="toc-bônus-visão-integrada-sankey" class="nav-link" data-scroll-target="#bônus-visão-integrada-sankey">Bônus — Visão integrada (Sankey)</a></li>
-  <li><a href="#reproduzindo-tudo-no-biblioshiny" id="toc-reproduzindo-tudo-no-biblioshiny" class="nav-link" data-scroll-target="#reproduzindo-tudo-no-biblioshiny">Reproduzindo tudo no Biblioshiny</a></li>
+  <li><a href="#as-7-perguntas" id="toc-as-7-perguntas" class="nav-link" data-scroll-target="#as-7-perguntas">As 7 perguntas</a>
+  <ul class="collapse">
+  <li><a href="#pergunta-1-tamanho-e-período-do-corpus" id="toc-pergunta-1-tamanho-e-período-do-corpus" class="nav-link" data-scroll-target="#pergunta-1-tamanho-e-período-do-corpus">Pergunta 1 — Tamanho e período do corpus</a></li>
+  <li><a href="#pergunta-2-evolução-temporal-da-produção" id="toc-pergunta-2-evolução-temporal-da-produção" class="nav-link" data-scroll-target="#pergunta-2-evolução-temporal-da-produção">Pergunta 2 — Evolução temporal da produção</a></li>
+  <li><a href="#pergunta-3-núcleo-de-periódicos-lei-de-bradford" id="toc-pergunta-3-núcleo-de-periódicos-lei-de-bradford" class="nav-link" data-scroll-target="#pergunta-3-núcleo-de-periódicos-lei-de-bradford">Pergunta 3 — Núcleo de periódicos (Lei de Bradford)</a></li>
+  <li><a href="#pergunta-4-autores-mais-produtivos" id="toc-pergunta-4-autores-mais-produtivos" class="nav-link" data-scroll-target="#pergunta-4-autores-mais-produtivos">Pergunta 4 — Autores mais produtivos</a></li>
+  <li><a href="#pergunta-5-impacto-dos-autores-h-index" id="toc-pergunta-5-impacto-dos-autores-h-index" class="nav-link" data-scroll-target="#pergunta-5-impacto-dos-autores-h-index">Pergunta 5 — Impacto dos autores (h-index)</a></li>
+  <li><a href="#pergunta-6-documento-mais-citado" id="toc-pergunta-6-documento-mais-citado" class="nav-link" data-scroll-target="#pergunta-6-documento-mais-citado">Pergunta 6 — Documento mais citado</a></li>
+  <li><a href="#pergunta-7-temas-palavras-chave-mais-frequentes" id="toc-pergunta-7-temas-palavras-chave-mais-frequentes" class="nav-link" data-scroll-target="#pergunta-7-temas-palavras-chave-mais-frequentes">Pergunta 7 — Temas: palavras-chave mais frequentes</a></li>
+  </ul></li>
+  <li><a href="#mapa-rápido-biblioshiny-bibliometrix" id="toc-mapa-rápido-biblioshiny-bibliometrix" class="nav-link" data-scroll-target="#mapa-rápido-biblioshiny-bibliometrix">Mapa rápido: Biblioshiny ⇄ bibliometrix</a></li>
   <li><a href="#checklist-de-entrega" id="toc-checklist-de-entrega" class="nav-link" data-scroll-target="#checklist-de-entrega">Checklist de entrega</a></li>
-  <li><a href="#desafios-finais-para-discussão-da-equipe" id="toc-desafios-finais-para-discussão-da-equipe" class="nav-link" data-scroll-target="#desafios-finais-para-discussão-da-equipe">Desafios finais (para discussão da equipe)</a></li>
   </ul>
 </nav>
     </div>
@@ -226,97 +227,66 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </header>
 
 
-<section id="apresentação-da-atividade" class="level1">
-<h1>Apresentação da atividade</h1>
+<section id="como-funciona-esta-atividade" class="level1">
+<h1>Como funciona esta atividade</h1>
 <blockquote class="blockquote">
-<p><strong>Tema da Equipe 7:</strong> Bibliometria analítica e indicadores científicos. <strong>Ferramenta:</strong> <code>bibliometrix</code> (pacote R) + <strong>Biblioshiny</strong> (interface web do pacote).</p>
+<p><strong>Tema da Equipe 7:</strong> Bibliometria analítica e indicadores científicos. <strong>Ferramenta:</strong> <code>bibliometrix</code> (pacote R) + <strong>Biblioshiny</strong> (a interface web do mesmo pacote).</p>
 </blockquote>
-<p>O <code>bibliometrix</code> é um pacote R para <em>science mapping</em> (mapeamento científico). O <strong>Biblioshiny</strong> é a interface gráfica (Shiny) que roda <strong>por cima</strong> do mesmo pacote: tudo o que você faz clicando no Biblioshiny corresponde a uma função do <code>bibliometrix</code>. Nesta atividade você vai <strong>executar essas funções no código</strong> e, ao final, vai aprender a <strong>reproduzir cada passo no Biblioshiny</strong>.</p>
-<p><strong>O que você vai entregar (ver checklist no fim):</strong></p>
-<ol type="1">
-<li>Este notebook executado (<code>.Rmd</code> + versão em PDF).</li>
-<li>Uma tabela-síntese de indicadores do seu corpus.</li>
-<li>Pelo menos um gráfico de evolução temporal e um de produtividade de autores.</li>
-</ol>
+<p>Tudo o que se faz clicando no <strong>Biblioshiny</strong> corresponde a uma função do <code>bibliometrix</code>. Por isso você pode fazer a atividade por <strong>dois caminhos</strong> — escolha o que preferir; os dois respondem <strong>as mesmas 7 perguntas</strong> sobre o <strong>mesmo corpus de exemplo</strong> (dataset <strong>Management</strong>).</p>
+<ul>
+<li>🟢 <strong>Trilha Geral (recomendada) — Biblioshiny no Hugging Face.</strong> Sem instalar nada: você duplica a nossa instância, abre no navegador e responde clicando.</li>
+<li>🔴 <strong>Trilha dos Bravos — <em>For the Braves and True</em>.</strong> Para quem quer ver o motor por baixo: instala o R + RStudio e roda o <code>bibliometrix</code> no código.</li>
+</ul>
+<section id="a-entrega-7-perguntas-1-por-grupo" class="level2">
+<h2 class="anchored" data-anchor-id="a-entrega-7-perguntas-1-por-grupo">A entrega: 7 perguntas, 1 por grupo</h2>
+<ul>
+<li>São <strong>7 perguntas</strong> (na seção <a href="#as-7-perguntas">As 7 perguntas</a>). Cada grupo fica responsável por <strong>uma</strong>.</li>
+<li>Responda usando o Biblioshiny (ou o código), <strong>tire um screenshot</strong> da tela que mostra a resposta e escreva uma frase explicando.</li>
+<li>Entre na <strong>apresentação compartilhada do Google</strong> e cole o screenshot <strong>no slide do seu grupo</strong>: 👉 <strong><a href="https://docs.google.com/presentation/d/1cXzXMhqq6SU0ZqYRCg0bC17dC7_NzdqU5nSl0a04hS8/edit?usp=sharing">Apresentação compartilhada (Google Slides)</a></strong></li>
+</ul>
+<blockquote class="blockquote">
+<p>Esta página renderizada já mostra as saídas do código — use como <strong>gabarito</strong> para conferir se a sua resposta no Biblioshiny bate.</p>
+</blockquote>
 <hr>
 </section>
-<section id="pré-requisitos-e-instalação" class="level1">
-<h1>Pré-requisitos e instalação</h1>
-<p>Rode o bloco abaixo <strong>uma única vez</strong> para instalar os pacotes. Depois pode comentá-lo novamente (mantenha o <code>#</code>) para não reinstalar a cada execução.</p>
+</section>
+<section id="trilha-geral-biblioshiny-no-hugging-face" class="level1">
+<h1>🟢 Trilha Geral — Biblioshiny no Hugging Face</h1>
+<p>Sem instalar nada, tudo no navegador.</p>
+<ol type="1">
+<li><p>Crie uma conta (gratuita) no <strong><a href="https://huggingface.co/join">Hugging Face</a></strong>.</p></li>
+<li><p>Abra a <strong>nossa</strong> instância e clique em <strong>Duplicate this Space</strong> (botão abaixo) → deixe o hardware em <strong>CPU basic (free)</strong> → <strong>Duplicate Space</strong>. A primeira <em>build</em> leva alguns minutos (acontece <strong>uma vez só</strong> por cópia).</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="https://huggingface.co/spaces/mrcsvg/ppgcd-biblioshiny?duplicate=true"><img src="https://huggingface.co/datasets/huggingface/badges/resolve/main/duplicate-this-space-md.svg" class="img-fluid figure-img"></a></p>
+<figcaption>Duplicate this Space</figcaption>
+</figure>
+</div></li>
+<li><p>Abra a <strong>sua</strong> cópia. Na tela <strong>Import or Load</strong>, escolha <strong>“Use a sample collection”</strong> → dataset <strong>Management</strong> → <strong>Start</strong>.</p></li>
+<li><p>Navegue pelos menus para responder a pergunta do seu grupo (o mapa de cada pergunta está em <a href="#as-7-perguntas">As 7 perguntas</a>).</p></li>
+<li><p><strong>Screenshot</strong> da tela com a resposta → cole no slide do grupo.</p></li>
+</ol>
+<blockquote class="blockquote">
+<p><strong>Tier gratuito:</strong> o Space “dorme” após 48h sem uso (acorda sozinho no próximo acesso) e o armazenamento é temporário — exporte o que quiser guardar.</p>
+</blockquote>
+<hr>
+</section>
+<section id="trilha-dos-bravos-for-the-braves-and-true" class="level1">
+<h1>🔴 Trilha dos Bravos — <em>For the Braves and True</em></h1>
+<p>Para quem quer rodar o <code>bibliometrix</code> no código. Instale o <strong>R</strong> e o <strong>RStudio</strong> e siga abaixo.</p>
+<section id="instalação-uma-única-vez" class="level2">
+<h2 class="anchored" data-anchor-id="instalação-uma-única-vez">Instalação (uma única vez)</h2>
 <div class="cell" data-layout-align="center">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Pacote principal e dados de exemplo</span></span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">"bibliometrix"</span>)      <span class="co"># funções de análise</span></span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">"bibliometrixData"</span>)  <span class="co"># bases de dados de exemplo</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">"bibliometrix"</span>)      <span class="co"># funções de análise</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">"bibliometrixData"</span>)  <span class="co"># bases de exemplo (inclui "Management")</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
-<p>Carregue os pacotes:</p>
 <div class="cell" data-layout-align="center">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(bibliometrix)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
-<blockquote class="blockquote">
-<p><strong>Dica:</strong> para abrir a interface gráfica a qualquer momento, basta rodar <code>biblioshiny()</code> no console. Não rode dentro do notebook — ela abre no navegador.</p>
-</blockquote>
-<hr>
 </section>
-<section id="conceito-biblioshiny-vs-bibliometrix" class="level1">
-<h1>Conceito: Biblioshiny <em>vs</em> bibliometrix</h1>
-<table class="caption-top table">
-<colgroup>
-<col style="width: 50%">
-<col style="width: 50%">
-</colgroup>
-<thead>
-<tr class="header">
-<th>No Biblioshiny (clicando)</th>
-<th>No bibliometrix (no código)</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>Importar arquivo</td>
-<td><code>convert2df()</code></td>
-</tr>
-<tr class="even">
-<td>Main Information</td>
-<td><code>biblioAnalysis()</code> + <code>summary()</code></td>
-</tr>
-<tr class="odd">
-<td>Annual Scientific Production</td>
-<td><code>summary()$AnnualProduction</code> / <code>plot()</code></td>
-</tr>
-<tr class="even">
-<td>Most Relevant Sources / Bradford</td>
-<td><code>bradford()</code></td>
-</tr>
-<tr class="odd">
-<td>Authors → Lotka</td>
-<td><code>lotka()</code></td>
-</tr>
-<tr class="even">
-<td>Authors → Author Impact (H/G/M)</td>
-<td><code>Hindex()</code></td>
-</tr>
-<tr class="odd">
-<td>Authors’ Production over Time</td>
-<td><code>authorProdOverTime()</code></td>
-</tr>
-<tr class="even">
-<td>Most Cited Documents</td>
-<td><code>citations()</code></td>
-</tr>
-<tr class="odd">
-<td>Three-Field Plot (Sankey)</td>
-<td><code>threeFieldsPlot()</code></td>
-</tr>
-</tbody>
-</table>
-<p>A lição central: <strong>o Biblioshiny é didático e rápido; o código é reprodutível e auditável.</strong> Quem domina as funções entende o que cada tela está calculando.</p>
-<hr>
-</section>
-<section id="importação-do-corpus-de-dados" class="level1">
-<h1>Importação do corpus de dados</h1>
-<p>Nesta atividade usaremos um corpus de exemplo já incluído no pacote para que todos consigam executar sem depender de download. <strong>No seu trabalho final, você substituirá este passo pela importação dos seus próprios arquivos</strong> (exportados do Scopus, Web of Science, OpenAlex, etc. — conexão com as Equipes 1 e 2).</p>
-<section id="corpus-de-exemplo-use-agora" class="level2">
-<h2 class="anchored" data-anchor-id="corpus-de-exemplo-use-agora">Corpus de exemplo (use agora)</h2>
+<section id="carregar-o-mesmo-corpus-de-exemplo" class="level2">
+<h2 class="anchored" data-anchor-id="carregar-o-mesmo-corpus-de-exemplo">Carregar o mesmo corpus de exemplo</h2>
+<p>É exatamente a <em>sample collection</em> <strong>Management</strong> que a Trilha Geral carrega pela interface:</p>
 <div class="cell" data-layout-align="center">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">data</span>(management, <span class="at">package =</span> <span class="st">"bibliometrixData"</span>)</span>
 <span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>M <span class="ot">&lt;-</span> management</span>
@@ -326,38 +296,28 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 </section>
-<section id="como-importar-o-seu-corpus-modelo-para-o-trabalho-final" class="level2">
-<h2 class="anchored" data-anchor-id="como-importar-o-seu-corpus-modelo-para-o-trabalho-final">Como importar o SEU corpus (modelo para o trabalho final)</h2>
+<section id="análise-descritiva-a-base-de-tudo" class="level2">
+<h2 class="anchored" data-anchor-id="análise-descritiva-a-base-de-tudo">Análise descritiva (a base de tudo)</h2>
+<p><code>biblioAnalysis()</code> calcula as medidas; <code>summary()</code> as organiza. Os objetos <code>results</code> e <code>S</code> abaixo alimentam quase todas as 7 respostas.</p>
 <div class="cell" data-layout-align="center">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Exemplo: arquivo BibTeX exportado do Scopus salvo na mesma pasta do notebook</span></span>
-<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>M <span class="ot">&lt;-</span> <span class="fu">convert2df</span>(</span>
-<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>  <span class="at">file     =</span> <span class="st">"scopus.bib"</span>,</span>
-<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a>  <span class="at">dbsource =</span> <span class="st">"scopus"</span>,     <span class="co"># "wos", "scopus", "openalex", "dimensions", "lens", "pubmed"</span></span>
-<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a>  <span class="at">format   =</span> <span class="st">"bibtex"</span>      <span class="co"># "bibtex", "plaintext", "csv", "api"</span></span>
-<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>results <span class="ot">&lt;-</span> <span class="fu">biblioAnalysis</span>(M, <span class="at">sep =</span> <span class="st">";"</span>)</span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>S <span class="ot">&lt;-</span> <span class="fu">summary</span>(results, <span class="at">k =</span> <span class="dv">10</span>, <span class="at">pause =</span> <span class="cn">FALSE</span>, <span class="at">verbose =</span> <span class="cn">FALSE</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <blockquote class="blockquote">
-<p><strong>🧪 Sua vez 1:</strong> confirme o tamanho do corpus com <code>dim(M)</code> e descubra o intervalo de anos com <code>range(M$PY, na.rm = TRUE)</code>.</p>
+<p><strong>Dica:</strong> rodar <code>biblioshiny()</code> no console abre <strong>localmente</strong> a mesma interface da Trilha Geral.</p>
 </blockquote>
-<div class="cell" data-layout-align="center">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="fu">range</span>(M<span class="sc">$</span>PY, <span class="at">na.rm =</span> <span class="cn">TRUE</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>[1] 1985 2020</code></pre>
-</div>
-</div>
 <hr>
 </section>
 </section>
-<section id="análise-descritiva-a-base-de-tudo" class="level1">
-<h1>Análise descritiva (a base de tudo)</h1>
-<p><code>biblioAnalysis()</code> calcula as principais medidas; <code>summary()</code> as exibe.</p>
+<section id="as-7-perguntas" class="level1">
+<h1>As 7 perguntas</h1>
+<p>Para cada pergunta: <strong>onde clicar no Biblioshiny</strong> (Trilha Geral) e o <strong>código equivalente</strong> (Trilha dos Bravos). Tire o screenshot da tela/saída e cole no slide do seu grupo.</p>
+<section id="pergunta-1-tamanho-e-período-do-corpus" class="level2">
+<h2 class="anchored" data-anchor-id="pergunta-1-tamanho-e-período-do-corpus">Pergunta 1 — Tamanho e período do corpus</h2>
+<p><strong>Pergunta:</strong> Quantos <strong>documentos</strong>, <strong>autores</strong> e <strong>fontes</strong> o corpus tem? Que <strong>período</strong> ele cobre?</p>
+<p><strong>No Biblioshiny:</strong> <em>Overview → Main Information.</em></p>
 <div class="cell" data-layout-align="center">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>results <span class="ot">&lt;-</span> <span class="fu">biblioAnalysis</span>(M, <span class="at">sep =</span> <span class="st">";"</span>)</span>
-<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>S <span class="ot">&lt;-</span> <span class="fu">summary</span>(results, <span class="at">k =</span> <span class="dv">10</span>, <span class="at">pause =</span> <span class="cn">FALSE</span>, <span class="at">verbose =</span> <span class="cn">FALSE</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-</div>
-<p>O objeto <code>S</code> guarda tabelas que você pode reutilizar:</p>
-<div class="cell" data-layout-align="center">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>S<span class="sc">$</span>MainInformationDF   <span class="co"># Documentos, autores, período, crescimento anual, citações médias...</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>S<span class="sc">$</span>MainInformationDF   <span class="co"># Documentos, autores, fontes, período, crescimento, citações...</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>                          Description   Results
 1         MAIN INFORMATION ABOUT DATA          
@@ -389,55 +349,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 27                                             </code></pre>
 </div>
 </div>
-<blockquote class="blockquote">
-<p><strong>🧪 Sua vez 2:</strong> localize na tabela acima o <strong>Annual Growth Rate</strong> e a <strong>média de citações por documento</strong>. Anote os dois valores — são indicadores centrais do seu tema.</p>
-</blockquote>
-<hr>
 </section>
-<section id="indicador-1-produção-científica-anual-evolução-temporal" class="level1">
-<h1>Indicador 1 — Produção científica anual (evolução temporal)</h1>
-<p>A evolução temporal mostra a maturidade e o ritmo de crescimento do campo.</p>
+<section id="pergunta-2-evolução-temporal-da-produção" class="level2">
+<h2 class="anchored" data-anchor-id="pergunta-2-evolução-temporal-da-produção">Pergunta 2 — Evolução temporal da produção</h2>
+<p><strong>Pergunta:</strong> Em que <strong>ano</strong> a produção foi maior? O campo está em <strong>ascensão</strong>, <strong>maturidade</strong> ou <strong>declínio</strong>?</p>
+<p><strong>No Biblioshiny:</strong> <em>Overview → Annual Scientific Production.</em></p>
 <div class="cell" data-layout-align="center">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(results, <span class="at">k =</span> <span class="dv">10</span>, <span class="at">pause =</span> <span class="cn">FALSE</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<div class="cell-output-display">
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="atividade_biblioshiny_files/figure-html/producao-anual-1.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="768"></p>
-</figure>
-</div>
-</div>
-<div class="cell-output-display">
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="atividade_biblioshiny_files/figure-html/producao-anual-2.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="768"></p>
-</figure>
-</div>
-</div>
-<div class="cell-output-display">
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="atividade_biblioshiny_files/figure-html/producao-anual-3.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="768"></p>
-</figure>
-</div>
-</div>
-<div class="cell-output-display">
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="atividade_biblioshiny_files/figure-html/producao-anual-4.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="768"></p>
-</figure>
-</div>
-</div>
-<div class="cell-output-display">
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="atividade_biblioshiny_files/figure-html/producao-anual-5.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="768"></p>
-</figure>
-</div>
-</div>
-</div>
-<p>Para obter só a tabela ano a ano (útil para a tabela-síntese):</p>
-<div class="cell" data-layout-align="center">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb12"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a>S<span class="sc">$</span>AnnualProduction</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>S<span class="sc">$</span>AnnualProduction    <span class="co"># nº de artigos por ano</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>   Year    Articles
 1     1985        2
@@ -475,17 +393,52 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 33    2020      199</code></pre>
 </div>
 </div>
-<blockquote class="blockquote">
-<p><strong>🧪 Sua vez 3:</strong> identifique o ano de maior produção e descreva em uma frase o padrão de crescimento (linear, exponencial, com queda recente?).</p>
-</blockquote>
-<hr>
-</section>
-<section id="indicador-2-fontesperiódicos-e-lei-de-bradford" class="level1">
-<h1>Indicador 2 — Fontes/periódicos e Lei de Bradford</h1>
-<p>A <strong>Lei de Bradford</strong> identifica o “núcleo” de periódicos que concentra a maior parte dos artigos relevantes — essencial para focar leituras e submissões.</p>
 <div class="cell" data-layout-align="center">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb14"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a>BR <span class="ot">&lt;-</span> <span class="fu">bradford</span>(M)</span>
-<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(BR<span class="sc">$</span>table, <span class="dv">10</span>)   <span class="co"># zona "Core" = periódicos do núcleo</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb10"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(results, <span class="at">k =</span> <span class="dv">10</span>, <span class="at">pause =</span> <span class="cn">FALSE</span>)   <span class="co"># entre os gráficos, a produção anual</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="atividade_biblioshiny_files/figure-html/p2-grafico-1.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="768"></p>
+</figure>
+</div>
+</div>
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="atividade_biblioshiny_files/figure-html/p2-grafico-2.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="768"></p>
+</figure>
+</div>
+</div>
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="atividade_biblioshiny_files/figure-html/p2-grafico-3.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="768"></p>
+</figure>
+</div>
+</div>
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="atividade_biblioshiny_files/figure-html/p2-grafico-4.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="768"></p>
+</figure>
+</div>
+</div>
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="atividade_biblioshiny_files/figure-html/p2-grafico-5.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="768"></p>
+</figure>
+</div>
+</div>
+</div>
+</section>
+<section id="pergunta-3-núcleo-de-periódicos-lei-de-bradford" class="level2">
+<h2 class="anchored" data-anchor-id="pergunta-3-núcleo-de-periódicos-lei-de-bradford">Pergunta 3 — Núcleo de periódicos (Lei de Bradford)</h2>
+<p><strong>Pergunta:</strong> Quais periódicos formam a <strong>zona “Core”</strong> (o núcleo que concentra a maior parte dos artigos)? Liste os <strong>3 principais</strong>.</p>
+<p><strong>No Biblioshiny:</strong> <em>Sources → Bradford’s Law</em> (ou <em>Most Relevant Sources</em>).</p>
+<div class="cell" data-layout-align="center">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>BR <span class="ot">&lt;-</span> <span class="fu">bradford</span>(M)</span>
+<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(BR<span class="sc">$</span>table, <span class="dv">10</span>)    <span class="co"># zona "Core" = periódicos do núcleo</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>                                                              SO Rank Freq cumFreq   Zone
 1                    TECHNOLOGICAL FORECASTING AND SOCIAL CHANGE    1   97      97 Zone 1
@@ -500,90 +453,28 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 10                                              R &amp; D MANAGEMENT   10   10     325 Zone 2</code></pre>
 </div>
 </div>
-<blockquote class="blockquote">
-<p><strong>🧪 Sua vez 4:</strong> quantos periódicos formam a <strong>zona Core</strong> (núcleo) do seu corpus? Liste os 3 principais.</p>
-</blockquote>
-<hr>
 </section>
-<section id="indicador-3-autores-produtividade-e-lei-de-lotka" class="level1">
-<h1>Indicador 3 — Autores: produtividade e Lei de Lotka</h1>
-<p>A <strong>Lei de Lotka</strong> descreve a distribuição da produtividade: poucos autores publicam muito, muitos publicam pouco (lei do inverso do quadrado).</p>
+<section id="pergunta-4-autores-mais-produtivos" class="level2">
+<h2 class="anchored" data-anchor-id="pergunta-4-autores-mais-produtivos">Pergunta 4 — Autores mais produtivos</h2>
+<p><strong>Pergunta:</strong> Quais são os <strong>3 autores</strong> com mais artigos no corpus?</p>
+<p><strong>No Biblioshiny:</strong> <em>Authors → Most Relevant Authors.</em></p>
 <div class="cell" data-layout-align="center">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb16"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="co"># A assinatura de lotka() mudou entre versões do bibliometrix:</span></span>
-<span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a><span class="co">#   versão atual (CRAN 5.x): lotka(M)        -&gt; M = data frame, classe "bibliometrixDB"</span></span>
-<span id="cb16-3"><a href="#cb16-3" aria-hidden="true" tabindex="-1"></a><span class="co">#   versões antigas:         lotka(results)  -&gt; saída de biblioAnalysis, classe "bibliometrix"</span></span>
-<span id="cb16-4"><a href="#cb16-4" aria-hidden="true" tabindex="-1"></a><span class="co"># O bloco abaixo escolhe automaticamente a forma que funciona:</span></span>
-<span id="cb16-5"><a href="#cb16-5" aria-hidden="true" tabindex="-1"></a><span class="fu">invisible</span>(<span class="fu">capture.output</span>(L <span class="ot">&lt;-</span> <span class="fu">lotka</span>(M)))    <span class="co"># tenta a forma atual</span></span>
-<span id="cb16-6"><a href="#cb16-6" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> (<span class="sc">!</span><span class="fu">is.list</span>(L)) L <span class="ot">&lt;-</span> <span class="fu">lotka</span>(results)        <span class="co"># se vier NA, usa a forma antiga</span></span>
-<span id="cb16-7"><a href="#cb16-7" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb16-8"><a href="#cb16-8" aria-hidden="true" tabindex="-1"></a>L<span class="sc">$</span>AuthorProd        <span class="co"># nº de autores por nº de artigos</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb13"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(results<span class="sc">$</span>Authors, <span class="dv">10</span>)   <span class="co"># autores ordenados por nº de artigos</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>   Documents written N. of Authors Proportion of Authors
-1                  1          1763          0.8480038480
-2                  2           210          0.1010101010
-3                  3            64          0.0307840308
-4                  4            15          0.0072150072
-5                  5             6          0.0028860029
-6                  6            10          0.0048100048
-7                  7             1          0.0004810005
-8                  8             4          0.0019240019
-9                  9             1          0.0004810005
-10                14             1          0.0004810005
-11                15             1          0.0004810005
-12                16             1          0.0004810005
-13                19             1          0.0004810005
-14                20             1          0.0004810005</code></pre>
-</div>
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb18"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="fu">cat</span>(<span class="st">"Beta estimado:"</span>, <span class="fu">round</span>(L<span class="sc">$</span>Beta, <span class="dv">3</span>),</span>
-<span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a>    <span class="st">"| R2 (ajuste):"</span>, <span class="fu">round</span>(L<span class="sc">$</span>R2, <span class="dv">3</span>),</span>
-<span id="cb18-3"><a href="#cb18-3" aria-hidden="true" tabindex="-1"></a>    <span class="st">"| p-valor (KS):"</span>, <span class="fu">round</span>(L<span class="sc">$</span>p.value, <span class="dv">4</span>), <span class="st">"</span><span class="sc">\n</span><span class="st">"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>Beta estimado: 2.526 | R2 (ajuste): 0.897 | p-valor (KS): 0.0604 </code></pre>
+<pre><code>AU
+  MERIGO JM   PORTER AL  KOSTOFF RN     KUMAR S  KAJIKAWA Y     ZHANG Y    ABRAMO G D'ANGELO CA KOSEOGLU MA    YOUTIE J 
+         20          19          16          15          14           9           8           8           8           8 </code></pre>
 </div>
 </div>
-<p>Interpretação: o <code>Beta</code> teórico de Lotka é <strong>2</strong>. Quanto mais próximo, mais o seu campo segue o padrão clássico de concentração de produtividade.</p>
-<section id="produção-dos-principais-autores-ao-longo-do-tempo" class="level2">
-<h2 class="anchored" data-anchor-id="produção-dos-principais-autores-ao-longo-do-tempo">Produção dos principais autores ao longo do tempo</h2>
-<div class="cell" data-layout-align="center">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb20"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a>topAU <span class="ot">&lt;-</span> <span class="fu">authorProdOverTime</span>(M, <span class="at">k =</span> <span class="dv">10</span>, <span class="at">graph =</span> <span class="cn">TRUE</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<div class="cell-output-display">
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="atividade_biblioshiny_files/figure-html/autores-tempo-1.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="768"></p>
-</figure>
-</div>
-</div>
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb21"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(topAU<span class="sc">$</span>dfAU)    <span class="co"># tabela: autor, ano, nº de artigos, citações</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>    Author year freq  TC      TCpY
-1 ABRAMO G 2009    2 200 11.111111
-2 ABRAMO G 2011    1  26  1.625000
-3 ABRAMO G 2012    1  28  1.866667
-4 ABRAMO G 2015    1  20  1.666667
-5 ABRAMO G 2016    1  18  1.636364
-6 ABRAMO G 2019    1  11  1.375000</code></pre>
-</div>
-</div>
-<blockquote class="blockquote">
-<p><strong>🧪 Sua vez 5:</strong> qual autor tem a trajetória mais longa (mais anos ativos)? E qual tem a maior produção concentrada em poucos anos?</p>
-</blockquote>
-<hr>
 </section>
-</section>
-<section id="indicador-4-impacto-índices-h-g-e-m" class="level1">
-<h1>Indicador 4 — Impacto: índices H, G e M</h1>
-<p><code>Hindex()</code> calcula, para cada autor, os índices <strong>h</strong>, <strong>g</strong> e <strong>m</strong>:</p>
-<ul>
-<li><strong>h-index:</strong> o autor tem <em>h</em> artigos com pelo menos <em>h</em> citações cada.</li>
-<li><strong>g-index:</strong> dá mais peso aos artigos mais citados.</li>
-<li><strong>m-index:</strong> h-index dividido pelos anos de carreira (corrige por tempo).</li>
-</ul>
+<section id="pergunta-5-impacto-dos-autores-h-index" class="level2">
+<h2 class="anchored" data-anchor-id="pergunta-5-impacto-dos-autores-h-index">Pergunta 5 — Impacto dos autores (h-index)</h2>
+<p><strong>Pergunta:</strong> Qual autor tem o <strong>maior h-index</strong>? É o <strong>mesmo</strong> que o mais produtivo (Pergunta 4)? O que isso sugere sobre <em>quantidade</em> vs <em>influência</em>?</p>
+<p><strong>No Biblioshiny:</strong> <em>Authors → Authors’ Impact (h-index).</em></p>
 <div class="cell" data-layout-align="center">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb23"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Seleciona os 10 autores mais produtivos para calcular o impacto</span></span>
-<span id="cb23-2"><a href="#cb23-2" aria-hidden="true" tabindex="-1"></a>autores <span class="ot">&lt;-</span> <span class="fu">gsub</span>(<span class="st">","</span>, <span class="st">" "</span>, <span class="fu">names</span>(results<span class="sc">$</span>Authors)[<span class="dv">1</span><span class="sc">:</span><span class="dv">10</span>])</span>
-<span id="cb23-3"><a href="#cb23-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb23-4"><a href="#cb23-4" aria-hidden="true" tabindex="-1"></a>H <span class="ot">&lt;-</span> <span class="fu">Hindex</span>(M, <span class="at">field =</span> <span class="st">"author"</span>, <span class="at">elements =</span> autores, <span class="at">sep =</span> <span class="st">";"</span>, <span class="at">years =</span> <span class="cn">Inf</span>)</span>
-<span id="cb23-5"><a href="#cb23-5" aria-hidden="true" tabindex="-1"></a>H<span class="sc">$</span>H[<span class="fu">order</span>(<span class="sc">-</span>H<span class="sc">$</span>H<span class="sc">$</span>h_index), ]   <span class="co"># ordenado pelo h-index</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb15"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a>autores <span class="ot">&lt;-</span> <span class="fu">gsub</span>(<span class="st">","</span>, <span class="st">" "</span>, <span class="fu">names</span>(results<span class="sc">$</span>Authors)[<span class="dv">1</span><span class="sc">:</span><span class="dv">10</span>])  <span class="co"># top 10 produtivos</span></span>
+<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a>H <span class="ot">&lt;-</span> <span class="fu">Hindex</span>(M, <span class="at">field =</span> <span class="st">"author"</span>, <span class="at">elements =</span> autores, <span class="at">sep =</span> <span class="st">";"</span>, <span class="at">years =</span> <span class="cn">Inf</span>)</span>
+<span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a>H<span class="sc">$</span>H[<span class="fu">order</span>(<span class="sc">-</span>H<span class="sc">$</span>H<span class="sc">$</span>h_index), ]                                <span class="co"># ordenado pelo h-index</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>       Element h_index g_index   m_index   TC NP PY_start
 7    MERIGO JM      14      20 1.1666667 1159 20     2015
@@ -598,143 +489,73 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 9     YOUTIE J       5       8 0.2380952   78  8     2006</code></pre>
 </div>
 </div>
-<blockquote class="blockquote">
-<p><strong>🧪 Sua vez 6:</strong> compare o autor mais <strong>produtivo</strong> (mais artigos) com o de maior <strong>impacto</strong> (maior h-index). São a mesma pessoa? O que isso sugere sobre a diferença entre <em>quantidade</em> e <em>influência</em>?</p>
-</blockquote>
-<hr>
 </section>
-<section id="indicador-5-documentos-e-referências-mais-citados" class="level1">
-<h1>Indicador 5 — Documentos e referências mais citados</h1>
+<section id="pergunta-6-documento-mais-citado" class="level2">
+<h2 class="anchored" data-anchor-id="pergunta-6-documento-mais-citado">Pergunta 6 — Documento mais citado</h2>
+<p><strong>Pergunta:</strong> Qual é o <strong>documento mais citado</strong> (citações globais) do corpus?</p>
+<p><strong>No Biblioshiny:</strong> <em>Documents → Most Global Cited Documents.</em></p>
 <div class="cell" data-layout-align="center">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb25"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a>CIT <span class="ot">&lt;-</span> <span class="fu">citations</span>(M, <span class="at">field =</span> <span class="st">"article"</span>, <span class="at">sep =</span> <span class="st">";"</span>)</span>
-<span id="cb25-2"><a href="#cb25-2" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(CIT<span class="sc">$</span>Cited, <span class="dv">10</span>)   <span class="co"># referências mais citadas pelo corpus</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb17"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a>ord <span class="ot">&lt;-</span> <span class="fu">order</span>(<span class="fu">as.numeric</span>(M<span class="sc">$</span>TC), <span class="at">decreasing =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a>M[ord[<span class="dv">1</span><span class="sc">:</span><span class="dv">10</span>], <span class="fu">c</span>(<span class="st">"AU"</span>, <span class="st">"TI"</span>, <span class="st">"SO"</span>, <span class="st">"PY"</span>, <span class="st">"TC"</span>)]   <span class="co"># TC = Total Citations</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>CR
-     VAN ECK NJ, 2010, SCIENTOMETRICS, V84, P523, DOI 10.1007/S11192-009-0146-3 
-                                                                            124 
-      SMALL H, 1973, J AM SOC INFORM SCI, V24, P265, DOI 10.1002/ASI.4630240406 
-                                                                            120 
-   RAMOS-RODRIGUEZ AR, 2004, STRATEGIC MANAGE J, V25, P981, DOI 10.1002/SMJ.397 
-                                                                            108 
-                                                   ANONYMOUS, NO TITLE CAPTURED 
-                                                                             86 
-                                            PRITCHARD A, 1969, J DOC, V25, P348 
-                                                                             74 
-             BARNEY J, 1991, J MANAGE, V17, P99, DOI 10.1177/014920639101700108 
-                                                                             73 
-HIRSCH JE, 2005, P NATL ACAD SCI USA, V102, P16569, DOI 10.1073/PNAS.0507655102 
-                                                                             71 
-      ZUPIC I, 2015, ORGAN RES METHODS, V18, P429, DOI 10.1177/1094428114562629 
-                                                                             71 
-                 KESSLER MM, 1963, AM DOC, V14, P10, DOI 10.1002/ASI.5090140103 
-                                                                             67 
-               NERUR SP, 2008, STRATEG MANAGE J, V29, P319, DOI 10.1002/SMJ.659 
-                                                                             67 </code></pre>
+<pre><code>                                                                                      AU
+CHEN HC, 2012, MIS QUART                                    CHEN HC;CHIANG RHL;STOREY VC
+ZUPIC I, 2015, ORGAN RES METHODS                                         ZUPIC I;CATER T
+RAMOS-RODRIGUEZ AR, 2004, STRATEGIC MANAGE J           RAMOS-RODRIGUEZ AR;RUIZ-NAVARRO J
+VOLBERDA HW, 2010, ORGAN SCI                                VOLBERDA HW;FOSS NJ;LYLES MA
+DAIM TU, 2006, TECHNOL FORECAST SOC                   DAIM TU;RUEDA G;MARTIN H;GERDSRI P
+KOSTOFF RN, 2001, IEEE T ENG MANAGE                                KOSTOFF RN;SCALLER RR
+NERUR SP, 2008, STRATEG MANAGE J                         NERUR SP;RASHEED AA;NATARAJAN V
+MELIN G, 2000, RES POLICY                                                        MELIN G
+MOED HF, 1985, RES POLICY                    MOED HF;BURGER WJM;FRANKFORT JG;VANRAAN AFJ
+MURRAY F, 2002, RES POLICY                                                      MURRAY F
+                                                                                                                                                                                      TI
+CHEN HC, 2012, MIS QUART                                                                                                BUSINESS INTELLIGENCE AND ANALYTICS: FROM BIG DATA TO BIG IMPACT
+ZUPIC I, 2015, ORGAN RES METHODS                                                                                                     BIBLIOMETRIC METHODS IN MANAGEMENT AND ORGANIZATION
+RAMOS-RODRIGUEZ AR, 2004, STRATEGIC MANAGE J CHANGES IN THE INTELLECTUAL STRUCTURE OF STRATEGIC MANAGEMENT RESEARCH: A BIBLIOMETRIC STUDY OF THE STRATEGIC MANAGEMENT JOURNAL, 1980-2000
+VOLBERDA HW, 2010, ORGAN SCI                                                        ABSORBING THE CONCEPT OF ABSORPTIVE CAPACITY: HOW TO REALIZE ITS POTENTIAL IN THE ORGANIZATION FIELD
+DAIM TU, 2006, TECHNOL FORECAST SOC                                                                          FORECASTING EMERGING TECHNOLOGIES: USE OF BIBLIOMETRICS AND PATENT ANALYSIS
+KOSTOFF RN, 2001, IEEE T ENG MANAGE                                                                                                                      SCIENCE AND TECHNOLOGY ROADMAPS
+NERUR SP, 2008, STRATEG MANAGE J                                                            THE INTELLECTUAL STRUCTURE OF THE STRATEGIC MANAGEMENT FIELD: AN AUTHOR CO-CITATION ANALYSIS
+MELIN G, 2000, RES POLICY                                                                              PRAGMATISM AND SELF-ORGANIZATION - RESEARCH COLLABORATION ON THE INDIVIDUAL LEVEL
+MOED HF, 1985, RES POLICY                                                                            THE USE OF BIBLIOMETRIC DATA FOR THE MEASUREMENT OF UNIVERSITY-RESEARCH PERFORMANCE
+MURRAY F, 2002, RES POLICY                                                             INNOVATION AS CO-EVOLUTION OF SCIENTIFIC AND TECHNOLOGICAL NETWORKS: EXPLORING TISSUE ENGINEERING
+                                                                                      SO   PY   TC
+CHEN HC, 2012, MIS QUART                                                   MIS QUARTERLY 2012 2161
+ZUPIC I, 2015, ORGAN RES METHODS                         ORGANIZATIONAL RESEARCH METHODS 2015  844
+RAMOS-RODRIGUEZ AR, 2004, STRATEGIC MANAGE J                STRATEGIC MANAGEMENT JOURNAL 2004  667
+VOLBERDA HW, 2010, ORGAN SCI                                        ORGANIZATION SCIENCE 2010  626
+DAIM TU, 2006, TECHNOL FORECAST SOC          TECHNOLOGICAL FORECASTING AND SOCIAL CHANGE 2006  569
+KOSTOFF RN, 2001, IEEE T ENG MANAGE          IEEE TRANSACTIONS ON ENGINEERING MANAGEMENT 2001  387
+NERUR SP, 2008, STRATEG MANAGE J                            STRATEGIC MANAGEMENT JOURNAL 2008  353
+MELIN G, 2000, RES POLICY                                                RESEARCH POLICY 2000  336
+MOED HF, 1985, RES POLICY                                                RESEARCH POLICY 1985  310
+MURRAY F, 2002, RES POLICY                                               RESEARCH POLICY 2002  301</code></pre>
 </div>
 </div>
-<blockquote class="blockquote">
-<p><strong>🧪 Sua vez 7:</strong> as referências mais citadas costumam ser os “clássicos” da área. Identifique 2 e comente se você as conhece.</p>
-</blockquote>
+</section>
+<section id="pergunta-7-temas-palavras-chave-mais-frequentes" class="level2">
+<h2 class="anchored" data-anchor-id="pergunta-7-temas-palavras-chave-mais-frequentes">Pergunta 7 — Temas: palavras-chave mais frequentes</h2>
+<p><strong>Pergunta:</strong> Quais são as <strong>palavras-chave</strong> mais frequentes do corpus? O que elas revelam sobre os temas dominantes?</p>
+<p><strong>No Biblioshiny:</strong> <em>Documents → Words → Most Frequent Words</em> (ou <em>WordCloud</em>).</p>
+<div class="cell" data-layout-align="center">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb19"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a>kw <span class="ot">&lt;-</span> <span class="fu">trimws</span>(<span class="fu">unlist</span>(<span class="fu">strsplit</span>(M<span class="sc">$</span>DE, <span class="st">";"</span>)))   <span class="co"># DE = Author Keywords</span></span>
+<span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a>kw <span class="ot">&lt;-</span> kw[kw <span class="sc">!=</span> <span class="st">""</span>]</span>
+<span id="cb19-3"><a href="#cb19-3" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(<span class="fu">sort</span>(<span class="fu">table</span>(kw), <span class="at">decreasing =</span> <span class="cn">TRUE</span>), <span class="dv">10</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>kw
+        BIBLIOMETRICS BIBLIOMETRIC ANALYSIS     CITATION ANALYSIS            INNOVATION    BIBLIOMETRIC STUDY 
+                  234                   161                    62                    44                    30 
+          TEXT MINING             VOSVIEWER     LITERATURE REVIEW          BIBLIOMETRIC  CO-CITATION ANALYSIS 
+                   30                    30                    29                    28                    28 </code></pre>
+</div>
+</div>
 <hr>
 </section>
-<section id="tabela-síntese-de-indicadores-entregável-principal" class="level1">
-<h1>Tabela-síntese de indicadores (entregável principal)</h1>
-<p>Consolide os principais indicadores em uma única tabela — é o coração do tema “indicadores científicos”.</p>
-<div class="cell" data-layout-align="center">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb27"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Crescimento anual: campo dedicado do summary (não depende de nomes de coluna)</span></span>
-<span id="cb27-2"><a href="#cb27-2" aria-hidden="true" tabindex="-1"></a>agr <span class="ot">&lt;-</span> <span class="fu">round</span>(S<span class="sc">$</span>AnnualGrowthRate, <span class="dv">2</span>)</span>
-<span id="cb27-3"><a href="#cb27-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb27-4"><a href="#cb27-4" aria-hidden="true" tabindex="-1"></a>sintese <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(</span>
-<span id="cb27-5"><a href="#cb27-5" aria-hidden="true" tabindex="-1"></a>  <span class="at">Indicador =</span> <span class="fu">c</span>(</span>
-<span id="cb27-6"><a href="#cb27-6" aria-hidden="true" tabindex="-1"></a>    <span class="st">"Documentos (total)"</span>,</span>
-<span id="cb27-7"><a href="#cb27-7" aria-hidden="true" tabindex="-1"></a>    <span class="st">"Fontes/periódicos"</span>,</span>
-<span id="cb27-8"><a href="#cb27-8" aria-hidden="true" tabindex="-1"></a>    <span class="st">"Autores"</span>,</span>
-<span id="cb27-9"><a href="#cb27-9" aria-hidden="true" tabindex="-1"></a>    <span class="st">"Período coberto"</span>,</span>
-<span id="cb27-10"><a href="#cb27-10" aria-hidden="true" tabindex="-1"></a>    <span class="st">"Crescimento anual (%)"</span>,</span>
-<span id="cb27-11"><a href="#cb27-11" aria-hidden="true" tabindex="-1"></a>    <span class="st">"Média de citações por documento"</span>,</span>
-<span id="cb27-12"><a href="#cb27-12" aria-hidden="true" tabindex="-1"></a>    <span class="st">"Autores por documento"</span>,</span>
-<span id="cb27-13"><a href="#cb27-13" aria-hidden="true" tabindex="-1"></a>    <span class="st">"Documentos por autor"</span></span>
-<span id="cb27-14"><a href="#cb27-14" aria-hidden="true" tabindex="-1"></a>  ),</span>
-<span id="cb27-15"><a href="#cb27-15" aria-hidden="true" tabindex="-1"></a>  <span class="at">Valor =</span> <span class="fu">c</span>(</span>
-<span id="cb27-16"><a href="#cb27-16" aria-hidden="true" tabindex="-1"></a>    <span class="fu">nrow</span>(M),</span>
-<span id="cb27-17"><a href="#cb27-17" aria-hidden="true" tabindex="-1"></a>    <span class="fu">length</span>(<span class="fu">unique</span>(M<span class="sc">$</span>SO)),</span>
-<span id="cb27-18"><a href="#cb27-18" aria-hidden="true" tabindex="-1"></a>    <span class="fu">length</span>(results<span class="sc">$</span>Authors),</span>
-<span id="cb27-19"><a href="#cb27-19" aria-hidden="true" tabindex="-1"></a>    <span class="fu">paste</span>(<span class="fu">range</span>(M<span class="sc">$</span>PY, <span class="at">na.rm =</span> <span class="cn">TRUE</span>), <span class="at">collapse =</span> <span class="st">" – "</span>),</span>
-<span id="cb27-20"><a href="#cb27-20" aria-hidden="true" tabindex="-1"></a>    agr,</span>
-<span id="cb27-21"><a href="#cb27-21" aria-hidden="true" tabindex="-1"></a>    <span class="fu">round</span>(<span class="fu">mean</span>(<span class="fu">as.numeric</span>(M<span class="sc">$</span>TC), <span class="at">na.rm =</span> <span class="cn">TRUE</span>), <span class="dv">2</span>),</span>
-<span id="cb27-22"><a href="#cb27-22" aria-hidden="true" tabindex="-1"></a>    <span class="fu">round</span>(<span class="fu">length</span>(results<span class="sc">$</span>Authors) <span class="sc">/</span> <span class="fu">nrow</span>(M), <span class="dv">2</span>),</span>
-<span id="cb27-23"><a href="#cb27-23" aria-hidden="true" tabindex="-1"></a>    <span class="fu">round</span>(<span class="fu">nrow</span>(M) <span class="sc">/</span> <span class="fu">length</span>(results<span class="sc">$</span>Authors), <span class="dv">2</span>)</span>
-<span id="cb27-24"><a href="#cb27-24" aria-hidden="true" tabindex="-1"></a>  )</span>
-<span id="cb27-25"><a href="#cb27-25" aria-hidden="true" tabindex="-1"></a>)</span>
-<span id="cb27-26"><a href="#cb27-26" aria-hidden="true" tabindex="-1"></a>knitr<span class="sc">::</span><span class="fu">kable</span>(sintese, <span class="at">caption =</span> <span class="st">"Indicadores bibliométricos do corpus"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<div class="cell-output-display">
-<table class="caption-top table table-sm table-striped small">
-<caption>Indicadores bibliométricos do corpus</caption>
-<thead>
-<tr class="header">
-<th style="text-align: left;">Indicador</th>
-<th style="text-align: left;">Valor</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td style="text-align: left;">Documentos (total)</td>
-<td style="text-align: left;">898</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">Fontes/periódicos</td>
-<td style="text-align: left;">281</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">Autores</td>
-<td style="text-align: left;">2079</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">Período coberto</td>
-<td style="text-align: left;">1985 – 2020</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">Crescimento anual (%)</td>
-<td style="text-align: left;">14.05</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">Média de citações por documento</td>
-<td style="text-align: left;">37.12</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">Autores por documento</td>
-<td style="text-align: left;">2.32</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">Documentos por autor</td>
-<td style="text-align: left;">0.43</td>
-</tr>
-</tbody>
-</table>
-</div>
-</div>
-<blockquote class="blockquote">
-<p><strong>🧪 Sua vez 8:</strong> adapte esta tabela ao seu corpus real e exporte-a: <code>write.csv(sintese, "indicadores.csv", row.names = FALSE)</code>.</p>
-</blockquote>
-<hr>
 </section>
-<section id="bônus-visão-integrada-sankey" class="level1">
-<h1>Bônus — Visão integrada (Sankey)</h1>
-<p>O <em>three-field plot</em> conecta três dimensões ao mesmo tempo (ex.: Autores → Palavras-chave → Fontes), ótimo para a apresentação final (conexão com a Equipe 8).</p>
-<div class="cell" data-layout-align="center">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb28"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb28-1"><a href="#cb28-1" aria-hidden="true" tabindex="-1"></a><span class="fu">threeFieldsPlot</span>(M, <span class="at">fields =</span> <span class="fu">c</span>(<span class="st">"AU"</span>, <span class="st">"DE"</span>, <span class="st">"SO"</span>), <span class="at">n =</span> <span class="fu">c</span>(<span class="dv">20</span>, <span class="dv">20</span>, <span class="dv">20</span>))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-</div>
-<blockquote class="blockquote">
-<p><em>(Definimos <code>eval=FALSE</code> porque gera um widget interativo; rode no seu console para visualizar.)</em></p>
-</blockquote>
-<hr>
-</section>
-<section id="reproduzindo-tudo-no-biblioshiny" class="level1">
-<h1>Reproduzindo tudo no Biblioshiny</h1>
-<p>Abra a interface e siga o mapa abaixo:</p>
-<div class="cell" data-layout-align="center">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb29"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb29-1"><a href="#cb29-1" aria-hidden="true" tabindex="-1"></a><span class="fu">biblioshiny</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-</div>
+<section id="mapa-rápido-biblioshiny-bibliometrix" class="level1">
+<h1>Mapa rápido: Biblioshiny ⇄ bibliometrix</h1>
+<p>Referência de bolso para localizar cada análise nas duas trilhas:</p>
 <table class="caption-top table">
 <colgroup>
 <col style="width: 50%">
@@ -742,69 +563,56 @@ HIRSCH JE, 2005, P NATL ACAD SCI USA, V102, P16569, DOI 10.1073/PNAS.0507655102
 </colgroup>
 <thead>
 <tr class="header">
-<th>Passo no Biblioshiny</th>
-<th>Equivale a</th>
+<th>No Biblioshiny (clicando)</th>
+<th>No bibliometrix (no código)</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td><strong>Data → Load Data → Import raw files</strong></td>
-<td><code>convert2df()</code></td>
+<td>Import or Load → Use a sample collection</td>
+<td><code>data(management)</code> / <code>convert2df()</code></td>
 </tr>
 <tr class="even">
-<td><strong>Overview → Main Information</strong></td>
+<td>Overview → Main Information</td>
 <td><code>biblioAnalysis()</code> + <code>summary()</code></td>
 </tr>
 <tr class="odd">
-<td><strong>Overview → Annual Scientific Production</strong></td>
-<td>gráfico de produção anual</td>
+<td>Overview → Annual Scientific Production</td>
+<td><code>S$AnnualProduction</code> / <code>plot()</code></td>
 </tr>
 <tr class="even">
-<td><strong>Sources → Most Relevant Sources / Bradford’s Law</strong></td>
+<td>Sources → Bradford’s Law</td>
 <td><code>bradford()</code></td>
 </tr>
 <tr class="odd">
-<td><strong>Authors → Most Relevant Authors / Lotka’s Law</strong></td>
-<td><code>lotka()</code></td>
+<td>Authors → Most Relevant Authors</td>
+<td><code>results$Authors</code></td>
 </tr>
 <tr class="even">
-<td><strong>Authors → Authors’ Production over Time</strong></td>
-<td><code>authorProdOverTime()</code></td>
-</tr>
-<tr class="odd">
-<td><strong>Authors → Author Impact (h-index)</strong></td>
+<td>Authors → Authors’ Impact (h-index)</td>
 <td><code>Hindex()</code></td>
 </tr>
+<tr class="odd">
+<td>Documents → Most Global Cited Documents</td>
+<td>ordenar por <code>M$TC</code></td>
+</tr>
 <tr class="even">
-<td><strong>Documents → Most Global Cited Documents</strong></td>
-<td><code>citations()</code></td>
+<td>Documents → Words → Most Frequent Words</td>
+<td>tabular <code>M$DE</code></td>
 </tr>
 </tbody>
 </table>
-<p><strong>Tarefa de fechamento:</strong> escolha <strong>um</strong> indicador desta atividade, gere-o no Biblioshiny e confirme que o número bate com o do seu código. Tire um print — ele entra na apresentação da Equipe 8.</p>
+<p>A lição central: <strong>o Biblioshiny é didático e rápido; o código é reprodutível e auditável.</strong> Quem domina as funções entende o que cada tela está calculando.</p>
 <hr>
 </section>
 <section id="checklist-de-entrega" class="level1">
 <h1>Checklist de entrega</h1>
-<p>Seguindo o <strong>Padrão de Entrega</strong> da capacitação:</p>
 <ul class="task-list">
-<li><label><input type="checkbox"><strong>Versão original editável</strong> — este arquivo <code>.Rmd</code>.</label></li>
-<li><label><input type="checkbox"><strong>PDF obrigatório</strong> — <code>Knit → Knit to PDF</code> (ou exporte o HTML para PDF).</label></li>
-<li><label><input type="checkbox">Tabela-síntese de indicadores exportada (<code>indicadores.csv</code>).</label></li>
-<li><label><input type="checkbox">Ao menos 1 gráfico temporal + 1 de autores salvos.</label></li>
-<li><label><input type="checkbox">Um print do Biblioshiny confirmando um indicador.</label></li>
-<li><label><input type="checkbox">Cheat sheet (1–2 páginas) anexado.</label></li>
+<li><label><input type="checkbox">Identifiquei a <strong>pergunta do meu grupo</strong> (1 a 7).</label></li>
+<li><label><input type="checkbox">Respondi pela <strong>Trilha Geral</strong> (Biblioshiny no Hugging Face) <strong>ou</strong> pela <strong>Trilha dos Bravos</strong> (código).</label></li>
+<li><label><input type="checkbox">Tirei o <strong>screenshot</strong> da tela que mostra a resposta.</label></li>
+<li><label><input type="checkbox">Colei o screenshot <strong>no slide do meu grupo</strong> na <a href="https://docs.google.com/presentation/d/1cXzXMhqq6SU0ZqYRCg0bC17dC7_NzdqU5nSl0a04hS8/edit?usp=sharing">apresentação compartilhada</a>, com <strong>uma frase</strong> de resposta.</label></li>
 </ul>
-<hr>
-</section>
-<section id="desafios-finais-para-discussão-da-equipe" class="level1">
-<h1>Desafios finais (para discussão da equipe)</h1>
-<ol type="1">
-<li>O seu campo segue a Lei de Lotka (Beta ≈ 2)? O que um desvio significaria?</li>
-<li>O autor mais produtivo é também o mais influente? Por quê?</li>
-<li>Olhando a produção anual, o campo está em ascensão, maturidade ou declínio?</li>
-<li>Qual indicador você defenderia como o <strong>mais importante</strong> para avaliar a qualidade de um corpus — e por quê?</li>
-</ol>
 <hr>
 <p><em>Referência do pacote:</em> Aria, M. &amp; Cuccurullo, C. (2017). <em>bibliometrix: An R-tool for comprehensive science mapping analysis.</em> Journal of Informetrics, 11(4), 959–975. Documentação: bibliometrix.org</p>
 
