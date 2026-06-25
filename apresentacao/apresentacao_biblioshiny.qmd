@@ -270,12 +270,6 @@ Uma função (`convert2df`) padroniza **sete bases diferentes** num único *data
 
 </video>
 
-## Etapa 1 · Buscar no OpenAlex {.smaller}
-
-## Etapa 1 · Baixar o corpus {.smaller}
-
-![O Biblioshiny baixa e **converte** os registros para `bibliometrixDB` — sem sair da interface.](img/api-02-download.jpg){.shot width="62%" fig-align="center"}
-
 ## Etapa 2 · Limpar: completude dos metadados {.smaller}
 
 ![Tela de **completude**: para cada campo, % de ausentes e status (de *Excellent* a *Completely missing*). É aqui que se decide o que precisa ser limpo.](img/api-03-completeness.jpg){.shot width="74%" fig-align="center"}
